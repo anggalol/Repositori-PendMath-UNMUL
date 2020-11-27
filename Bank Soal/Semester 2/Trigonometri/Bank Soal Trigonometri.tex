@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, lmargin=1in, rmargin=1in, tmargin=1in, bmargin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{xparse}
+\usepackage{icomma}
+\usepackage[a]{esvect}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{indentfirst}
+\usepackage{gensymb}
+\usepackage{mdframed}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{colortbl}
+\usepackage{etex}
+\usepackage{tkz-euclide}
+
+%% Impor semua objek tkz %%
+\usetkzobj{all}
+
+%% Impor library tikz %%
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{through}
+\usetikzlibrary{intersections}
+\usetikzlibrary{math}
+\usetikzlibrary{angles}
+\usetikzlibrary{positioning}
+\usetikzlibrary{quotes}
+\usetikzlibrary{decorations.markings}
+
+%% Buat command baru untuk membuat simbol diferensial %%
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+%% Setel panjang indentasi %%
+\setlength{\parindent}{5ex}
+
+%% Ganti simbol himpunan kosong dengan varnothing %%
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+%% Buat beberapa fitur otomatis untuk menambahkan bar %%
+\newcommand*\norm[1]{\mathop{}\!\left\|#1\right\|}
+\newcommand*\lrbr[1]{\mathop{}\!\left\lbrace#1\right\rbrace}
+\newcommand*\lrag[1]{\mathop{}\!\left\langle{#1}\right\rangle}
+\newcommand*\lbrk[1]{\mathop{}\!\left({#1}\right]}
+\newcommand*\lkrb[1]{\mathop{}\!\left[{#1}\right)}
+\newcommand*\floor[1]{\mathop{}\!\left\lfloor{#1}\right\rfloor}
+\newcommand*\ceil[1]{\mathop{}\!\left\lceil{#1}\right\rceil}
+\newcommand*\func[2]{\mathop{}\!{#1}{\left({#2}\right)}}
+\newcommand*\funk[2]{\mathop{}\!{#1}{\left[{#2}\right]}}
+\newcommand*\funl[2]{\mathop{}\!{#1}{\left\lbrace{#2}\right\rbrace}}
+\newcommand*\funa[2]{\mathop{}\!{#1}{\left|{#2}\right|}}
+\newcommand*\set[2]{\mathop{}\!\left\lbrace{{#1} \, \left| \, {#2} \right.}\right\rbrace}
+
+%% Buat underbrace agar dapat berada pada notasi matematika %%
+\newcommand*\ubr[2]{\mathop{}\!\underbrace{#1}_{\text{$ {#2} $}}}
+
+%% Buat tanda titik-titik vertikal dan membuat tanda tersebut tepat ditengah-tengah tanda sama dengan %%
+%% Biasanya digunakan untuk membuat persamaan yang memiliki algoritma sama %%
+\newcommand*\cvdot[1]{\mathop{}\!\mathrel{\makebox[\widthof{$ {#1} $}]{\vdots}}}
+
+%% Item default untuk environment enumerate %%
+\newcommand\defitem{\item[$ \bullet $]}
+
+%% Ganti notasi logaritma dengan varlog %%
+\let\oldlog\log
+\let\log\varlog
+
+%% Ganti syntax displaystyle menjadi ds agar lebih mudah %%
+\newcommand*\ds[1]{\mathop{}\!\displaystyle{{#1}}}
+
+%% Definisi varlog %%
+%% Perbedaan notasi logaritma ini dengan notasi logaritma awal (yang diganti) berada pada basis logaritmanya %%
+%% Notasi baru ini menggunakan basis logaritma yang digunakan di Indonesia (sebagai ganti dari notasi logaritma internasional) %%
+\NewDocumentCommand{\log}{o}
+{
+	\IfNoValueTF{#1}
+	{}
+	{{}^{{#1}}\!}
+	\oldlog
+}
+
+%% Buat tambahan operator matematika %%
+\DeclareMathOperator{\sgn}{sgn}				% signum
+\DeclareMathOperator{\csch}{csch}			% kosekan hiperbolik
+\DeclareMathOperator{\sech}{sech}			% sekan hiperbolik
+\DeclareMathOperator{\arcsec}{arcsec}		% sekan invers
+\DeclareMathOperator{\arccsc}{arccsc}		% kosekan invers
+\DeclareMathOperator{\arccot}{arccot}		% kotangen invers
+\DeclareMathOperator{\lcm}{lcm}				% least common multiple (kelipatan persekutuan terbesar)
+\DeclareMathOperator{\arsinh}{arsinh}		% sinus hiperbolik invers
+\DeclareMathOperator{\arcosh}{arcosh}		% kosinus hiperbolik invers
+\DeclareMathOperator{\artanh}{artanh}		% tangen hiperbolik invers
+\DeclareMathOperator{\arcsch}{arcsch}		% kosekan hiperbolik invers
+\DeclareMathOperator{\arsech}{arsech}		% sekan hiperbolik invers
+\DeclareMathOperator{\arcoth}{arcoth}		% kotangen hiperbolik invers
+
+%% Buat fitur satuan untuk suatu besaran fisis %%
+\newcommand*\punit[1]{\mathop{}\!\, \mathrm{{#1}}}
+
+%% Buat notasi-notasi yang menggunakan teks roman %%
+\newcommand*{\transpose}{\mathop{}\!\mathrm{T}}
+\newcommand*{\comp}{\mathop{}\!\mathrm{C}}
+
+%% Buat notasi turunan pada suatu titik %%
+\newcommand{\at}[2][]{#1|_{#2}}
+
+%% Buat warna untuk membedakan pencoretan %%
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+%% Buat header dan footer untuk dokumen %%
+\pagestyle{fancy}
+\lfoot{Made with \LaTeX}
+\cfoot{\thepage}
+\rfoot{\copyright \, Pak Angga, \the\year}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+	%% Header &&
+	\begin{center}
+		{\large{\sc{
+					Universitas Mulawarman \\
+					Fakultas Keguruan dan Ilmu Pendidikan \\
+					Pendidikan Matematika \\[3pt]
+					Bank Soal HOTS Trigonometri
+		}}}
+	\end{center}
+	
+	\vspace{5pt}
+	
+	\noindent Nama : \dotfill
+	
+	\vspace{-13pt}
+	
+	\noindent \hrulefill
+	
+	\vspace{5pt}
+	
+	%% Content %%
+	\begin{enumerate}[leftmargin=*]
+		\item Jika $ 3\func{\sin}{x} + 4\func{\cos}{y} = 5 $, maka tentukan nilai maksimum dari $ 3\func{\cos}{x} + 4\func{\sin}{y} $.
+		\item 
+	\end{enumerate}
+\end{document}

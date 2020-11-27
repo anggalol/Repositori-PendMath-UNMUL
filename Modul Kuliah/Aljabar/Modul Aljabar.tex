@@ -1,0 +1,261 @@
+% Documentation for front page:
+% https://github.com/martinhelso/mnfrontpage
+
+
+\documentclass[a4paper, british]{memoir}
+% Add [final] to remove marginal notes
+
+\usepackage{style}       % Custom style
+\usepackage{mnfrontpage} % Front page
+\usepackage{kantlipsum}  % Dummy text
+\usepackage{venndiagram}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage[figurename=Gambar]{caption}
+
+%% Deklarasikan theorem environment %%
+\declaretheoremstyle[headfont   = \bfseries\sffamily,
+					 notefont   = \normalfont,
+					 bodyfont   = \itshape,
+					 spaceabove = 6pt,
+					 spacebelow = 6pt]{plain}
+\declaretheoremstyle[headfont   = \bfseries\sffamily,
+					 notefont   = \normalfont,
+					 spaceabove = 6pt,
+					 spacebelow = 6pt]{definition}
+\declaretheoremstyle[headfont	= \itshape,
+					 notefont	= \normalfont,
+					 spaceabove	= 6pt,
+					 spacebelow = 6pt,
+					 qed		= $\square$,
+					 numbered	= no]{pfs}
+\declaretheoremstyle[headfont	= \itshape,
+					 notefont	= \normalfont,
+					 spaceabove	= 6pt,
+					 spacebelow = 6pt,
+					 numbered	= no]{answer}
+\declaretheorem[style = plain, numberwithin = section]{teorema}
+\declaretheorem[style = plain,      sibling = teorema]{akibat}
+\declaretheorem[style = plain,      sibling = teorema]{lema}
+\declaretheorem[style = plain,      sibling = teorema]{proposisi}
+\declaretheorem[style = plain,      sibling = teorema]{observation}
+\declaretheorem[style = plain,      sibling = teorema]{konjektur}
+\declaretheorem[style = definition, sibling = teorema]{definisi}
+\declaretheorem[style = definition, sibling = teorema]{contoh}
+\declaretheorem[style = definition, sibling = teorema]{notasi}
+\declaretheorem[style = remark,     sibling = teorema]{catatan}
+\declaretheorem[style = pfs]{bukti}
+\declaretheorem[style = answer]{jawab}
+
+%% Better dash %%
+\newcommand{\dashh}{\dash \space}
+
+%% Perbaiki vertical space untuk environment multicols %%
+\setlength{\multicolsep}{6pt plus 2pt minus 1.5pt}
+
+%% Fake section untuk menghilangkan section title %%
+\newcommand{\fakechapter}[1]{%
+	\chaptermark{#1}
+	\addcontentsline{toc}{chapter}{#1}
+}
+
+%% Perbaiki indentasi environment multicols %%
+\newenvironment{multcols}
+{
+	\begin{multicols}{2}
+		\noindent
+}
+{
+		\vfill
+	\end{multicols}
+}
+
+%% Definisi warna baru %%
+\definecolor{_5C8AA8}{RGB}{92, 138, 168}
+\definecolor{_F0F7FF}{RGB}{240, 247, 255}
+
+%% Buat environment baru berdasarkan tcolorbox %%
+\newtcolorbox{warningbox}{colback=red!5!white,
+	colframe=red!75!black,fonttitle=\bfseries,
+	title={Peringatan}}
+
+\newtcolorbox{explbox}{colback=green!10,
+	colframe=green!65!black,fonttitle=\bfseries,
+	title={Eksplorasi}}
+
+\newtcolorbox{infobox}[1]{colback=_F0F7FF,
+	colframe=_5C8AA8,fonttitle=\bfseries,
+	title={#1}}
+
+\newtcolorbox{charbox}[1]{fonttitle=\bfseries,
+	size=small,
+	righthand width=3cm,
+	sidebyside,
+	sidebyside gap=6mm,
+	lower separated=false,
+	adjusted title=center seam,
+	sidebyside align=center seam,
+	title={Tokoh \dash \space {#1}}}
+
+%% Buat boxed environment untuk jenis soal tertentu %%
+\newcommand{\probtype}[1]{\tikz[baseline={(a.base)}]\node[draw=red!75!black,rounded corners=0.5ex,fill=red!5!white,inner sep=1pt](a){#1};}
+
+%% Buat command baru untuk membuat simbol diferensial %%
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+%% Ganti simbol himpunan kosong dengan varnothing %%
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+%% Buat beberapa fitur otomatis untuk menambahkan bar %%
+\newcommand*\norm[1]{\mathop{}\!\left\|#1\right\|}
+\newcommand*\lrbr[1]{\mathop{}\!\left\lbrace#1\right\rbrace}
+\newcommand*\lrag[1]{\mathop{}\!\left\langle{#1}\right\rangle}
+\newcommand*\lbrk[1]{\mathop{}\!\left({#1}\right]}
+\newcommand*\lkrb[1]{\mathop{}\!\left[{#1}\right)}
+\newcommand*\floor[1]{\mathop{}\!\left\lfloor{#1}\right\rfloor}
+\newcommand*\ceil[1]{\mathop{}\!\left\lceil{#1}\right\rceil}
+\newcommand*\func[2]{\mathop{}\!{#1}{\left({#2}\right)}}
+\newcommand*\funk[2]{\mathop{}\!{#1}{\left[{#2}\right]}}
+\newcommand*\funl[2]{\mathop{}\!{#1}{\left\lbrace{#2}\right\rbrace}}
+
+\newcommand*\set[2]{\mathop{}\!\left\lbrace{{#1} \, \left|\, {#2}\right.}\right\rbrace}
+
+%% Buat underbrace agar dapat berada pada notasi matematika %%
+\newcommand*\ubr[2]{\mathop{}\!\underbrace{#1}_{\text{$ {#2} $}}}
+
+%% Buat beberapa notasi agar memiliki skala 1 ketika berada pada pecahan atau inline %%
+\newcommand*\Sum{\mathop{}\!\displaystyle\sum}
+\newcommand*\Prod{\mathop{}\!\displaystyle\prod}
+\newcommand*\Binom{\mathop{}\!\displaystyle\binom}
+
+%% Buat tanda titik-titik vertikal dan membuat tanda tersebut tepat ditengah-tengah tanda sama dengan %%
+%% Biasanya digunakan untuk membuat persamaan yang memiliki algoritma sama %%
+\newcommand*\cvdot[1]{\mathop{}\!\mathrel{\makebox[\widthof{$ {#1} $}]{\vdots}}}
+
+%% Item default untuk environment enumerate %%
+\newcommand\defitem{\item[$ \bullet $]}
+
+%% Buat warna untuk membedakan pencoretan %%
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+%% Ganti notasi logaritma dengan varlog %%
+\let\oldlog\log
+\let\log\varlog
+
+%% Definisi varlog %%
+%% Perbedaan notasi logaritma ini dengan notasi logaritma awal (yang diganti) berada pada basis logaritmanya %%
+%% Notasi baru ini menggunakan basis logaritma yang digunakan di Indonesia (sebagai ganti dari notasi logaritma internasional) %%
+\NewDocumentCommand{\log}{o}
+{
+	\IfNoValueTF{#1}
+	{}
+	{{}^{{#1}}\!}
+	\oldlog
+}
+
+%% Buat tambahan operator matematika %%
+\DeclareMathOperator{\sgn}{sgn}				% signum
+\DeclareMathOperator{\csch}{csch}			% kosekan hiperbolik
+\DeclareMathOperator{\sech}{sech}			% sekan hiperbolik
+\DeclareMathOperator{\arcsec}{arcsec}		% sekan invers
+\DeclareMathOperator{\arccsc}{arccsc}		% kosekan invers
+\DeclareMathOperator{\arccot}{arccot}		% kotangen invers
+\DeclareMathOperator{\lcm}{lcm}				% least common multiple (kelipatan persekutuan terbesar)
+\DeclareMathOperator{\arsinh}{arsinh}		% sinus hiperbolik invers
+\DeclareMathOperator{\arcosh}{arcosh}		% kosinus hiperbolik invers
+\DeclareMathOperator{\artanh}{artanh}		% tangen hiperbolik invers
+\DeclareMathOperator{\arcsch}{arcsch}		% kosekan hiperbolik invers
+\DeclareMathOperator{\arsech}{arsech}		% sekan hiperbolik invers
+\DeclareMathOperator{\arcoth}{arcoth}		% kotangen hiperbolik invers
+\DeclareMathOperator{\Dom}{Dom}				% domain fungsi
+\DeclareMathOperator{\Ran}{Ran}				% jangkauan fungsi
+
+%% Buat fitur satuan untuk suatu besaran fisis %%
+\newcommand*\punit[1]{\mathop{}\!\, \mathrm{{#1}}}
+
+%% Buat notasi-notasi yang menggunakan teks roman %%
+\newcommand*{\transpose}{\mathop{}\!\mathrm{T}}
+\newcommand*{\comp}{\mathop{}\!\mathrm{C}}
+
+%% Buat notasi turunan pada suatu titik %%
+\newcommand{\at}[2][]{#1|_{#2}}
+
+%% Buat notasi himpunan penyelesaian (HP) %%
+\newcommand{\HP}{\mathop{}\!\mathrm{HP}}
+
+\pgfplotsset{soldot/.style={thick, only marks, mark=*},
+	holdot/.style={thick, fill=white, only marks, mark=*},
+	compat=1.12}
+
+\title{Modul Mata Kuliah Aljabar}
+\subtitle{Semester 1}
+\author{Anggara Duta Medika}
+\kind{Seri Pertama\hfill\the\year} % Optional
+
+\includeonly
+{
+	sections/copyright,
+	sections/preface,
+    sections/acknowledgements,
+    sections/using,
+    sections/notation,
+    sections/introduction,
+    sections/chapter2,
+    sections/chapter3,
+    sections/chapter4,
+    sections/chapter5,
+    sections/appendixA,
+    sections/appendixB,
+    sections/about,
+    sections/source
+}
+
+\settocdepth{subsection}
+\setsecnumdepth{subsection}
+
+\begin{document}
+
+    \frontmatter        % Folios in Roman numerals, unnumbered chapters.
+	
+    \mnfrontpage
+	
+	\include{sections/copyright}
+	\include{sections/preface}
+    \include{sections/acknowledgements}
+    \include{sections/using}
+    \include{sections/notation}
+
+    \cleartorecto%
+    
+    {
+    	\hypersetup{linkcolor=black}
+    	\tableofcontents    % Or \tableofcontents*
+    }
+
+    \mainmatter         % Folios in Arabic numerals, numbered chapters.
+
+    \include{sections/introduction}
+
+    \include{sections/chapter2}
+    \include{sections/chapter3}
+    \include{sections/chapter4}
+    \include{sections/chapter5}
+
+    \appendix           % "Chapter" is renamed "Appendix"
+    \appendixpage       % Similar to \part*{Appendices}, but appears in TOC.
+
+    \include{sections/appendixA}
+    \include{sections/appendixB}
+
+    \backmatter         % Folios in Arabic numerals, unnumbered chapters.
+	
+	\include{sections/about}
+	\include{sections/source}
+	
+	\nocite{*}
+    \printbibliography[title={Daftar Pustaka}]
+
+\end{document}

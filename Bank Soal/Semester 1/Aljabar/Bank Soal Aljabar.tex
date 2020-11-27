@@ -1,0 +1,416 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, lmargin=1in, rmargin=1in, tmargin=1in, bmargin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{xparse}
+\usepackage{icomma}
+\usepackage[a]{esvect}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{indentfirst}
+\usepackage{gensymb}
+\usepackage{mdframed}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{etex}
+\usepackage{tkz-euclide}
+
+%% Impor semua objek tkz %%
+\usetkzobj{all}
+
+%% Impor library tikz %%
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{through}
+\usetikzlibrary{intersections}
+\usetikzlibrary{math}
+\usetikzlibrary{angles}
+\usetikzlibrary{positioning}
+\usetikzlibrary{quotes}
+\usetikzlibrary{decorations.markings}
+
+%% Buat command baru untuk membuat simbol diferensial %%
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+%% Setel panjang indentasi %%
+\setlength{\parindent}{5ex}
+
+%% Ganti simbol himpunan kosong dengan varnothing %%
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+%% Buat beberapa fitur otomatis untuk menambahkan bar %%
+\newcommand*\norm[1]{\mathop{}\!\left\|#1\right\|}
+\newcommand*\lrbr[1]{\mathop{}\!\left\lbrace#1\right\rbrace}
+\newcommand*\lrag[1]{\mathop{}\!\left\langle{#1}\right\rangle}
+\newcommand*\lbrk[1]{\mathop{}\!\left({#1}\right]}
+\newcommand*\lkrb[1]{\mathop{}\!\left[{#1}\right)}
+\newcommand*\floor[1]{\mathop{}\!\left\lfloor{#1}\right\rfloor}
+\newcommand*\ceil[1]{\mathop{}\!\left\lceil{#1}\right\rceil}
+\newcommand*\func[2]{\mathop{}\!{#1}{\left({#2}\right)}}
+\newcommand*\funk[2]{\mathop{}\!{#1}{\left[{#2}\right]}}
+\newcommand*\funl[2]{\mathop{}\!{#1}{\left\lbrace{#2}\right\rbrace}}
+
+\newcommand*\set[2]{\mathop{}\!\left\lbrace{{#1} \, \left|\, {#2}\right.}\right\rbrace}
+
+%% Buat underbrace agar dapat berada pada notasi matematika %%
+\newcommand*\ubr[2]{\mathop{}\!\underbrace{#1}_{\text{$ {#2} $}}}
+
+%% Buat beberapa notasi agar memiliki skala 1 ketika berada pada pecahan atau inline %%
+\newcommand*\Sum{\mathop{}\!\displaystyle\sum}
+\newcommand*\Prod{\mathop{}\!\displaystyle\prod}
+\newcommand*\Binom{\mathop{}\!\displaystyle\binom}
+
+%% Buat tanda titik-titik vertikal dan membuat tanda tersebut tepat ditengah-tengah tanda sama dengan %%
+%% Biasanya digunakan untuk membuat persamaan yang memiliki algoritma sama %%
+\newcommand*\cvdot[1]{\mathop{}\!\mathrel{\makebox[\widthof{$ {#1} $}]{\vdots}}}
+
+%% Item default untuk environment enumerate %%
+\newcommand\defitem{\item[$ \bullet $]}
+
+%% Ganti notasi logaritma dengan varlog %%
+\let\oldlog\log
+\let\log\varlog
+
+%% Definisi varlog %%
+%% Perbedaan notasi logaritma ini dengan notasi logaritma awal (yang diganti) berada pada basis logaritmanya %%
+%% Notasi baru ini menggunakan basis logaritma yang digunakan di Indonesia (sebagai ganti dari notasi logaritma internasional) %%
+\NewDocumentCommand{\log}{o}
+{
+	\IfNoValueTF{#1}
+	{}
+	{{}^{{#1}}\!}
+	\oldlog
+}
+
+%% Buat tambahan operator matematika %%
+\DeclareMathOperator{\sgn}{sgn}				% signum
+\DeclareMathOperator{\csch}{csch}			% kosekan hiperbolik
+\DeclareMathOperator{\sech}{sech}			% sekan hiperbolik
+\DeclareMathOperator{\arcsec}{arcsec}		% sekan invers
+\DeclareMathOperator{\arccsc}{arccsc}		% kosekan invers
+\DeclareMathOperator{\arccot}{arccot}		% kotangen invers
+\DeclareMathOperator{\lcm}{lcm}				% least common multiple (kelipatan persekutuan terbesar)
+\DeclareMathOperator{\arsinh}{arsinh}		% sinus hiperbolik invers
+\DeclareMathOperator{\arcosh}{arcosh}		% kosinus hiperbolik invers
+\DeclareMathOperator{\artanh}{artanh}		% tangen hiperbolik invers
+\DeclareMathOperator{\arcsch}{arcsch}		% kosekan hiperbolik invers
+\DeclareMathOperator{\arsech}{arsech}		% sekan hiperbolik invers
+\DeclareMathOperator{\arcoth}{arcoth}		% kotangen hiperbolik invers
+
+%% Buat fitur satuan untuk suatu besaran fisis %%
+\newcommand*\punit[1]{\mathop{}\!\, \mathrm{{#1}}}
+
+%% Buat notasi-notasi yang menggunakan teks roman %%
+\newcommand*{\transpose}{\mathop{}\!\mathrm{T}}
+\newcommand*{\comp}{\mathop{}\!\mathrm{C}}
+
+%% Buat notasi turunan pada suatu titik %%
+\newcommand{\at}[2][]{#1|_{#2}}
+
+%% Buat header dan footer untuk dokumen %%
+\pagestyle{fancy}
+\lfoot{Made with \LaTeX}
+\cfoot{\thepage}
+\rfoot{\copyright \, Pak Angga, \the\year}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+	%% Header &&
+	\begin{center}
+		{\large{\sc{
+					Universitas Mulawarman \\
+					Fakultas Keguruan dan Ilmu Pendidikan \\
+					Pendidikan Matematika \\[3pt]
+					Bank Soal HOTS Aljabar
+		}}}
+	\end{center}
+	
+	\vspace{5pt}
+	
+	\noindent Nama : \dotfill
+	
+	\vspace{-13pt}
+	
+	\noindent \hrulefill
+	
+	\vspace{5pt}
+	
+	%% Content %%
+	\noindent \textbf{A. Persamaan Kuadrat dan Fungsi Kuadrat}
+	\begin{enumerate}[leftmargin=*]
+		\item Misalkan $ \func{f}{x} $ fungsi yang memenuhi $ \func{f}{\dfrac{x}{3}} = x^{2} + 2x + 3 $. Tentukan jumlah semua nilai $ z $ yang memenuhi $ \func{f}{3z} = 12 $.
+		\item Persamaan kuadrat $ 2x^{2} + px + 1 = 0 $ mempunyai akar-akar $ \alpha $ dan $ \beta $ serta titik puncaknya berada di kuadran pertama. Jika $ x^{2} - 5x + q = 0 $ mempunyai akar-akar $ \dfrac{1}{\alpha^{2}} $ dan $ \dfrac{1}{\beta^{2}} $, maka tentukan nilai dari $ q - p $.
+		\item Diketahui $ x_{1} $ dan $ x_{2} $ akar-akar real persamaan $ x^{2} + 3x + p = 0 $ dengan $ x_{1} $ dan $ x_{2} $ kedua-duanya tidak sama dengan nol. Jika $ x_{1} + x_{2} $, $ x_{1}x_{2} $, dan $ x_{1}^{2}x_{2}^{2} $ merupakan tiga suku pertama barisan aritmetika, maka tentukan nilai dari $ p $.
+		\item Misalkan $ a $, $ b $ dan $ c $ adalah tiga bilangan \textit{berbeda}. Jika ketiga bilangan tersebut merupakan bilangan asli satu digit, tentukanlah jumlah terbesar akar-akar persamaan $ \left(x - a\right)\left(x- b\right) + \left(x - b\right)\left(x - c\right) = 0 $ yang mungkin.
+		\item Misalkan $ p $ dan $ q $ bilangan real sedemikian sehingga persamaan kuadrat $ x^{2} + px + q = 0 $ memiliki dua akar berbeda $ x_{1} $ dan $ x_{2} $. Asumsikan $ \left|x_{1} - x_{2}\right| = 1 $ dan $ \left|p - q\right| = 1 $. Buktikan bahwa $ p, q, x_{1}, x_{2} $ semuanya merupakan bilangan bulat.
+		\item Parabola $ y = ax^{2} - 4 $ dan $ y = 8 - bx^{2} $ memotong sumbu koordinat pada tepat empat titik. Keempat titik sudut tersebut merupakan titik-titik sudut layang-layang dengan luas 24. Tentukan nilai dari $ a + b $.
+		\item Jika fungsi $ \func{f}{x} $ terdefinisi pada domain $ x \in \left[0, 2\right] $ dengan
+		\[ \func{f}{x} = \left|x - 1\right| + \left|x^{2} - 2x\right|, \]
+		maka tentukanlah nilai minimum dan nilai maksimum dari $ \func{f}{x} $.
+		\item Cari semua nilai $ \lambda $ sedemikian sehingga kurva $ y = \lambda x^{2} + \lambda x + \dfrac{1}{24} $ dan kurva $ x = \lambda y^{2} + \lambda y + \dfrac{1}{24} $ bersinggungan satu sama lain.
+		\item Misalkan $ \alpha $ dan $ \beta $ akar-akar dari persamaan
+		\[ x^{2} - 2px + p^{2} - 2p - 1 = 0. \]
+		Cari semua bilangan real $ p $ sedemikian sehingga
+		\[ \frac{1}{2}\frac{\left(\alpha - \beta\right)^{2} - 2}{\left(\alpha + \beta\right)^{2} + 2} \]
+		merupakan bilangan bulat.
+		\item Diketahui $ p $ dan $ q $ merupakan bilangan prima. Jika persamaan $ x^{2} - px + q = 0 $ memiliki akar-akar bilangan bulat positif yang berbeda, tentukanlah nilai dari $ p $ dan $ q $.
+		\item Titik $ A $ dan $ B $ terletak pada parabola $ y = 4 + x - x^{2} $. Diketahui titik asal $ O $ merupakan titik tengah ruas garis $ AB $. Tentukanlah panjang $ AB $.
+		\item Tinjau persamaan $ x^{2} + px + q = 0 $. Berapa banyak persamaan demikian yang memiliki akar-akar real jika $ p $ dan $ q $ hanya boleh dipilih dari himpunan $ \lrbr{1, 2, 3, 4, 5, 6} $?
+		\item Diberikan persamaan kuadrat $ ax^{2} - bx + c = 0 $ dengan $ a $, $ b $, dan $ c $ semuanya merupakan bilangan asli. Jika persamaan kuadrat tersebut memiliki dua akar berbeda yang berada pada interval $ \left(0, 1\right) $, carilah nilai paling minimum yang mungkin dari $ abc $.
+		\item Jika $ x_{1} $ dan $ x_{2} $ adalah akar-akar dari persamaan kuadrat $ x^{2} + x - 3 = 0 $, tentukanlah nilai dari $ 4x_{1}^{2} + 3x_{2}^{2} + 2x_{1} + x_{2} $.
+		\item Jika akar-akar persamaan $ x^{2} - 45x - 8 = 0 $ adalah $ \alpha $ dan $ \beta $, maka tentukanlah nilai dari $ \sqrt[3]{\alpha} + \sqrt[3]{\beta} $.
+		\item Misalkan $ a $, $ b $, $ c $, dan $ d $ bilangan real taknol. Jika $ a $ dan $ b $ adalah solusi dari $ x^{2} + cx + d = 0 $ serta $ c $ dan $ d $ solusi dari $ x^{2} + ax + b = 0 $, maka tentukanlah nilai dari $ a + b + c + d $.
+		\item Jika $ \alpha $ dan $ \beta $ akar-akar dari persamaan kuadrat $ x^{2} - 2x - 5 = 0 $, maka tentukanlah nilai dari $ \alpha^{4} - 28\alpha $.
+		\item Jika $ p $ dan $ q $ akar-akar dari persamaan $ x^{2} - x + 1 = 0 $, tentukanlah nilai dari $ p^{2021} + q^{2021} $.
+		\item Akar-akar persamaan kuadrat $ 2x^{2} - 7x + 2 = 0 $ adalah $ r $ dan $ s $. Tentukan hasil dari
+		\[ \frac{r}{\left(r^{2} + 1\right)^{2}} + \frac{s}{\left(s^{2} + 1\right)^{2}}. \]
+		\item Dua persamaan kuadrat memiliki akar-akar bilangan asli. Persamaan kuadrat yang pertama memiliki akar-akar $ a $ dan $ b $, sedangkan persamaan kuadrat yang kedua memiliki akar-akar $ b $ dan $ c $ dengan $ c \ne a $. Jika $ a $, $ b $, dan $ c $ merupakan bilangan prima kurang dari 15, ada berapa macam persamaan kuadrat yang memenuhi persyaratan tersebut?
+		\item Diberikan $ \func{f}{x} = x^{2} + 4 $. Misalkan $ u $ dan $ v $ adalah bilangan real positif yang memenuhi $ \func{f}{uv} + \func{f}{v - u} = \func{f}{u + v} $. Tentukan nilai minimum dari $ u + v $.
+		\item Jika $ a $ dan $ b $ bilangan bulat sehingga $ \sqrt{90 + 2\sqrt{2021}} $ merupakan solusi persamaan kuadrat $ x^{2} + ax + b = 0 $, maka tentukanlah nilai dari $ a + b $.
+		\item Tentukan bilangan terbesar $ x $ yang kurang dari 1000 sehingga terdapat tepat dua bilangan asli $ n $ sehingga $ \dfrac{n^{2} + x}{n + 1} $ juga merupakan bilangan asli.
+		\item Tentukan semua nilai $ b $ sedemikian sehingga untuk setiap bilangan real $ x $, paling tidak salah satu dari fungsi
+		\[ \func{f}{x} = x^{2} + 2021x + b \quad \mbox{atau} \quad \func{g}{x} = x^{2} - 2021x + b \]
+		bernilai positif.
+		\item Diketahui $ x_{1} $ dan $ x_{2} $ adalah dua bilangan bulat berbeda yang merupakan akar-akar dari persamaan kuadrat $ x^{2} + px + q + 1 = 0 $. Jika $ p $ dan $ p^{2} + q^{2} $ adalah bilangan-bilangan prima, tentukan nilai terbesar yang mungkin dari $ x_{1}^{2021} + x_{2}^{2021} $.
+		\item Diberikan fungsi kuadrat $ \func{f}{x} = ax^{2} + bx + c $ yang didefinisikan pada himpunan bilangan real dengan $ b \ne 0 $. Jika $ \func{f}{x} $ definit positif, maka tentukan nilai terkecil yang mungkin untuk $ \dfrac{a + c}{b} $.
+		\item Jika akar-akar persamaan kuadrat $ ax^{2} + bx + c = 0 $ berada dalam interval $ \left[0, 1\right] $, maka tentukanlah nilai maksimum dari
+		\[ \frac{\left(2a - b\right)\left(a - b\right)}{a\left(a - b + c\right)}. \]
+		\item Untuk bilangan real $ t $ dan bilangan real positif $ a $ dan $ b $ berlaku
+		\[ 2a^{2} - 3abt + b^{2} = 2a^{2} + abt - b^{2} = 0. \]
+		Tentukan nilai $ t $.
+		\item Misalkan $ f : \mathbb{R} \to \mathbb{R} $ fungsi yang memenuhi $ \func{f}{\func{f}{x}} = x^{2} - x + 1 $ untuk setiap bilangan real $ x $. Hitunglah nilai dari $ \func{f}{0} $.
+		\item Jika $ \func{f}{x} $ adalah fungsi yang terdefinisi pada himpunan bilangan real dan berlaku
+		\[ 3\func{f}{x} - 2\func{f}{2 - x} = x^{2} + bx - 9 \]
+		untuk setiap bilangan real $ x $, maka tentukanlah nilai dari $ \func{f}{2021} $.
+		\item Diberikan dua fungsi kuadrat berbeda $ \func{f}{x} = x^{2} + ax + b $ dan $ \func{g}{x} = x^{2} + cx + d $ dengan $ a, b, c, d \in \mathbb{R} $ yang memenuhi $ \func{f}{20} + \func{f}{21} = \func{g}{20} + \func{g}{21} $. Tentukan jumlah semua bilangan real $ x $ yang memenuhi $ \func{f}{x} = \func{g}{x} $.
+		\item Untuk bilangan real $ x $, notasi $ \floor{x} $ menyatakan bilangan bulat terbesar yang tidak lebih besar dari $ x $; sedangkan $ \ceil{x} $ menyatakan bilangan bulat terkecil yang tidak lebih kecil dari $ x $. Tentukan semua bilangan real $ x $ yang memenuhi
+		\[ \floor{x}^{2} - 3x + \ceil{x} = 0. \]
+		\item Misalkan $ a > 0 $ dan $ 0 < r_{1} < r_{2} < 1 $ sehingga $ a + ar_{1} + ar_{2}^{2} + \cdots $ dan $ a + ar_{2} + ar_{2}^{2} + \cdots $ merupakan deret geometri tak hingga dengan jumlah berturut-turut $ r_{1} $ dan $ r_{2} $. Tentukan nilai dari $ r_{1} + r_{2} $.
+		\item Untuk sebarang bilangan real $ x $, simbol $ \floor{x} $ menyatakan bilangan bulat terbesar yang tidak lebih besar daripada $ x $, sedangkan $ \ceil{x} $ menyatakan bilangan bulat terkecil yang tidak lebih kecil dibanding $ x $. Interval $ \lbrk{a, b} $ adalah himpunan semua bilangan real $ x $ yang memenuhi
+		\[ \floor{2x}^{2} = \ceil{x} + 7. \]
+		Tentukan nilai dari $ ab $.
+		\item Persamaan kuadrat $ x^{2} + ax + b + 1 = 0 $ dengan $ a $ dan $ b $ bilangan bulat memiliki akar-akar bilangan asli. Mungkinkah $ a^{2} + b^{2} $ merupakan bilangan prima?
+		\item Diberikan fungsi kuadrat $ \func{P}{x} = ax^{2} + bx + c $ dimana $ a $, $ b $, dan $ c $ bilangan real. Jika
+		\[ \func{P}{a} = bc, \quad \func{P}{b} = ca, \quad \mbox{dan} \quad \func{P}{c} = ab, \]
+		buktikan bahwa
+		\[ \left(a - b\right)\left(b - c\right)\left(a + b + c\right) = 0. \]
+		\item Cari semua bilangan asli $ a $, $ b $, dan $ c $ sedemikian sehingga akar-akar dari persamaan
+		\[
+			\begin{cases}
+				x^{2} - 2ax + b = 0 \\
+				x^{2} - 2bx + c = 0 \\
+				x^{2} - 2cx + a = 0
+			\end{cases}
+		\]
+		semuanya juga merupakan bilangan asli.
+		\item Apakah terdapat fungsi $ f, g : \mathbb{R} \to \mathbb{R} $ sedemikian sehingga $ f $ dan $ g $ memenuhi
+		\[ \func{\left(f \circ g\right)}{x} = x^{2} \quad \mbox{dan} \quad \func{\left(g \circ f\right)}{x} = x^{4} \]
+		untuk setiap bilangan real $ x $?
+		\item Untuk sebarang bilangan real $ \alpha $, notasi $ \floor{\alpha} $ menyatakan bilangan bulat terbesar yang lebih kecil atau sama dengan $ \alpha $, sedangkan $ \ceil{\alpha} $ menyatakan bilangan bulat terkecil yang lebih besar atau sama dengan $ \alpha $. Tentukan semua solusi bilangan real persamaan $ \floor{x^{2}} + \ceil{x^{2}} = 2021 $.
+		\item Misalkan $ a, b, c \in \mathbb{Z} $ dan asumsikan fungsi kuadrat
+		\[ \func{f}{x} = ax^{2} + bx + c \]
+		memiliki akar irasional $ r $. Misalkan juga $ u = \dfrac{p}{q} $ bilangan rasional sedemikian sehingga $ \left|u - r\right| < 1 $. Buktikan bahwa
+		\[ \frac{1}{q^{2}} \leq \left|\func{f}{u}\right| \leq K\left|u - r\right|. \]
+		\item Danu dan Dini sedang bermain suatu permainan. Pada awalnya, Danu memilih tiga bilangan real taknol. Dini kemudian menyusun ketiga bilangan tadi sebagai koefisien persamaan kuadrat
+		\[ \rule{1ex}{.4pt}x^{2} + \rule{1ex}{.4pt}x + \rule{1ex}{.4pt} = 0. \]
+		Danu memenangkan permainan jika dan hanya jika persamaan yang dihasilkan memiliki dua solusi rasional berbeda.
+		\par \noindent Siapakah yang memiliki strategi untuk menang?
+		\item* Diberikan fungsi kuadrat $ \func{f}{x} = x^{2} + px + q $ dengan $ p $ dan $ q $ merupakan bilangan bulat. Misalkan $ a $, $ b $, dan $ c $ bilangan bulat berbeda sehingga $ 2^{2020} $ habis membagi $ \func{f}{a} $, $ \func{f}{b} $, dan $ \func{f}{c} $, tetapi $ 2^{100} $ tidak habis membagi $ b - a $ dan juga tidak habis membagi $ c - a $. Tunjukkan bahwa $ 2^{1021} $ habis membagi $ b - c $.
+		\item* Jika $ a $ dan $ b $ bilangan real sedemikian sehingga persamaan
+		\[ x^{4} + ax^{3} + bx^{2} + ax + 1 = 0 \]
+		mempunyai minimal satu penyelesaian real, tentukanlah nilai minimum dari $ a^{2} + b^{2} $.
+		\item* Di papan tulis terdapat fungsi kuadrat $ \func{f}{x} = Ax^{2} + Bx + C $. Otto dan Gian bermain menggunakan papan tulis tersebut. Pertama, Otto menuliskan satu buah bilangan real positif di papan. Lalu, Gian melakukan hal yang sama. Kemudian, Otto menuliskan bilangan real positif ketiga. Sekarang, Gian menang jika Gian dapat mengubah $ A $, $ B $, $ C $ menjadi ketiga bilangan yang baru saja ditulis sehingga fungsi kuadrat ini punya akar real. Apakah Gian bisa memastikan kemenangannya? Contohnya, jika Otto menulis 2, Gian menulis 3, lalu Otto menulis 6, Gian menang karena $ 3x^{2} + 6x + 2 $ punya akar real.
+		\item* Misalkan $ \func{f}{x} = ax^{2} + bx + c $, dimana $ b $ dan $ c $ bilangan real, dan misalkan $ M = \set{x \in \mathbb{R}}{\left|\func{f}{x}\right| < 1} $. Jelas bahwa himpunan $ M $ kosong atau terdiri dari beberapa interval buka yang saling lepas. Notasikan jumlah panjang semua intervalnya adalah $ \left\lbrack{M}\right\rbrack $ Buktikan bahwa $ \left\lbrack{M}\right\rbrack \leq 2\sqrt{2} $.
+		\item* Misalkan $ m $ dan $ n $ bilangan asli. Jika ada tak berhingga banyaknya bilangan bulat $ k $ sedemikian sehingga $ k^{2} + 2kn + m^{2} $ merupakan bilangan kuadrat sempurna, buktikan bahwa $ m = n $.
+		\item* Asumsikan $ a, b, c, A, B, C $ semuanya bilangan real dengan $ a \ne 0 $ dan $ A \ne 0 $ sedemikian sehingga
+		\[ \left|ax^{2} + bx + c\right| \leq \left|Ax^{2} + Bx + C\right| \]
+		untuk setiap bilangan real $ x $. Buktikan bahwa
+		\[ \left|b^{2} - 4ac\right| \leq \left|B^{2} - 4AC\right|. \]
+		\item* Misalkan akar-akar persamaan kuadrat $ ax^{2} + bx + c = 0 $ adalah $ x_{1} $ dan $ x_{2} $. Buktikan bahwa jika $ \phi = \dfrac{1 + \sqrt{5}}{2} $, maka
+		\[ \funl{\max}{x_{1}, x_{2}} \leq \frac{\funl{\max}{\left|a\right|, \left|b\right|, \left|c\right|}}{\left|a\right|} \times \phi. \]
+		\item* Diberikan sebarang fungsi kuadrat $ \func{P}{x} $. Jika $ \func{P}{x} $ definit positif, Apakah $ \func{P}{x} $ selalu dapat dinyatakan sebagai jumlah tiga fungsi kuadrat
+		\[ \func{P}{x} = \func{P_{1}}{x} + \func{P_{2}}{x} + \func{P_{3}}{x} \]
+		dengan $ \func{P_{1}}{x} $, $ \func{P_{2}}{x} $, dan $ \func{P_{3}}{x} $ memiliki koefisien utama positif dan diskriminan nol serta akar (real kembar) dari ketiga fungsi kuadrat tersebut berbeda?
+		\item** Tentukan semua fungsi kuadrat dengan koefisien bulat $ \func{P}{x} $ sehingga untuk setiap bilangan asli $ a $, $ b $, dan $ c $ yang merupakan panjang sisi-sisi suatu segitiga siku-siku, berlaku $ \func{P}{a} $, $ \func{P}{b} $, dan $ \func{P}{c} $ juga merupakan panjang sisi-sisi suatu segitiga siku-siku.
+		\par \noindent \textit{Catatan: Jika $ c $ sisi miring, $ \func{P}{c} $ tidak harus merupakan sisi miring.}
+		\item** Misalkan $ \floor{x} $ dinotasikan sebagai bilangan bulat terbesar yang lebih kecil dari atau sama dengan $ x $. Apakah terdapat fungsi kuadrat $ \func{f}{x} $ yang memenuhi $ \func{f}{\floor{x}} = \floor{\func{f}{x}} $?
+		\item** Pada suatu permainan Andi dan komputer melangkah secara bergantian. Awalnya komputer menampilkan suatu polinom $ x^{2} + mx + n $ dengan $ m, n \in \mathbb{Z} $ yang tidak memiliki akar real. Andi kemudian memulai permainan tersebut. Pada setiap gilirannya, Andi mengganti polinom $ x^{2} + ax + b $ yang muncul di layar dengan salah satu dari $ x^{2} + \left(a + b\right)x + b $ atau $ x^{2} + ax + \left(a + b\right) $. Andi hanya boleh memilih polinom pengganti yang akar-akarnya real. Sedangkan komputer pada setiap gilirannya menukar koefisien $ x $ dan konstanta dari polinom yang dipilih Andi. Andi akan kalah jika dia tidak bisa melakukan langkahnya. Tentukan semua pasangan $ \left(m, n\right) $ agar Andi pasti kalah.
+		\item*** Misalkan $ a $ dan $ b $ bilangan bulat positif sedemikian sehingga $ ab + 1 $ membagi $ a^{2} + b^{2} $. Apakah $ \dfrac{a^{2} + b^{2}}{ab + 1} $ selalu merupakan kuadrat dari suatu bilangan bulat?
+		\item*** Misalkan $ a $ dan $ b $ bilangan bulat positif sedemikian sehingga $ 4ab - 1 $ membagi $ \left(4a^{2} - 1\right)^{2} $. Buktikan bahwa $ a = b $.
+	\end{enumerate}
+	
+	\newpage
+	
+	\noindent \textbf{B. Pertidaksamaan}
+	\begin{enumerate}[leftmargin=*]
+		\item Jika $ 1 < a < 2 $, maka tentukan semua nilai $ x $ yang memenuhi pertidaksamaan
+		\[ \frac{-x^{2} + 2ax - 6}{x^{2} + 3x} \leq 0. \]
+		\item Tentukan semua nilai $ a $ agar pertidaksamaan
+		\[ \sqrt{2x^{2} - x + 14} \geq \sqrt{x^{2} - ax + 10} \]
+		bernilai benar untuk semua bilangan real $ x $.
+		\item Tentukan luas daerah pada bidang koordinat yang memenuhi $ \left|x\right| + \left|y\right| \leq 2 $.
+		\item Tentukan himpunan penyelesaian $ x $ yang memenuhi pertidaksamaan
+		\[ 4 - 3x \leq x^{2} - 4x \leq 2 + 6x \leq 5. \]
+		\item Tentukan himpunan semua bilangan real $ x $ yang bukan merupakan penyelesaian dari
+		\[ \frac{1}{x + 1} < 1 + \sqrt{x^{2}}. \]
+		\item Jika $ a $ dan $ b $ bilangan real positif, buktikan bahwa
+		\[ \frac{a + b}{2} \geq \sqrt{ab} \]
+		dengan kesamaan tercapai jika dan hanya jika $ a = b $.
+		\item Himpunan $ S $ beranggotakan semua bilangan bulat tak negatif $ x $ yang memenuhi
+		\[ \frac{x^{2} - 2ax + a^{2}}{x^{2} - 3x - 4} < 0. \]
+		Berapakah nilai $ a $ sehingga hasil penjumlahan semua anggota $ S $ minimum?
+		\item Tentukan semua nilai $ k $ sehingga pertidaksamaan
+		\[ 0 < \frac{x^{2} + kx + 1}{x^{2} + x + 1} < 2 \]
+		bernilai benar untuk setiap bilangan real $ x $.
+		\item Misalkan $ k $ bilangan real sedemikian sehingga pertidaksamaan
+		\[ \sqrt{x - 3} + \sqrt{6 - x} \geq k \]
+		mempunyai solusi real $ x $. Tentukan nilai maksimum untuk $ k $.
+		\item Tentukan nilai $ p $ sehingga pertidaksamaan $ 3x - p > \dfrac{x - 1}{5} + \dfrac{px}{2} $ dipenuhi oleh $ x < -3 $.
+		\item Tentukan semua bilangan real $ x $ yang memenuhi $ x^{4} + \dfrac{1}{x^{4}} \leq 2 $.
+		\item Misalkan $ p = 2x - 1 + \left(1 - 2x\right)^{2} + \left(2x - 1\right)^{3} + \left(1 - 2x\right)^{4} + \cdots $. Tentukan semua nilai $ x $ yang memenuhi $ p < 2 $.
+		\item Tentukan semua bilangan real $ x $ yang memenuhi pertidaksamaan
+		\[ \left|3 - \left|x - 3\right|\right| \leq 3 - 2\sqrt{x}. \]
+		\item Jika nilai maksimum $ x + y $ pada himpunan $ \set{\left(x, y\right) \in \mathbb{R}^{2}}{x \geq 0, y \geq 0, x + 3y \leq 6, 3x + y \leq a} $ adalah 4, tentukanlah nilai $ a $.
+		\item Cari semua bilangan real $ x $ yang memenuhi pertidaksamaan
+		\[ \sqrt{\sqrt{3 - x} - \sqrt{x + 1}} > \frac{1}{2} \]
+		\item Tentukan himpunan penyelesaian dari pertidaksamaan
+		\[ \left|x + 1\right| + \left|\frac{19}{x - 1}\right| \leq \frac{20 - x^{2}}{1 - x}. \]
+		\item* Fungsi bernilai real $ \func{f}{x} $ dan $ \func{g}{x} $ masing-masing didefinisikan sebagai
+		\[ \func{f}{x} = \sqrt{\floor{x} - a} \quad \mbox{dan} \quad \func{g}{x} = \sqrt{x^{2} - \frac{x\sqrt{2}}{\sqrt{a}}} \]
+		dengan $ a $ bilangan bulat positif. Diketahui $ \floor{x} $ menyatakan bilangan bulat terbesar yang kurang dari atau sama dengan $ x $. Jika domain $ \func{\left(g \circ f\right)}{x} $ adalah $ D_{f} = \set{x \in \mathbb{R}}{\dfrac{7}{2} \leq x < 4} $, tentukanlah banyaknya nilai $ a $ yang memenuhi.
+		\item* Carilah semua bilangan real $ x $ yang memenuhi pertidaksamaan
+		\[ \frac{x^{2} - 21}{x^{2} - 20} + \frac{x^{2} + 22}{x^{2} + 21} \geq \frac{x^{2} - 22}{x^{2} - 21} + \frac{x^{2} + 21}{x^{2} + 20}. \]
+		\item* Diketahui $ n $ bilangan real $ x_{1}, x_{2}, \dots, x_{n} $ memenuhi $ \left|x_{i}\right| < 1 $ untuk $ i = 1, 2, \dots, n $ dan
+		\[ \left|x_{1}\right| + \left|x_{2}\right| + \cdots + \left|x_{n}\right| = 2021 + \left|x_{1} + x_{2} + \cdots + x_{n}\right|. \]
+		Tentukanlah nilai minimum dari $ n $.
+		\item* Untuk sebarang bilangan real $ x $, definisikan $ \floor{x} $ sebagai bilangan bulat terbesar yang kurang dari atau sama dengan $ x $. Tentukan banyaknya bilangan asli $ n \leq 1.000.000 $ sehingga
+		\[ \sqrt{n} - \floor{\sqrt{n}} < \frac{1}{2021}. \]
+		\item* Misalkan $ M $ dan $ m $ berturut-turut merupakan nilai $ a $ terbesar dan nilai $ a $ terkecil sedemikian sehingga berlaku
+		\[ \left|x^{2} - 2ax - a^{2} - \frac{3}{4}\right| \leq 1 \]
+		untuk setiap $ x \in \left[0, 1\right] $. Tentukan nilai dari $ M - m $.
+		\item** Tentukan semua bilangan real $ x $ yang memenuhi pertidaksamaan
+		\[ \frac{4x^{2}}{\left(1 - \sqrt{1 + 2x}\right)^{2}} < 2x + 9. \]
+		\item** Misalkan $ a $, $ b $, dan $ c $ adalah bilangan-bilangan real yang nilai mutlaknya tidak lebih besar dari 1. Buktikan bahwa
+		\[ \sqrt{\left|a - b\right|} + \sqrt{\left|b - c\right|} + \sqrt{\left|c - a\right|} \leq 2 + \sqrt{2}. \]
+	\end{enumerate}
+	
+	\newpage
+	
+	\noindent \textbf{C. Eksponen dan Logaritma}
+	\begin{enumerate}[leftmargin=*]
+		\item Tentukan kali semua nilai $ x $ yang memenuhi persamaan $ \func{\log[3]}{x^{2 + \func{\log[3]}{x}}} = 15 $.
+		\item Jika $ A^{2x} = 2 $, maka tentukan nilai dari $ \dfrac{A^{5x} - A^{-5x}}{A^{3x} + A^{-3x}} $.
+		\item Tentukan jumlah semua bilangan bulat positif yang memenuhi $ x^{\sqrt{x}} > \left(\sqrt{x}\right)^{x} $.
+		\item Jika $ x_{1} $ dan $ x_{2} $ adalah akar-akar dari $ 25^{2x} - 5^{2x + 1} - 2 \cdot 5^{2x + 3} + a = 0 $, dimana $ x_{1} + x_{2} = 2\log[5]{2} $, maka tentukanlah nilai dari $ a $.
+		\item Diketahui $ x $ dan $ y $ bilangan real dengan $ x > 1 $ dan $ y > 0 $. Jika
+		\[ xy = x^{y} \quad \mbox{dan} \quad \frac{x}{y} = x^{5y}, \]
+		maka tentukan nilai dari $ x^{2} + 3y $.
+		\item Tentukan hasil perkalian dari nilai-nilai $ x $ yang memenuhi
+		\[ \frac{x^{2}}{10000} = \frac{10000}{x^{2\func{\log}{x} - 8}}. \]
+		\item Untuk setiap bilangan real positif $ a $, tentukan nilai dari
+		\[ \frac{1}{a^{-2021} + 1} + \frac{1}{a^{-2020} + 1} + \cdots + \frac{1}{a^{2020} + 1} + \frac{1}{a^{2021} + 1}. \]
+		\item Tentukan nilai dari $ \dfrac{1}{1 + x^{b - a} + x^{c - a}} + \dfrac{1}{1 + x^{a - b} + x^{c - b}} + \dfrac{1}{1 + x^{b - c} + x^{a - c}} $.
+		\item Tentukan nilai dari $ \left(\dfrac{x^{b}}{x^{c}}\right)^{b + c - a} \cdot \left(\dfrac{x^{c}}{x^{a}}\right)^{c + a - b} \cdot \left(\dfrac{x^{a}}{x^{b}}\right)^{a + b - c} $.
+		\item Tentukan daerah asal dan daerah hasil dari fungsi $ \func{f}{x} = \left(-1\right)^{x} $.
+		\item Tentukan semua bilangan real $ x $ yang merupakan solusi dari persamaan
+		\[ 3^{\frac{1}{2} + \func{\log[3]}{\func{\cos}{x} - \func{\sin}{x}}} + 2^{\func{\log[2]}{\func{\cos}{x} + \func{\sin}{x}}} = \sqrt{2}. \]
+		\item Tentukan nilai dari $ \sqrt[3]{6\sqrt{3} + 10} - \sqrt[3]{6\sqrt{3} - 10} $.
+		\item Tentukan nilai dari $ \displaystyle{\sum_{n = 1}^{2020^{2^{2021}} - 1}{\left(\prod_{m = 1}^{2021}{\left(\sqrt[2^{m}]{n} + \sqrt[2^{m}]{n + 1}\right)}\right)^{-1}}} $.
+		\item Diketahui $ \func{f}{n} = \log[2]{3} \cdot \log[2]{4} \cdot \log[2]{5} \cdots \log[n - 1]{n} $.
+		\begin{enumerate}
+			\item Tentukanlah nilai dari
+			\[ \sum_{k = 2}^{2021}{\func{f}{2^{k}}}. \]
+			\item Jika $ a_{1} $ dan $ a_{2} $ penyelesaian persamaan $ \func{f}{a} + \func{f}{a^{2}} + \cdots + \func{f}{a^{9}} = \func{f}{a}\func{f}{a^{5}} $, maka tentukan nilai dari $ a_{1}a_{2} $.
+		\end{enumerate}
+		\item Misalkan $ x $ dan $ y $ bilangan bulat positif dan
+		\[
+			\begin{matrix}
+				A = \sqrt{\func{\log}{x}}, & B = \sqrt{\func{\log}{y}}, \\[3pt]
+				C = \func{\log}{\sqrt{x}}, & D = \func{\log}{\sqrt{y}}.
+			\end{matrix}
+		\]
+		Jika diketahui bahwa $ A $, $ B $, $ C $, dan $ D $ semuanya bulat dan $ A + B + C + D = 8 $, maka tentukan nilai dari $ xy $.
+		\item Misalkan $ x, y, z > 1 $ dan $ w > 0 $. Jika $ \func{\log[x]}{w} = 4 $, $ \func{\log[y]}{w} = 5 $, dan $ \func{\log[xyz]}{w} = 2 $, maka tentukanlah nilai dari $ \func{\log[z]}{w} $.
+		\item Terdapat dua kesalahan pada tabel logaritma dibawah.
+		\begin{center}
+			\begin{tabular}{|c|c|}
+				\hline
+				$ \log{0,021} $ & $ 2a + b + c - 3 $ \\
+				\hline
+				$ \log{0,27} $ & $ 6a - 3b - 2 $ \\
+				\hline
+				$ \log{1,5} $ & $ 3a - b + c $ \\
+				\hline
+				$ \log{2,8} $ & $ 1 - 2a + 2b - c $ \\
+				\hline
+				$ \log{3} $ & $ 2a - b $ \\
+				\hline
+				$ \log{5} $ & $ a + c $ \\
+				\hline
+				$ \log{6} $ & $ 1 + a - b - c $ \\
+				\hline
+				$ \log{7} $ & $ 2\left(a + c\right) $ \\
+				\hline
+				$ \log{8} $ & $ 3 - 3a - 3c $ \\
+				\hline
+				$ \log{9} $ & $ 4a - 2b $ \\
+				\hline
+				$ \log{14} $ & $ 1 - a + 2b $ \\
+				\hline
+			\end{tabular}
+		\end{center}
+		Benarkanlah kesalahan tersebut.
+		\item Untuk setiap bilangan real taknegatif $ x $, buktikan bahwa $ \func{\log[4]}{4^{x} + 1} > \func{\log[9]}{9^{x} + 2^{x}} $.
+		\item Diberikan persamaan kuadrat $ x^{2} + ax - a + 3 = 0 $ dengan $ a \in \mathbb{R} $. Agar $ y = \log[\frac{x}{2}]{2021} $ bernilai real, tentukan semua nilai $ a $ yang memenuhi.
+		\item Misalkan $ a, b, c, d, e $ adalah bilangan-bilangan bulat sedemikian sehingga $ 2^{a}3^{b}4^{c}5^{d}6^{e} $ juga merupakan bilangan bulat. Diketahui bahwa nilai mutlak dari $ a, b, c, d, e $ tidak lebih dari 2021. Tentukan nilai terkecil yang mungkin dari $ a + b + c + d + e $.
+		\item Bentuk logaritma $ \sqrt{\log[2]{6} + \log[3]{6}} $ dapat ditulis menjadi $ \sqrt{\log[a]{b}} + \sqrt{\log[c]{d}} $. Tentukan jumlah semua nilai $ abcd $ yang mungkin.
+		\item Cari semua bilangan real $ x $ yang memenuhi
+		\[ \frac{8^{x} + 27^{x}}{12^{x} + 18^{x}} = \frac{7}{6}. \]
+		\item Diketahui $ n $ merupakan bilangan asli. Jika himpunan penyelesaian dari
+		\[ \sqrt[n]{x^{x^{2}}} \leq x^{\sqrt[n]{x^{2}}} \]
+		adalah $ \set{x \in \mathbb{R}}{0 < x \leq \sqrt[5]{216}} $, maka tentukanlah nilai $ n $.
+		\item Tentukan semua pasangan bilangan bulat positif $ \left(a, b\right) $ yang memenuhi
+		\[ 4^{a} + 4a^{2} + 4 = b^{2}. \]
+		\item Cari semua bilangan real $ x $ yang memenuhi
+		\[ 20^{x} + 21^{x} + 22^{x} = 23^{x} + 24^{x}. \]
+		\item Diberikan $ 3\func{\log[x]}{3y} = 3\func{\log[3x]}{27z} = \func{\log[3xy]}{81yz} \ne 0 $ untuk setiap bilangan real positif $ x $, $ y $, dan $ z $. Tentukan nilai dari $ x^{5}y^{4}z $.
+		\item Misalkan $ \func{f}{x} = \dfrac{2}{4^{x} + 2} $ untuk setiap bilangan real $ x $. Carilah nilai dari
+		\[ \func{f}{\frac{1}{2021}} + \func{f}{\frac{2}{2021}} + \cdots + \func{f}{\frac{2019}{2021}} + \func{f}{\frac{2020}{2021}}. \]
+		\item Cari semua bilangan real $ x $ yang memenuhi persamaan
+		\[ 2^{x} + 3^{x} - 4^{x} + 6^{x} - 9^{x} = 1. \]
+		\item Tentukan semua pasangan bilangan asli $ \left(m, n\right) $ yang memenuhi persamaan
+		\[ 3^{m} = 10 - \log[2]{n}. \]
+		\item Buktikan bahwa
+		\[ 16 < \sum_{k = 1}^{80}{\frac{1}{\sqrt{k}}} < 17. \]
+		\item Misalkan $ 0 < a < 1 $. Cari semua bilangan real positif $ x $ sedemikian sehingga $ x^{a^{x}} = a^{x^{a}} $.
+		\item Cari semua bilangan real $ x $ yang memenuhi persamaan
+		\[ 2\left(2^{x} - 1\right)x^{2} + \left(2^{x^{2}} - 2\right)x = 2^{x + 1} - 2. \]
+		\item* Misalkan $ a $ bilangan irasional. Misalkan juga $ n $ bilangan bulat yang lebih besar daripada 1. Buktikan bahwa
+		\[ \left(a + \sqrt{a^{2} - 1}\right)^{\frac{1}{n}} + \left(a - \sqrt{a^{2} - 1}\right)^{\frac{1}{n}}. \]
+		\item* Cari semua solusi real $ x $ yang memenuhi persamaan
+		\[ 2^{x} + 3^{x} + 6^{x} = x^{2}. \]
+		\item* Cari semua tripel bilangan rasional $ \left(a, b, c\right) $ sedemikian sehingga
+		\[ \sqrt[3]{\sqrt[3]{2} - 1} = \sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c}. \]
+		\item* Untuk bilangan real $ x $, simbol $ \floor{x} $ menyatakan bilangan bulat terbesar yang tidak lebih besar daripada $ x $ dan $ \ceil{x} $ menyatakan bilangan bulat terkecil yang tidak lebih kecil daripada $ x $. Tentukan semua bilangan bulat tak negatif $ k $ sedemikian sehingga dapat ditemukan bilangan real positif tak bulat $ x $ yang memenuhi
+		\[ \floor{x + k}^{\floor{x + k}} = \ceil{x}^{\floor{x}} + \floor{x}^{\ceil{x}}. \]
+		\item* Diketahui $ p_{0} = 1 $ dan $ p_{i} $ bilangan prima ke-$ i $, untuk $ i = 1, 2, \dots $; yaitu $ p_{1} = 2, p_{2} = 3, \dots $. Bilangan prima $ p_{i} $ dikatakan \textit{sederhana} jika
+		\[ p_{i}^{n^{2}} > p_{i - 1}\left(n!\right)^{4} \]
+		untuk semua bilangan bulat positif $ n $. Tentukan semua bilangan prima yang sederhana.
+		\item** Bilangan real $ a, b, c, d $ memenuhi $ a \geq b \geq c \geq d > 0 $ dan $ a + b + c + d = 1 $. Buktikan bahwa
+		\[ \left(a + 2b + 3c + 4d\right)a^{a}b^{b}c^{c}d^{d} < 1. \]
+		\item** Untuk setiap bilangan real $ x $, $ \floor{x} $ dinotasikan sebagai bilangan bulat terbesar yang kurang dari atau sama dengan $ x $. Diberikan barisan $ \left(u_{n}\right)_{n \geq 0} $ yang memenuhi $ u_{n + 1} = u_{n}\left(u_{n - 1}^{2} - 2\right) $ untuk setiap bilangan bulat positif $ n $. Jika $ u_{0} = 2 $ dan $ u_{1} = \dfrac{5}{2} $, buktikan bahwa
+		\[ 3 \cdot \func{\log[2]}{\floor{u_{n}}} = 2^{n} - \left(-1\right)^{n}. \]
+	\end{enumerate}
+\end{document}

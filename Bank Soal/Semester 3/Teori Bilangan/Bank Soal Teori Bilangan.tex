@@ -1,0 +1,942 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, lmargin=1in, rmargin=1in, tmargin=1in, bmargin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{xparse}
+\usepackage{icomma}
+\usepackage[a]{esvect}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{indentfirst}
+\usepackage{gensymb}
+\usepackage{mdframed}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{colortbl}
+\usepackage{etex}
+\usepackage{tkz-euclide}
+
+%% Impor semua objek tkz %%
+\usetkzobj{all}
+
+%% Impor library tikz %%
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{through}
+\usetikzlibrary{intersections}
+\usetikzlibrary{math}
+\usetikzlibrary{angles}
+\usetikzlibrary{positioning}
+\usetikzlibrary{quotes}
+\usetikzlibrary{decorations.markings}
+
+%% Buat command baru untuk membuat simbol diferensial %%
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+%% Setel panjang indentasi %%
+\setlength{\parindent}{5ex}
+
+%% Ganti simbol himpunan kosong dengan varnothing %%
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+%% Buat beberapa fitur otomatis untuk menambahkan bar %%
+\newcommand*\norm[1]{\mathop{}\!\left\|#1\right\|}
+\newcommand*\lrbr[1]{\mathop{}\!\left\lbrace#1\right\rbrace}
+\newcommand*\lrag[1]{\mathop{}\!\left\langle{#1}\right\rangle}
+\newcommand*\lbrk[1]{\mathop{}\!\left({#1}\right]}
+\newcommand*\lkrb[1]{\mathop{}\!\left[{#1}\right)}
+\newcommand*\floor[1]{\mathop{}\!\left\lfloor{#1}\right\rfloor}
+\newcommand*\ceil[1]{\mathop{}\!\left\lceil{#1}\right\rceil}
+\newcommand*\braket[1]{\mathop{}\!\left\langle{#1}\right\rangle}
+\newcommand*\func[2]{\mathop{}\!{#1}{\left({#2}\right)}}
+\newcommand*\funk[2]{\mathop{}\!{#1}{\left[{#2}\right]}}
+\newcommand*\funl[2]{\mathop{}\!{#1}{\left\lbrace{#2}\right\rbrace}}
+\newcommand*\funa[2]{\mathop{}\!{#1}{\left|{#2}\right|}}
+\newcommand*\set[2]{\mathop{}\!\left\lbrace{{#1} \, \left| \, {#2} \right.}\right\rbrace}
+
+%% Buat underbrace agar dapat berada pada notasi matematika %%
+\newcommand*\ubr[2]{\mathop{}\!\underbrace{#1}_{\text{$ {#2} $}}}
+
+%% Buat tanda titik-titik vertikal dan membuat tanda tersebut tepat ditengah-tengah tanda sama dengan %%
+%% Biasanya digunakan untuk membuat persamaan yang memiliki algoritma sama %%
+\newcommand*\cvdot[1]{\mathop{}\!\mathrel{\makebox[\widthof{$ {#1} $}]{\vdots}}}
+
+%% Item default untuk environment enumerate %%
+\newcommand\defitem{\item[$ \bullet $]}
+
+%% Ganti notasi logaritma dengan varlog %%
+\let\oldlog\log
+\let\log\varlog
+
+%% Ganti syntax displaystyle menjadi ds agar lebih mudah %%
+\newcommand*\ds[1]{\mathop{}\!\displaystyle{{#1}}}
+
+%% Definisi varlog %%
+%% Perbedaan notasi logaritma ini dengan notasi logaritma awal (yang diganti) berada pada basis logaritmanya %%
+%% Notasi baru ini menggunakan basis logaritma yang digunakan di Indonesia (sebagai ganti dari notasi logaritma internasional) %%
+\NewDocumentCommand{\log}{o}
+{
+	\IfNoValueTF{#1}
+	{}
+	{{}^{{#1}}\!}
+	\oldlog
+}
+
+%% Buat notasi keterbagian baru yang lebih fleksibel %%
+\newcommand*\divid[2]{\mathop{}\!{#1} \left| {#2} \right.}
+
+%% Buat tambahan operator matematika %%
+\DeclareMathOperator{\sgn}{sgn}				% signum
+\DeclareMathOperator{\csch}{csch}			% kosekan hiperbolik
+\DeclareMathOperator{\sech}{sech}			% sekan hiperbolik
+\DeclareMathOperator{\arcsec}{arcsec}		% sekan invers
+\DeclareMathOperator{\arccsc}{arccsc}		% kosekan invers
+\DeclareMathOperator{\arccot}{arccot}		% kotangen invers
+\DeclareMathOperator{\lcm}{lcm}				% least common multiple (kelipatan persekutuan terbesar)
+\DeclareMathOperator{\arsinh}{arsinh}		% sinus hiperbolik invers
+\DeclareMathOperator{\arcosh}{arcosh}		% kosinus hiperbolik invers
+\DeclareMathOperator{\artanh}{artanh}		% tangen hiperbolik invers
+\DeclareMathOperator{\arcsch}{arcsch}		% kosekan hiperbolik invers
+\DeclareMathOperator{\arsech}{arsech}		% sekan hiperbolik invers
+\DeclareMathOperator{\arcoth}{arcoth}		% kotangen hiperbolik invers
+\DeclareMathOperator{\rank}{rank}			% rank
+
+%% Buat fitur satuan untuk suatu besaran fisis %%
+\newcommand*\punit[1]{\mathop{}\!\, \mathrm{{#1}}}
+
+%% Buat notasi-notasi yang menggunakan teks roman %%
+\newcommand*{\transpose}{\mathop{}\!\mathrm{T}}
+\newcommand*{\comp}{\mathop{}\!\mathrm{C}}
+
+%% Buat notasi turunan pada suatu titik %%
+\newcommand{\at}[2][]{#1|_{#2}}
+
+%% Buat warna untuk membedakan pencoretan %%
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+%% Buat header dan footer untuk dokumen %%
+\pagestyle{fancy}
+\lfoot{Made with \LaTeX}
+\cfoot{\thepage}
+\rfoot{\copyright \, Pak Angga, \the\year}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+	%% Header &&
+	\begin{center}
+		{\large{\sc{
+					Universitas Mulawarman \\
+					Fakultas Keguruan dan Ilmu Pendidikan \\
+					Pendidikan Matematika \\[3pt]
+					Bank Soal HOTS Teori Bilangan
+		}}}
+	\end{center}
+	
+	\vspace{5pt}
+	
+	\noindent Nama : \dotfill
+	
+	\vspace{-13pt}
+	
+	\noindent \hrulefill
+	
+	\vspace{5pt}
+	
+	%% Notation %%
+	\noindent \textbf{Notasi yang Digunakan}
+	\begin{enumerate}[leftmargin=*]
+		\item $ \floor{x} $ dinotasikan sebagai bilangan bulat terbesar yang kurang dari atau sama dengan $ x $. Sebagai contoh, $ \floor{2,5} = 2 $, $ \floor{\pi} = \floor{3,14} = 3 $, dan $ \floor{-0,5} = -1 $.
+		\item $ \ceil{x} $ dinotasikan sebagai bilangan bulat terkeil yang lebih dari atau sama dengan $ x $. Sebagai contoh, $ \ceil{2,5} = 3 $, $ \ceil{\pi} = \ceil{3,14} = 4 $, dan $ \floor{-0,5} = 0 $.
+		\item $ \func{\gcd}{a, b} $ dinotasikan sebagai faktor persekutuan terbesar (\textit{greatest common divisor}) dari $ a $ dan $ b $.
+		\item $ \func{\lcm}{a, b} $ dinotasikan sebagai kelipatan persekutuan terkecil (\textit{least common multiple}) dari $ a $ dan $ b $.
+		\item $ \func{\tau}{n} $ dinotasikan sebagai banyaknya faktor positif dari $ n $.
+		\item $ \func{\phi}{n} $ dinotasikan sebagai banyaknya faktor positif dari $ n $ yang relatif prima dengan $ n $.
+	\end{enumerate}
+	
+	\newpage
+	
+	%% Content %%
+	\begin{enumerate}[leftmargin=*]
+		\item Tentukan bilangan ganjil 4 angka terbesar yang hasil penjumlahan semua angkanya bilangan prima.
+		\item Tentukan bilangan asli terkecil yang lebih besar dari 2011 yang bersisa 1 jika dibagi dengan $ 2, 3, \dots, 2021 $
+		\item Misalkan $ x $, $ y $, dan $ z $ tiga bilangan asli yang berbeda. Faktor persekutuan terbesar ketiganya adalah 12, sedangkan kelipatan persekutuan terkecil ketiganya adalah 840. Tentukan nilai paling maksimum yang mungkin dari $ x + y + z $.
+		\item Misalkan $ M $ dan $ m $ berturut-turut menyatakan bilangan terbesar dan bilangan terkecil di antara semua bilangan 4 angka yang jumlah keempat angkanya adalah 9. Tentukan faktor prima terbesar dari $ M - m $.
+		\item Tentukan bilangan bulat positif terkecil $ k $ sehingga $ \ds{\ubr{20212021\cdots2021}{k \mbox{ 2021}}} $ habis dibagi 9.
+		\item Tentukan bilangan terbesar $ x $ yang kurang dari 1000 sehingga terdapat tepat dua bilangan asli $ n $ sehingga $ \dfrac{n^{2} + x}{n + 1} $ merupakan bilangan asli.
+		\item Tentukan bilangan bulat positif terbesar yang membagi semua bilangan $ 1^{5} - 1, 2^{5} - 2, \dots, n^{5} - n $.
+		\item Jika $ N = 123456789101112 \cdots 9899100 $, maka tentukan tiga angka pertama dari $ \sqrt{N} $.
+		\item Diberikan tiga bilangan bulat positif berurutan. Jika bilangan pertama tetap, bilangan kedua ditambah 10, dan bilangan ketiga ditambah bilangan prima, maka ketiga bilangan ini membentuk deret ukur. Tentukan bilangan ketiga dari bilangan bulat berurutan ini.
+		\item Untuk setiap bilangan asli $ n $ didefinisikan $ \func{s}{n} $ sebagai hasil penjumlahan dari semua digit-digit dari $ n $. Tentukan banyaknya bilangan asli $ d $ sehingga $ d $ habis membagi $ n - \func{s}{n} $ untuk setiap bilangan asli $ n $.
+		\item Diketahui $ x $ dan $ y $ bilangan prima dengan $ x < y $ dan
+		\[ x^{3} + y^{3} + 2021 = 30y^{2} - 300y + 3021. \]
+		Tentukan semua nilai $ x $ yang memenuhi.
+		\item Tentukan semua bilangan real $ x $ yang memenuhi $ \floor{2x}^{2} = \ceil{x} + 7 $.
+		\item Tentukan sisa pembagian $ 1111^{2021} $ oleh 11111.
+		\item Diberikan dua bilangan asli dua angka yang selisihnya 10. Diketahui bahwa bilangan yang kecil merupakan kelipatan 3, sedangkan yang lainnya merupakan kelipatan 7. Diketahui pula bahwa jumlah semua faktor prima kedua bilangan tersebut adalah 17. Tentukan jumlah dua bilangan tersebut.
+		\item Tentukan nilai dari $ \dfrac{1}{2021!} + \ds{\sum_{k = 1}^{2020}{\frac{k}{\left(k + 1\right)!}}} $.
+		\item Tentukan banyaknya bilangan asli $ k $ yang memenuhi $ \divid{k}{\left(n^{7} - n\right)} $ untuk semua bilangan asli $ n $.
+		\item Misalkan $ \func{s}{n} $ menyatakan faktor prima terbesar dari $ n $ dan $ \func{t}{n} $ menyatakan faktor prima terkecil dari $ n $. Tentukan banyaknya bilangan asli $ n \in \lrbr{1, 2, \dots, 100} $ sehingga $ \func{t}{n} + 1 = \func{s}{n} $.
+		\item Tentukan sisa pembagian $ 43^{43^{43}} $ oleh 100.
+		\item Tentukan banyaknya tripel bilangan bulat $ \left(x, y, z\right) $ yang memenuhi
+		\[ x^{2} + y^{2} + z^{2} - xy - yz - zx = x^{3} + y^{3} + z^{3}. \]
+		\item Diketahui $ \floor{x} + \floor{y} + y = 43,8 $ dan $ x + y - \floor{x} = 18,4 $. Tentukan nilai dari $ 10\left(x + y\right) $.
+		\item Bilangan $ x $ adalah bilangan bulat positif terkecil yang membuat $ 31^{n} + x \cdot 96^{n} $ merupakan kelipatan 2021 untuk setiap bilangan asli $ n $. Tentukan nilai dari $ x $.
+		\item Misalkan $ N $ adalah bilangan bulat terkecil yang bersisa 2 jika dibagi 5, bersisa 3 jika dibagi 7, dan bersisa 4 jika dibagi 9. Tentukan jumlah digit-digit dari $ N $.
+		\item Misalkan $ p_{i} $ dinotasikan sebagai bilangan prima ke-$ i $. Tentukan nilai dari $ \ds{\sum_{k = 1}^{2021}{\func{\gcd}{k, 7}}} $.
+		\item Bilangan-bilangan 1111, 5276, 8251, dan 9441 bersisa sama jika dibagi $ N $. Tentukan nilai $ N $ terbesar yang memiliki sifat tersebut.
+		\item Misalkan $ p $ suatu bilangan prima sedemikian sehingga terdapat pasangan bilangan asli $ \left(m, n\right) $ dengan $ n > 1 $ yang memenuhi
+		\[ mn^{2} + mnp + m + n + p = mn + mp + np + n^{2} + 2020. \]
+		Tentukan semua nilai $ p $ yang mungkin.
+		\item Tentukan jumlah semua bilangan bulat $ x $ sehingga $ \func{\log[2]}{x^{2} - 4x - 1} $ merupakan bilangan bulat.
+		\item Misalkan $ S = \set{x \in \mathbb{R}}{0 \leq x \leq 1} $. Tentukan banyaknya pasangan bilangan asli $ \left(a, b\right) $ sehingga tepat ada 2021 anggota $ S $ yang dapat dinyatakan dalam bentuk $ \dfrac{x}{a} + \dfrac{y}{b} $ untuk suatu bilangan bulat $ x $ dan $ y $.
+		\item Tentukan semua bilangan tiga digit yang memenuhi syarat bahwa bilangan tersebut sama dengan penjumlahan dari faktorial setiap digitnya.
+		\item Fungsi $ f $ memetakan himpunan bilangan bulat tak negatif. Fungsi tersebut memenuhi $ \func{f}{1} = 0 $ dan untuk setiap bilangan asli berbeda $ m $ dan $ n $ dengan $ \divid{m}{n} $, berlaku $ \func{f}{m} < \func{f}{n} $. Jika diketahui $ \func{f}{8!} = 11 $, maka tentukanlah nilai dari $ \func{f}{288} $.
+		\item Tentukan semua pasangan bilangan asli $ \left(a, b\right) $ sedemikian sehingga $ x^{4} + 4y^{4} $ merupakan bilangan prima.
+		\item Kwartet bilangan asli $ \left(a, b, c, d\right) $ dikatakan \textit{keren} jika memenuhi
+		\[ b = a^{2} + 1, \quad c = b^{2} + 1, \quad d = c^{2} + 1, \]
+		dan $ \func{\tau}{a} + \func{\tau}{b} + \func{\tau}{c} + \func{\tau}{d} $ bilangan ganjil. Tentukan banyaknya kwartet keren $ \left(a, b, c, d\right) $ dengan $ a, b, c, d < 10^{6} $.
+		\item Diberikan barisan $ \left(a_{n}\right)_{n \geq 1} $ dan $ \left(b_{n}\right)_{n \geq 1} $ dengan $ a_{n} = \dfrac{1}{n\sqrt{n}} $ dan $ b_{n} = \dfrac{1}{1 + \frac{1}{n} + \sqrt{1 + \frac{1}{n}}} $ untuk setiap bilangan asli $ n $. Misalkan $ S_{n} = a_{1}b_{1} + a_{2}b_{2} + \cdots + a_{n}b_{n} $. Tentukan banyaknya bilangan asli $ n \leq 2021 $ sehingga $ S_{n} $ merupakan bilangan rasional.
+		\item Tentukan banyaknya pasangan terurut bilangan asli $ \left(a, b, c\right) $ dengan $ a, b, c \in \lrbr{1, 2, 3, 4, 5} $ sehingga
+		\[ \funl{\max}{a, b, c} < 2\funl{\min}{a, b, c}. \]
+		\item Tentukan banyaknya bilangan asli $ n \in \lrbr{1, 2, 3, \dots, 1000} $ sehingga terdapat bilangan real positif $ x $ yang memenuhi $ x^{2} + \floor{x}^{2} = n $.
+		\item Tentukan semua pasangan bilangan prima $ \left(p, q\right) $ yang memenuhi persamaan
+		\[ \left(7p - q\right)^{2} = 2\left(p - 1\right)q^{2}. \]
+		\item Tentukan bilangan asli terbesar $ n $ sehingga $ n! $ dapat dinyatakan sebagai hasil perkalian dari $ n - 4 $ bilangan asli berurutan.
+		\item Diketahui $ p $ adalah bilangan prima sehingga terdapat pasangan bilangan bulat positif $ \left(x, y\right) $ yang memenuhi $ x^{2} + xy + 2y^{2} + 30p $. Tentukan banyaknya pasangan bilangan bulat positif $ \left(x, y\right) $ yang memenuhi.
+		\item Sepuluh tim mengikuti turnamen sepakbola. Setiap tim bertemu satu kali dengan setiap tim lainnya. Pemenang setiap pertandingan memperoleh nilai 3, sedangkan yang kalah memperoleh nilai 0. Untuk pertandingan yang berakhir seri, kedua tim memperoleh nilai masing-masing 1. Di akhir turnamen, jumlah nilai seluruh tim adalah 124. Tentukan banyaknya pertandingan yang berakhir seri.
+		\item Tentukan semua bilangan bulat $ n $ sehingga $ n^{4} + 16n^{3} + 71n^{2} + 56n $ merupakan bilangan kuadrat taknol.
+		\item Tentukan semua bilangan bulat $ n $ sehingga $ n^{4} - 51n^{2} + 225 $ merupakan bilangan prima.
+		\item Tentukan bilangan prima terbesar yang dapat dinyatakan dalam bentuk $ a^{4} + b^{4} + 13 $ untuk suatu bilangan-bilangan prima $ a $ dan $ b $.
+		\item Tentukan semua tripel bilangan bulat $ \left(m, n, p\right) $ dengan $ p $ prima yang memenuhi
+		\[ p^{2}n^{2} - 3mn = 21p - m^{2}. \]
+		\item Tentukan bilangan asli terkecil $ n $ sehingga $ n + 3 $ dan $ 2020n + 1 $ bilangan kuadrat sempurna.
+		\item Untuk sebarang bilangan asli $ n $, misalkan $ \func{S}{n} $ adalah jumlah digit-digit dari $ n $ dalam penulisan desimal. Jika $ \func{S}{n} = 5 $, maka tentukan nilai maksimum dari $ \func{S}{n^{5}} $.
+		\item Budi memilih 5 bilangan di antara $ \lrbr{1, 2, 3, 4, 5, 6, 7} $ dan mengatakan kepada Ani hasil kali dari kelima bilangan tersebut. Kemudian Budi bertanya apakah Ani mengetahui hasil penjumlahan kelima bilangan tersebut merupakan bilangan ganjil atau genap. Ani menjawab bahwa dia tidak bisa memastikannya. Tentukan nilai hasil kali lima bilangan yang dimiliki Budi.
+		\item Tentukan banyaknya pasangan terurut bilangan bulat $ \left(a, b\right) $ yang memenuhi $ a^{2} + b^{2} = a + b $.
+		\item Tentukan semua pasangan bilangan asli $ \left(m, n\right) $ sehingga $ \func{\gcd}{m, n} = 2 $ dan $ \func{\lcm}{m, n} = 1000 $.
+		\item Tentukan bilangan asli terkecil $ n $ sehingga $ \dfrac{\left(2n\right)!}{\left(n!\right)^{2}} $ habis dibagi 30.
+		\item Tentukan semua bilangan asli $ n < 400 $ sehingga 5 membagi $ \floor{\dfrac{n}{4}} $, namun 5 tidak membagi $ n $
+		\item Untuk setiap bilangan asli $ n $, misalkan $ \func{S}{n} $ menyatakan hasil jumlah digit-digit $ n $ dalam penulisan desimal. Sebagai contoh, $ \func{S}{2021} = 2 + 0 + 2 + 1 = 5 $. Tentukan hasil jumlah semua bilangan asli $ n $ sedemikian sehingga $ n + \func{S}{n} = 2021 $.
+		\item Tentukan banyaknya bilangan bulat $ n $ sehingga $ n + 1 $ merupakan faktor dari $ n^{2} + 1 $.
+		\item Misalkan $ x $, $ y $, dan $ z $ adalah bilangan-bilangan prima yang memenuhi persamaan
+		\[ 34x - 51y = 2012z. \]
+		Tentukan nilai dari $ x + y + z $.
+		\item Jika $ n $ bilangan asli sehingga $ 4n + 804 $ dan $ 9n + 1621 $ merupakan bilangan kuadrat, maka tentukanlah nilai dari $ n $.
+		\item Tentukan semua pasangan bilangan asli $ \left(x, y\right) $ yang memenuhi persamaan
+		\[ x + y = \sqrt{x} + \sqrt{y} + \sqrt{xy}. \]
+		\item Tentukan semua pasangan bilangan asli $ \left(m, n\right) $ yang memenuhi
+		\[ m^{2}n + mn^{2} + m^{2} + 2mn = 2020m + 2021n + 2021. \]
+		\item Untuk sebarang bilangan asli $ k $, misalkan $ I_{k} = 10 \dots 064 $ dengan 0 di antara 1 dan 6 sebanyak $ k $. Jika $ \func{N}{k} $ menyatakan banyaknya faktor 2 pada faktorisasi prima dari $ I_{k} $, maka tentukanlah nilai maksimum untuk $ \func{N}{k} $.
+		\item Diberikan bilangan asli $ n $. Tentukan kelipatan persekutuan terkecil dari $ 3^{n} - 3 $ dan $ 9^{n} + 9 $.
+		\item Tentukan banyaknya pasangan bilangan bulat $ \left(a, b\right) $ yang memenuhi
+		\[ \frac{1}{a} + \frac{1}{b + 1} = \frac{1}{2021}. \]
+		\item Berapakah sisa pembagian $ 1 \cdot 1! + 2 \cdot 2! + \cdots + 99 \cdot 99! + 100 \cdot 100! $ oleh 101?
+		\item Diberikan $ a $ dan $ b $ bilangan bulat positif dengan
+		\[ \frac{53}{201} < \frac{a}{b} < \frac{4}{15}. \]
+		Tentukan nilai $ b $ terkecil yang mungkin.
+		\item Bilangan asli empat digit $ n $ habis dibagi oleh 7. Bilangan asli $ k $, yang diperoleh dengan menuliskan digit-digit $ n $ dari belakang ke depan, juga habis dibagi oleh 7. Selain itu, diketahui bahwa $ n $ dan $ k $ mempunyai sisa yang sama apabila dibagi oleh 37. Jika $ k > n $, maka tentukan jumlah dari semua nilai $ n $ yang memenuhi.
+		\item Diketahui $ \left(a_{i}\right)_{i \geq 1} $ merupakan barisan bilangan real dengan $ a_{1} = 20,21 $. Jika
+		\[ a_{1}, a_{2}, \dots, a_{11} \quad \mbox{dan} \quad \floor{a_{1}}, \floor{a_{2}}, \dots, \floor{a_{10}} \]
+		masing-masing merupakan barisan aritmatika; sedangkan $ \floor{a_{1}}, \floor{a_{2}}, \dots, \floor{a_{11}} $ bukan barisan aritmatika, maka tentukanlah nilai minimum dari $ a_{2} - a_{1} - \floor{a_{2} - a_{1}} $.
+		\item Diambil secara acak bilangan bulat positif $ k $ dengan $ k \leq 4042 $. Tentukan peluang $ k^{2021} $ bersisa 2 jika dibagi dengan 4042.
+		\item Tentukan semua tripel bilangan prima $ \left(p, q, r\right) $ yang memenuhi $ 15p + 7pq + qr = pqr $.
+		\item Tiga bilangan asli $ a_{1} < a_{2} < a_{3} $ memenuhi $ \func{\gcd}{a_{1}, a_{2}, a_{3}} = 1 $, tetapi $ \func{\gcd}{a_{i}, a_{j}} > 1 $ jika $ i \ne j $ dan $ i, j = 1, 2, 3 $. Tentukan tripel bilangan asli $ \left(a_{1}, a_{2}, a_{3}\right) $ agar $ a_{1} + a_{2} + a_{3} $ minimal.
+		\item Tentukan semua bilangan asli $ n $ sehingga $ n^{4} - 5n^{3} + 5n^{2} + 4n + 10 $ merupakan bilangan prima.
+		\item Tentukan semua bilangan real $ x $ yang memenuhi $ \floor{x}^{2} - 3x + \ceil{x} = 0 $.
+		\item Tentukan jumlah 2021 digit terakhir dari $ \floor{\dfrac{60^{2021}}{7}} $.
+		\item Tentukan semua bilangan asli $ n \leq 1000 $ sedemikian sehingga bilangan
+		\[ 9 + 99 + 999 + \cdots + \ubr{999 \cdots 9}{n \mbox{ angka } 9} \]
+		pada digit-digitnya terdapat tepat $ n $ buah angka 1.
+		\item Tentukan hasil jumlah semua bilangan real $ x $ yang memenuhi $ \left|8x - 2021\right| + \floor{x} = 4042 $.
+		\item Tentukan semua pasangan bilangan asli $ \left(x, y\right) $ yang memenuhi persamaan
+		\[ \frac{x + y}{2} + \sqrt{xy} = 54. \]
+		\item Diberikan bilangan prima $ p > 2 $. Jika $ S $ adalah himpunan semua bilangan asli $ n $ yang menyebabkan $ n^{2} + pn $ merupakan kuadrat dari suatu bilangan bulat, maka tentukanlah $ S $.
+		\item Misalkan $ \func{S}{n} $ dinotasikan sebagai hasil penjumlahan digit-digit dari $ n $. Sebagai contoh, $ \func{S}{567} = 5 + 6 + 7 = 18 $. Tentukan banyaknya bilangan asli $ n $ yang kurang dari 1000 sehingga $ \dfrac{\func{S}{n}}{\func{S}{n + 1}} $ merupakan bilangan bulat.
+		\item Misalkan $ \mathbb{N} $ menyatakan himpunan semua bilangan asli dan
+		\[ S = \set{n \in \mathbb{N}}{\frac{n^{2021} + 2}{n + 1} \in \mathbb{N}}. \]
+		Tentukan banyaknya himpunan bagian dari $ S $.
+		\item Tentukan semua bilangan prima $ p $ yang memenuhi $ p^{2} + 73 $ merupakan bilangan kubik.
+		\item Tentukan banyaknya anggota himpunan $ \set{n \in \mathbb{Z}}{\func{\gcd}{n^{3} + 1, n^{2} + 3n + 9}} $.
+		\item Untuk sebarang bilangan real $ x $, definisikan $ \braket{x} $ sebagai bilangan bulat yang terdekat dengan $ x $, sebagai contoh $ \braket{1,9} = 2 $ dan $ \braket{0,49} = 0 $. Jika $ n $ adalah suatu bilangan bulat positif kelipatan 2021, tentukan banyaknya bilangan bulat positif $ k $ yang memenuhi $ \braket{\sqrt[3]{k}} = n $.
+		\item Tentukan semua bilangan asli $ n < 100 $ yang mempunyai kelipatan yang berbentuk
+		\[ 123456789123456789 \dots 123456789. \]
+		\item Tentukan semua pasangan bilangan bulat positif $ \left(x, y\right) $ yang memenuhi
+		\[ \frac{xy^{2}}{x + y} \]
+		bilangan prima.
+		\item Tentukan banyaknya bilangan bulat positif $ n $ yang kurang dari 2021 yang mempunyai tepat $ n/2 $ bilangan kurang dari $ n $ dan relatif prima terhadap $ n $.
+		\item Diketahui $ k $, $ m $, dan $ n $ adalah tiga bilangan bulat positif yang memenuhi
+		\[ \frac{k}{m} + \frac{m}{4n} = \frac{1}{6}. \]
+		Tentukan bilangan $ m $ terkecil yang memenuhi.
+		\item Tentukan semua bilangan asli $ n $ sehingga persamaan $ x\floor{\dfrac{1}{x}} + \dfrac{1}{x}\floor{x} = \dfrac{n}{n + 1} $ mempunyai tepat 2021 solusi real positif.
+		\item Tentukan semua bilangan prima $ p $ yang memenuhi $ \left(2p - 1\right)^{3} + \left(3p\right)^{2} = 6^{p} $.
+		\item Diberikan bilangan prima $ p > 2021 $. Misalkan $ a $ dan $ b $ adalah bilangan-bilangan asli sehingga $ a + b $ habis dibagi $ p $ tetapi tidak habis dibagi $ p^{2} $. Jika diketahui $ a^{2021} + b^{2021} $ habis dibagi $ p^{2} $, maka tentukanlah banyak bilangan asli $ n \leq 2021 $ sehingga $ a^{2021} + b^{2021} $ habis dibagi $ p^{n} $.
+		\item Jika $ m $ dan $ n $ bilangan bulat positif yang memenuhi $ m^{2} + n^{5} = 252 $, maka tentukanlah nilai dari $ m + n $.
+		\item Diketahui $ H $ adalah himpunan bilangan asli kurang dari 2021 yang faktor primanya tidak lebih dari 3. Selanjutnya, definisikan himpunan
+		\[ S = \set{n \in H}{\frac{1}{n}}. \]
+		Tentukan nilai dari
+		\[ \floor{\sum_{s \in S}{s}}. \]
+		\item Tentukan semua pasangan bulangan bulat positif $ \left(a, b\right) $ yang memenuhi $ \func{\gcd}{a, b} = 1 $ dan
+		\[ \frac{a}{b} + \frac{25b}{21a} \]
+		merupakan bilangan bulat.
+		\item Tentukan semua tripel bilangan ganjil berurutan $ \left(a, b, c\right) $ dengan $ a < b < c $ sedemikian sehingga $ a^{2} + b^{2} + c^{2} $ merupakan bilangan dengan 4 digit yang semua digitnya sama.
+		\item Tentukan semua bilangan bulat $ n $ sedemikian sehingga
+		\[ \frac{9n + 1}{n + 3} \]
+		merupakan kuadrat dari suatu bilangan rasional.
+		\item Tentukan semua pasangan bilangan bulat $ \left(x, y\right) $ yang memenuhi persamaan
+		\[ \frac{1}{x} + \frac{1}{y} - \frac{1}{xy^{2}} = \frac{3}{4}. \]
+		\item Tentukan semua bilangan bulat positif $ n < 100 $ sehingga persamaan
+		\[ \frac{3xy - 1}{x + y} = n \]
+		mempunyai solusi pasangan bilangan bulat $ \left(x, y\right) $.
+		\item Tentukan semua pasangan bilangan bulat positif $ \left(a, b\right) $ yang memenuhi
+		\[ 4^{a} + 4a^{2} + 4 = b^{2}. \]
+		\item Tentukan bilangan asli terbesar $ n $ sehingga $ 50\floor{x} - \floor{x\floor{x}} = 100n - 27\ceil{x} $ memiliki solusi real $ x $.
+		\item Lima buah bilangan asli berbeda $ k $, $ \ell $, $ m $, $ n $, dan $ p $ akan dipilih. Kelima informasi berikut ternyata cukup untuk mengurutkan kelima bilangan tersebut:
+		\begin{enumerate}
+			\item Diantara setiap dua bilangan, salah satu bilangan mesti membagi bilangan yang lainnya,
+			\item $ m $ adalah bilangan yang terbesar atau yang terkecil,
+			\item $ p $ tidak boleh membagi sekaligus $ m $ dan $ k $,
+			\item $ n \leq \ell - p $, dan
+			\item $ k $ membagi $ n $ atu $ p $ membagi $ n $, tetapi tidak sekaligus keduanya.
+		\end{enumerate}
+		Tentukan urutan yang mungkin bagi $ k $, $ \ell $, $ m $, $ n $, dan $ p $.
+		\item Tentukan semua pasangan bilangan bulat tak negatif $ \left(a, b, x, y\right) $ yang memenuhi sistem persamaan
+		\[
+			\begin{cases}
+				a + b = xy \\
+				x + y = ab
+			\end{cases}.
+		\]
+		\item Cari semua pasangan bilangan asli $ \left(x, n\right) $ yang memenuhi
+		\[ 1 + x + x^{2} + \cdots + x^{n} = 40. \]
+		\item Diketahui $ a $ dan $ b $ bilangan real positif sedemikian sehingga $ a + \sqrt{ab} $ dan $ b + \sqrt{ab} $ rasional. Buktikan bahwa $ a $ dan $ b $ rasional.
+		\item Misalkan $ a $ dan $ b $ dua bilangan asli, yang satu bukan kelipatan yang lainnya. Misalkan pula $ \func{\lcm}{a, b} $ adalah bilangan dua angka, sedangkan $ \func{\gcd}{a, b} $ dapat diperoleh dengan membalik urutan angka pada $ \func{\lcm}{a, b} $. Tentukan $ b $ terbesar yang mungkin.
+		\item Misalkan $ d = \func{\gcd}{7n + 5, 5n + 4} $, dimana $ n $ adalah bilangan asli.
+		\begin{enumerate}
+			\item Buktikan bahwa untuk setiap bilangan asli $ n $, berlaku $ d = 1 $ atau $ d = 3 $.
+			\item Buktikan bahwa $ d = 3 $ jika dan hanya jika $ n = 3k + 1 $ untuk suatu bilangan asli $ k $.
+		\end{enumerate}
+		\item Diberikan fungsi kuadrat $ \func{f}{x} = x^{2} + px + q $ dengan $ p $ dan $ q $ merupakan bilangan bulat. Misalkan $ a $, $ b $, dan $ c $ adalah bilangan bulat berbeda sehingga $ 2^{2020} $ habis membagi $ \func{f}{a} $, $ \func{f}{b} $, dan $ \func{f}{c} $, tetapi $ 2^{1000} $ tidak habis membagi $ b - a $ dan juga tidak habis membagi $ c - a $. Tunjukkan bahwa $ 2^{1021} $ habis membagi $ b - c $.
+		\item Tentukan banyaknya pasangan terurut bilangan asli $ \left(a, b, c, d\right) $ yang memenuhi
+		\[ ab + bc + cd + da = 1000 \]
+		\item Bilangan asli $ k > 2 $ dikatakan \textit{cantik} jika untuk setiap bilangan asli $ n \geq 4 $ dengan $ 5n + 1 $ bilangan kuadrat sempurna, dapat ditemukan bilangan asli $ a_{1}, a_{2}, \dots, a_{k} $ sehingga
+		\[ n + 1 = a_{1}^{2} + a_{2}^{2} + \cdots + a_{k}^{2}. \]
+		Tentukanlah bilangan cantik terkecil.
+		\item Misalkan $ a $, $ b $, dan $ c $ adalah bilangan bulat positif sehingga
+		\[ c = a + \frac{b}{a} - \frac{1}{b}. \]
+		Buktikan bahwa $ c $ adalah kuadrat dari suatu bilangan bulat.
+		\item Tentukan semua bilangan bulat $ a $ dan $ b $ sehingga
+		\[ \frac{\sqrt{2} + \sqrt{a}}{\sqrt{3} + \sqrt{b}} \]
+		merupakan bilangan rasional.
+		\item Buktikan bahwa tidak ada bilangan asli $ m $ sehingga terdapat bilangan-bilangan bulat $ k $ dan $ e $ dengan $ e \geq 2 $ yang memenuhi $ m\left(m^{2} + 1\right) = k^{e} $.
+		\item Tentukan semua bilangan bulat positif $ p $ sedemikian sehingga $ \dfrac{3p + 25}{2p - 5} $ juga merupakan bilangan bulat positif.
+		\item Diketahui $ k $ adalah bilangan bulat positif terbesar sehingga dapat ditemukan bilangan bulat positif $ n $, bilangan prima (tidak harus berbeda) $ q_{1}, q_{2}, \dots, q_{k} $ dan bilangan prima berbeda $ p_{1}, p_{2}, \dots, p_{k} $ yang memenuhi
+		\[ \frac{1}{p_{1}} + \frac{1}{p_{2}} + \cdots + \frac{1}{p_{k}} = \frac{7 + nq_{1}q_{2} \cdots q_{k}}{2021}. \]
+		\item Tentukan semua bilangan irasional $ x $ sehingga $ x^{2} + 20x + 20 $ dan $ x^{3} - 2020x + 1 $ keduanya merupakan bilangan rasional.
+		\item Diberikan bilangan asli $ n $. Misalkan $ x = 6 + 2021\sqrt{n} $. Jika $ \dfrac{x^{2021} - x}{x^{3} - x} $ merupakan bilangan rasional, apakah $ n $ merupakan kuadrat dari suatu bilangan asli?
+		\item Tentukan banyaknya bilangan asli $ n \leq 1.000.000 $ yang memenuhi
+		\[ \sqrt{n} - \floor{\sqrt{n}} < \frac{1}{2021}. \]
+		\item Suatu bilangan asli $ n $ dikatakan \textit{valid} jika $ 1^{n} + 2^{n} + \cdots + m^{n} $ habis dibagi oleh $ 1 + 2 + \cdots + m $ untuk setiap bilangan asli $ m $.
+		\begin{enumerate}
+			\item Tunjukkan bahwa 2021 valid.
+			\item Buktikan bahwa ada tak hingga banyaknya bilangan yang tidak valid.
+		\end{enumerate}
+		\item Tentukan semua bilangan bulat tak negatif $ k $ sehingga dapat ditemukan bilangan real positif tak bulat $ x $ yang memenuhi
+		\[ \floor{x + k}^{\floor{x + k}} = \ceil{x}^{\floor{x}} + \floor{x}^{\ceil{x}}. \]
+		\item Misalkan $ p_{1}, p_{2}, \dots, p_{n} $ merupakan barisan aritmatika dengan beda $ b > 0 $ dan $ p_{i} $ prima untuk setiap $ i = 1, 2, \dots, n $.
+		\begin{enumerate}
+			\item Jika $ p_{1} > n $, tunjukkan bahwa setiap bilangan prima $ p $ dengan $ p \leq n $, maka $ p $ membagi habis $ b $.
+			\item Berikan contoh barisan aritmatika $ p_{1}, p_{2}, \dots, p_{10} $ dengan beda positif dan $ p_{i} $ prima untuk $ i = 1, 2, \dots, 10 $.
+		\end{enumerate}
+		\item Diberikan himpunan $ A $ dan $ B $ yang masing-masing beranggotakan bilangan-bilangan asli yang berurutan. Jumlah rata-rata aritmatika unsur-unsur $ A $ dan rata-rata aritmatika unsur-unsur $ B $ adalah 1202. Jika $ A \cap B = \lrbr{2021} $, tentukan unsur terbesar yang mungkin dari himpunan $ A \cup B $.
+		\item Diketahui $ p $ adalah bilangan prima sedemikian sehingga persamaan $ 7p = 8x^{2} - 1 $ dan $ p^{2} = 2y^{2} - 1 $ mempunyai solusi $ x $ dan $ y $ berupa bilangan bulat. Tentukan semua nilai $ p $ yang memenuhi.
+		\item Misalkan $ \left(a_{n}\right)_{n \geq 1} $ merupakan barisan bilangan bulat yang memenuhi $ a_{1} = 2 $, $ a_{2} = 8 $, dan
+		\[ a_{n + 2} = 3a_{n + 1} - a_{n} + 5\left(-1\right)^{n}. \]
+		\begin{enumerate}
+			\item Apakah $ a_{2021} $ prima?
+			\item Tunjukkan bahwa untuk setiap bilangan ganjil $ m $, bilangan $ \dfrac{a_{m} + a_{4m}}{a_{2m} + a_{3m}} $ merupakan bilangan bulat.
+		\end{enumerate}
+		\item Diketahui $ p_{0} = 1 $ dan $ p_{i} $ bilangan prima ke-$ i $, untuk $ i = 1, 2, \dots $; yaitu $ p_{1} = 2, p_{2} = 3, \dots $. Bilangan prima $ p_{i} $ dikatakan \textit{sederhana} jika
+		\[ p_{i}^{n^{2}} > p_{i - 1}\left(n!\right)^{4} \]
+		untuk semua bilangan bulat positif $ n $. Tentukan semua bilangan prima yang sederhana.
+		\item Buktikan bahwa $ n^{4} - n^{2} $ habis dibagi oleh 12 untuk sebarang bilangan bulat $ n > 1 $.
+		\item Persamaan kuadrat $ x^{2} + ax + b + 1 = 0 $ dengan $ a $ dan $ b $ bilangan bulat, memiliki akar-akar bilangan asli. Buktikan bahwa $ a^{2} + b^{2} $ bukan bilangan prima.
+		\item Tentukan semua bilangan real $ m $ yang memenuhi persamaan
+		\[ m - \floor{\frac{m}{2021}} = 2021. \]
+		\item Untuk setiap bilangan asli $ n $, $ \func{\Sigma}{n} $ menyatakan banyaknya faktor positif dari $ n $ dan $ \func{\sigma}{n} $ menyatakan hasil penjumlahan semua faktor positif $ n $. Sebagai contoh, $ \func{\Sigma}{14} = \left|\lrbr{1, 2, 7, 14}\right| = 4 $ dan $ \func{\sigma}{14} = 1 + 2 + 7 + 14 = 24 $. Misalkan $ k $ sebuah bilangan asli yang lebih besar dari 1.
+		\begin{enumerate}
+			\item Tentukan semua bilangan asli $ n $ yang memenuhi $ \func{\Sigma}{n} + \func{\sigma}{n} = 2021 $.
+			\item Buktikan bahwa ada tak berhingga banyaknya bilangan asli $ n $ yang memenuhi $ \func{\Sigma}{n} = k^{2} - k + 1 $.
+			\item Buktikan bahwa ada berhingga banyaknya bilangan asli $ n $ yang memenuhi $ \func{\sigma}{n} = k^{2} - k + 1 $.
+		\end{enumerate}
+		\item Diberikan $ a_{1}, a_{2}, a_{3}, \dots $ suatu barisan bilangan asli yang memenuhi $ a_{1} > 1 $ dan
+		\[ \floor{\frac{a_{1} + 1}{a_{2}}} = \floor{\frac{a_{2} + 1}{a_{3}}} = \floor{\frac{a_{3} + 1}{a_{4}}} = \cdots. \]
+		Buktikan bahwa
+		\[ \floor{\frac{a_{n} + 1}{a_{n + 1}}} \leq 1 \]
+		untuk setiap bilangan asli $ n $.
+		\item Untuk suatu bilangan bulat $ n $ yang berbasis 10, misalkan $ \func{\sigma}{n} $ dinotasikan sebagai jumlah dari semua bilangan yang mungkin dari penghapusan beberapa digit $ n $ (termasuk tanpa penghapusan dan penghapusan seluruh digit). Sebagai contoh, jika $ n = 1234 $, maka $ \func{\sigma}{n} = 1234 + 123 + 124 + 134 + 234 + 12 + 13 + 14 + 23 + 24 + 34 + 1 + 2 + 3 + 4 + 0 = 1979 $; penjumlahan ini didapatkan dari penghapusan nol digit dari $ n $ (1234), penghapusan satu digit dari $ n $ (123, 124, 134, 234), penghapusan dua digit dari $ n $ (12, 13, 14, 23, 24, 34), penghapusan tiga digit dari $ n $ (1, 2, 3, 4), dan penghapusan semua digit dari $ n $ (0). Jika $ p $ merupakan bilangan bulat positif dengan 2021 digit, buktikan bahwa $ \func{\sigma}{p} - p $ habis dibagi 9.
+		\par \noindent \textit{Catatan: Jika penghapusan digit menghasilkan dua atau lebih angka yang sama, maka angka tersebut tetap dihitung semuanya. Sebagai contoh, dengan bilangan 101, 1 muncul sebanyak tiga kali (dengan menghapus digit pertama didapatkan 01 yang sama dengan 1, dengan menghapus dua digit pertama, atau dengan menghapus dua digit terakhir) sehingga tetap dihitung sebanyak tiga kali.}
+		\item Buktikan bahwa untuk sebarang bilangan asli $ a $ dan $ b $, bilangan
+		\[ n = \func{\gcd}{a, b} + \func{\lcm}{a, b} - a - b \]
+		adalah bilangan bulat genap tak negatif.
+		\item Diberikan bilangan real $ x $. Definisikan barisan $ \left(a_{n}\right)_{n = 1}^{\infty} $ dengan $ a_{n} = \floor{nx} $ untuk setiap bilangan asli $ n $. Jika barisan $ \left(a_{n}\right)_{n = 1}^{\infty} $ merupakan barisan aritmatika, haruskan $ x $ bilangan bulat?
+		\item Misalkan $ a $ adalah bilangan bulat positif sehingga
+		\[ \func{\gcd}{an + 1, 2n + 1} = 1 \]
+		untuk setiap bilangan bulat $ n $.
+		\begin{enumerate}
+			\item Tunjukkan bahwa $ \func{\gcd}{a - 2, 2n + 1} = 1 $ untuk setiap bilangan bulat $ n $.
+			\item Cari semua $ a $ yang mungkin.
+		\end{enumerate}
+		\item Cari semua tripel bilangan real $ \left(x, y, z\right) $ yang memenuhi sistem persamaan
+		\[
+			\begin{cases}
+				\dfrac{1}{3}\funl{\min}{x, y} + \dfrac{2}{3}\funl{\max}{x, y} = 2021 \\[6pt]
+				\dfrac{1}{3}\funl{\min}{y, z} + \dfrac{2}{3}\funl{\max}{y, z} = 2022 \\[6pt]
+				\dfrac{1}{3}\funl{\min}{z, x} + \dfrac{2}{3}\funl{\max}{z, x} = 2023
+			\end{cases}.
+		\]
+		\item Diberikan bilangan bulat positif $ n $ dan $ r $. Jika
+		\[ 1 + 2 + \cdots + \left(n - 1\right) = \left(n + 1\right) + \left(n + 2\right) + \cdots + \left(n + r\right), \]
+		buktikan bahwa $ n $ bilangan komposit.
+		\item Diberikan bilangan real $ a $ dan $ b $ sedemikian sehingga terdapat tak terhingga banyaknya bilangan bulat positif $ m $ dan $ n $ yang memenuhi
+		\[ \floor{an + b} \geq \floor{a + bn} \quad \mbox{dan} \quad \floor{a + bm} \geq \floor{am + b}. \]
+		Buktikan bahwa $ a = b $.
+		\item Misalkan $ a $, $ b $, dan $ c $ adalah bilangan-bilangan asli. Jika $ \divid{30}{\left(a + b + c\right)} $, buktikan bahwa $ \divid{30}{a^{5} + b^{5} + c^{5}} $.
+		\item Tentukan semua bilangan prima $ p $ yang membuat $ 4p^{2} + 1 $ dan $ 6p^{2} + 1 $ keduanya prima.
+		\item Untuk sebarang bilangan asli $ n $, definisikan $ \func{p}{n} $ sebagai hasil kali digit-digit $ n $ (dalam representasi basis 10). Tentukan semua bilangan asli $ n $ sehingga $ 11\func{p}{n} = n^{2} - 2021 $.
+		\item Diberikan barisan bilangan bulat $ a_{0}, a_{1}, a_{2}, \dots, a_{2020} $ sedemikian sehingga $ a_{0} = 1 $ dan $ \divid{2021}{\left(a_{k - 1}a_{k} - k\right)} $ untuk setiap $ k = 1, 2, \dots, 2020 $. Buktikan bahwa 2021 membagi $ a_{2020} + 1 $.
+		\item Misalkan $ m $ dan $ n $ bilangan asli sehingga sistem persamaan
+		\[
+			\begin{cases}
+				x + y^{2} = m \\
+				x^{2} + y = n
+			\end{cases}
+		\]
+		memiliki tepat satu solusi bulat $ \left(x, y\right) $. Tentukan semua nilai yang mungkin bagi $ m - n $.
+		\item Cari semua bilangan bulat positif $ n $ yang tidak lebih besar dari 2021 sedemikian sehingga $ n $ membagi $ 20^{n} + 21k $ untuk suatu bilangan bulat positif $ k $.
+		\item Misalkan $ a, b, c, d $ adalah bilangan asli sehingga $ \divid{a}{c^{d}} $ dan $ \divid{b}{d^{c}} $. Buktikan bahwa $ \divid{\left(ab\right)}{\left(cd\right)^{\funl{\max}{a, b}}} $.
+		\item Tentukan semua fungsi $ f : \mathbb{N} \to \mathbb{N} $ sehingga $ n^{2} + \func{f}{n}\func{f}{m} $ merupakan kelipatan $ \func{f}{n} + m $ untuk setiap bilangan asli $ m $ dan $ n $.
+		\item Tentukan semua tripel bilangan asli $ \left(a, b, c\right) $ dengan $ b > 1 $ yang memenuhi
+		\[ 2^{c} + 4^{2021} = a^{b}. \]
+		\item Tentukan semua bilangan prima $ p $ sehingga terdapat bilangan bulat positif $ n $ yang mengakibatkan $ 2^{n}p^{2} $ merupakan bilangan kuadrat.
+		\item Misalkan $ k $ dan $ m $ bilangan-bilangan asli sehingga $ \dfrac{1}{2}\left(\sqrt{k + 4\sqrt{m}} - \sqrt{k}\right) $ adalah bilangan bulat. Buktikan bahwa $ \sqrt{k} $ adalah bilangan asli.
+		\item Cari semua bilangan asli yang dapat dinyatakan dalam bentuk
+		\[ \frac{a + b}{c} + \frac{b + c}{a} + \frac{c + a}{b} \]
+		untuk suatu bilangan asli $ a $, $ b $, dan $ c $ dengan
+		\[ \func{\gcd}{a, b} = \func{\gcd}{b, c} = \func{\gcd}{c, a} = 1. \]
+		\item Misalkan $ a $, $ b $, dan $ c $ bilangan-bilangan real sehingga $ ab $, $ bc $, dan $ ca $ bilangan-bilangan rasional. Buktikan bahwa ada bilangan-bilangan bulat $ x $, $ y $, dan $ z $ yang tidak semuanya nol sehingga $ ax + by + cz = 0 $.
+		\item Tentukan bilangan bulat 85 angka terbesar yang jumlah semua angkanya sama dengan hasil kali semua angkanya.
+		\item Misalkan $ n $ bilangan asli. Buktikan bahwa persamaan
+		\[ \sqrt{x} + \sqrt{y} = \sqrt{n} \]
+		memiliki solusi pasangan bilangan asli $ \left(x, y\right) $ jika dan hanya jika $ n $ habis dibagi oleh suatu bilangan kuadrat yang lebih besar dari 1.
+		\item Suatu bilangan asli $ n $ dikatakan \textit{kuat} apabila terdapat bilangan asli $ x $ sehingga $ x^{nx} + 1 $ habis dibagi $ 2^{n} $.
+		\begin{enumerate}
+			\item Buktikan bahwa 2021 merupakan bilangan kuat.
+			\item Jika $ m $ bilangan kuat, tentukan bilangan asli terkecil $ y $ sehingga $ y^{my} + 1 $ habis dibagi $ 2^{m} $.
+		\end{enumerate}
+		\item Tentukan semua bilangan asli $ n $ sehingga
+		\[ 4\sum_{k = 1}^{n}{\func{\lcm}{n, k}} = 1 + \sum_{k = 1}^{n}{\func{\gcd}{n, k}} + 2n^{2}\sum_{k = 1}^{n}{\frac{1}{\func{\gcd}{n, k}}}. \]
+		\item Suatu bilangan asli $ d $ disebut \textit{istimewa} jika setiap bilangan bulat dapat dinyatakan sebagai $ a^{2} + b^{2} - dc^{2} $ untuk suatu bilangan bulat $ a, b, c $.
+		\begin{enumerate}
+			\item Tentukan bilangan asli terkecil yang tidak istimewa.
+			\item Apakah 2021 bilangan istimewa?
+		\end{enumerate}
+		\item Suatu pasangan bilangan bulat $ \left(m, n\right) $ dikatakan \textit{baik} apabila
+		\[ \divid{m}{n^{2} + n} \quad \mbox{dan} \divid{n}{m^{2} + m}. \]
+		Diberikan sebarang dua bilangan asli $ a, b > 1 $ yang relatif prima. Buktikan bahwa terdapat pasangan baik $ \left(m, n\right) $ dengan $ \divid{a}{m} $ dan $ \divid{b}{n} $, tetapi $ a $ tidak membagi $ n $ dan $ b $ tidak membagi $ m $.
+		\item Misalkan $ m $ dan $ n $ dua bilangan asli. Jika ada tak berhingga banyaknya bilangan bulat $ k $ sedemikian sehingga $ k^{2} + 2kn + m^{2} $ merupakan bilangan kuadrat sempurna, buktikan bahwa $ m = n $.
+		\item Misalkan $ p > 2 $ suatu bilangan prima. Untuk setiap bilangan bulat $ k = 1, 2, \dots, p - 1 $, definisikan $ r_{k} $ sebagai sisa pembagian $ k^{p} $ oleh $ p^{2} $. Buktikan bahwa
+		\[ r_{1} + r_{2} + r_{3} + \cdots + r_{p - 1} = \frac{p^{2}\left(p - 1\right)}{2}. \]
+		\item Diberikan bilangan bulat positif $ m $ dan $ n $ yang memenuhi
+		\[ \divid{\left(mn\right)}{\left(m^{k} + n^{k} + n\right)}. \]
+		\begin{enumerate}
+			\item Buktikan atau bantah bahwa jika $ k = 2 $, maka $ n $ kuadrat sempurna.
+			\item Buktikan atau bantah bahwa jika $ k > 2 $ bilangan bulat positif, maka $ n = t^{k} $ untuk suatu bilangan bulat positif $ t $.
+		\end{enumerate}
+		\item Cari semua solusi dari sistem persamaan
+		\[
+			\begin{cases}
+				x + y^{2} = p^{m} \\
+				x^{2} + y = p^{n}
+			\end{cases}
+		\]
+		untuk bilangan bulat positif $ x, y, m, n $ dan bilangan prima $ p $.
+		\item Cari semua bilangan bulat positif $ n > 1 $ sedemikian sehingga
+		\[ \func{\tau}{n} + \func{\phi}{n} = n + 1. \]
+		\item* Misalkan $ p > 3 $ bilangan prima dan
+		\[ S = \sum_{2 \leq i < j < k \leq p - 1}{ijk}. \]
+		Buktikan bahwa $ S + 1 $ habis dibagi $ p $.
+		\item* Suatu bilangan asli disebut \textit{cantik} jika dapat dinyatakan dalam bentuk
+		\[ \frac{x^{2} + y^{2}}{x + y} \]
+		untuk suatu bilangan asli $ x $ dan $ y $ yang berbeda.
+		\begin{enumerate}
+			\item Tentukan semua bilangan asli yang cantik.
+			\item Buktikan bahwa hasil perkalian dua bilangan tidak cantik tetap tidak cantik.
+		\end{enumerate}
+		\item* Tentukan bilangan asli terkecil sedemikian sehingga $ n > 2 $ atau buktikan bahwa tidak ada bilangan asli $ n $ sedemikian sehingga terdapat $ n $ bilangan asli $ a_{1}, a_{2}, \dots, a_{n} $ yang memenuhi
+		\[ \func{\gcd}{a_{1}, a_{2}, \dots, a_{n}} = \sum_{1 \leq i < j \leq n}{\frac{1}{\func{\gcd}{a_{i}, a_{j}}}}. \]
+		\item* Susunan kesamaan disebut \textit{susunan kesamaan segitiga} jika ia berbentuk
+		\begin{align*}
+			a_{1} + a_{2} &= a_{3} \\
+			b_{1} + b_{2} + b_{3} &= b_{4} + b_{5} \\
+			c_{1} + c_{2} + c_{3} + c_{4} &= c_{5} + c_{6} + c_{7} \\
+			\vdots \qquad &= \qquad \vdots \quad ,
+		\end{align*}
+		yaitu pada kesamaan di baris ke-$ j $, ruas kirinya terdiri dari $ j + 1 $ suku, sedangkan ruas kanannya terdiri dari $ j $ suku.
+		\par \noindent Diberikan bilangan-bilangan asli $ 1, 2, \dots, N^{2} $ dan kemudian dibuang satu bilangan yang mempunyai paritas yang sama dengan $ N $. Buktikan bahwa bilangan-bilangan sisanya dapat disusun menjadi suatu susunan kesamaan segitiga.
+		\par \noindent Sebagai contoh, jika 10 dibuang dari bilangan-bilangan $ 1, 2, \dots, 16 $, sisanya dapat disusun menjadi susunan kesamaan segitiga
+		\begin{align*}
+			1 + 3 &= 4 \\
+			2 + 5 + 8 &= 6 + 9 \\
+			7 + 11 + 12 + 14 &= 13 + 15 + 16.
+		\end{align*}
+		\textit{Catatan: dua bilangan bulat dikatakan berparitas sama jika keduanya ganjil atau keduanya genap.}
+		
+		% Intermediate NT
+		
+		
+		
+		
+		% IMO 1/4 & Putnam 12 & IMC 1256 & IMO SL 123
+		\item Cari semua bilangan tiga digit $ N $ yang memiliki sifat bahwa $ N $ habis dibagi oleh 11 dan $ \dfrac{N}{11} $ sama dengan jumlah kuadrat digit-digit dari $ N $.
+		\item Cari bilangan asli terkecil $ n $ yang memiliki sifat-sifat berikut:
+		\begin{enumerate}
+			\item Digit terakhir dari representasi desimalnya adalah 6.
+			\item Jika digit terakhirnya (6) dipindahkan ke depan, maka bilangan yang dihasilkan empat kali lebih besar dari bilangan awal $ n $.
+		\end{enumerate}
+		\item
+		\begin{enumerate}
+			\item Cari semua bilangan bulat positif $ n $ sedemikian sehingga $ 2^{n} - 1 $ habis dibagi 7.
+			\item Buktikan bahwa tidak ada bilangan bulat positif $ m $ sedemikian sehingga $ 2^{m} + 1 $ habis dibagi 7.
+		\end{enumerate}
+		\item Buktikan bahwa terdapat tak berhingga banyaknya bilangan asli $ a $ sedemikian sehingga $ n^{4} + a $ merupakan bilangan komposit untuk setiap bilangan asli $ n $.
+		\item Cari himpunan semua bilangan asli $ n $ dengan sifat bahwa himpunan
+		\[ \lrbr{n, n + 1, n + 2, n + 3, n + 4, n + 5} \]
+		dapat dipartisikan menjadi dua himpunan sedemikian sehingga hasil kali semua bilangan pada salah satu himpunan sama dengan hasil kali semua bilangan pada himpunan yang lainnya.
+		\item Ketika $ 4444^{4444} $ dituliskan dalam notasi desimal, jumlah digit-digitnya adalah $ A $. Misalkan $ B $ jumlah digit-digit dari $ A $. Carilah jumlah digit dari $ B $.
+		\item Diberikan bilangan bulat positif $ m $ dan $ n $ dengan $ m < n $. Tiga digit terakhir dari $ 2021^{m} $ sama dengan tiga digit terakhir dari $ 2021^{n} $. Tentukan nilai dari $ m + n $ terkecil yang mungkin.
+		\item Misalkan $ d $ sebarang bilangan bulat positif yang tidak sama dengan 2, 5, atau 13. Buktikan bahwa akan selalu dapat ditemukan bilangan $ a $ dan $ b $ pada himpunan $ \lrbr{2, 5, 13, d} $ sedemikian sehingga $ ab - 1 $ bukan kuadrat sempurna.
+		\item Cari semua bilangan bulat $ a, b, c $ dengan $ 1 < a < b < c $ sedemikian sehingga
+		\[ \left(a - 1\right)\left(b - 1\right)\left(c - 1\right) \quad \mbox{merupakan faktor dari} \quad abc - 1. \]
+		\item Cari semua pasangan bilangan bulat positif $ \left(m, n\right) $ sedemikian sehingga
+		\[ \frac{n^{3} + 1}{mn - 1} \]
+		merupakan bilangan bulat.
+		\item Tentukan semua pasangan bilangan bulat positif $ \left(a, b\right) $ sedemikian sehingga $ ab^{2} + b + 7 $ membagi $ a^{2}b + a + b $.
+		\item Tentukan semua pasangan bilangan bulat positif $ \left(n, p\right) $ sedemikian sehingga
+		\begin{enumerate}
+			\item $ p $ prima,
+			\item $ n $ tidak lebih dari $ 2p $, dan
+			\item $ \left(p - 1\right)^{n} + 1 $ habis dibagi oleh $ n^{p - 1} $.
+		\end{enumerate}
+		\item Misalkan $ n $ bilangan bulat ganjil yang lebih besar daripada 1, dan misalkan $ k_{1}, k_{2}, \dots, k_{n} $ bilangan-bilangan bulat. Untuk setiap $ n! $ permutasi $ a = \left(a_{1}, a_{2}, \dots, a_{n}\right) $ dari $ 1, 2, \dots, n $, misalkan
+		\[ \func{S}{a} = \sum_{i = 1}^{n}{k_{i}a_{i}}. \]
+		Buktikan bahwa terdapat dua permutasi $ p $ dan $ q $ dengan $ p \ne q $ sedemikian sehingga $ n! $ merupakan pembagi positif dari $ \func{S}{p} - \func{S}{q} $.
+		\item Pembagi positif dari bilangan bulat $ n > 1 $ adalah $ d_{1} < d_{2} < \cdots < d_{k} $ sehingga $ d_{1} = 1 $ dan $ d_{k} = n $. Misalkan $ d = d_{1}d_{2} + d_{2}d_{3} + \cdots + d_{k - 1}d_{k} $. Buktikan bahwa $ d < n^{2} $ dan cari semua nilai $ n $ sedemikian sehingga $ d $ membagi $ n^{2} $.
+		\item Cari semua bilangan bulat positif yang relatif prima dengan semua nilai dalam barisan $ \left(a_{n}\right)_{n = 1}^{\infty} $ dimana
+		\[ a_{n} = 2^{n} + 3^{n} + 6^{n} - 1, \quad n \geq 1. \]
+		\item Cari semua pasangan bilangan bulat $ \left(x, y\right) $ yang memenuhi persamaan
+		\[ 1 + 2^{x} + 2^{2x + 1} = y^{2}. \]
+		\item Misalkan $ n $ suatu bilangan bulat positif dan misalkan $ a_{1}, \dots, a_{k} $ dengan $ k \geq 2 $ bilangan-bilangan bulat berbeda di himpunan $ \lrbr{1, \dots, n} $ sehingga $ n $ membagi $ a_{i}\left(a_{i + 1} - 1\right) $ untuk $ i = 1, \dots, k - 1 $. Buktikan bahwa $ n $ tidak membagi $ a_{k}\left(a_{1} - 1\right) $.
+		\item Diberikan sebarang himpunan $ A = \lrbr{a_{1}, a_{2}, a_{3}, a_{4}} $ dari empat bilangan bulat positif yang berbeda. Jumlah $ a_{1} + a_{2} + a_{3} + a_{4} $ didefinisikan sebagai $ s_{A} $. Misalkan $ n_{A} $ menyatakan banyaknya pasangan $ \left(i, j\right) $ dengan $ 1 \leq i < j \leq 4 $ sehingga $ a_{i} + a_{j} $ membagi $ s_{A} $. Cari semua himpunan $ A $ dari empat bilangan bulat positif berbeda yang merealisasikan nilai $ n_{A} $ terbesar yang mungkin.
+		\item Untuk setiap bilangan bulat $ a_{0} > 1 $, definisikan barisan $ a_{0}, a_{1}, a_{2}, \dots $ melalui:
+		\[
+			a_{n + 1} =	\begin{cases}
+							\sqrt{a_{n}} & \mbox{jika } \sqrt{a_{n}} \mbox{ merupakan bilangan bulat}, \\
+							a_{n} + 3 & \mbox{selain di atas},
+						\end{cases}
+			\quad \mbox{untuk setiap} \quad n \geq 0.
+		\]
+		Tentukan semua nilai $ a_{0} $ sehingga terdapat bilangan $ A $ yang memenuhi $ a_{n} = A $ untuk takberhingga banyaknya $ n $.
+		\item Cari semua pasangan bilangan bulat positif $ \left(k, n\right) $ sehingga
+		\[ k! = \left(2^{n} - 1\right)\left(2^{n} - 2\right)\left(2^{n} - 4\right) \cdots \left(2^{n} - 2^{n - 1}\right). \]
+		\item Buktikan bahwa diantara sepuluh bilangan bulat berurutan, setidaknya ada satu bilangan yang relatif prima dengan bilangan-bilangan yang lainnya.
+		\item Misalkan $ a_{j} $, $ b_{j} $, dan $ c_{j} $ bilangan bulat untuk $ 1 \leq j \leq N $. Asumsikan untuk setiap $ j $, setidaknya satu dari $ a_{j}, b_{j}, c_{j} $ merupakan bilangan ganjil. Buktikan bahwa terdapat bilangan bulat $ r $, $ s $, dan $ t $ sedemikian sehingga $ ra_{j} + sb_{j} + tc_{j} $ ganjil untuk setidaknya $ 4N/7 $ nilai dari $ j $ untuk $ 1 \leq j \leq N $.
+		\item Cari bilangan bulat positif terkecil $ n $ sedemikian sehingga untuk setiap bilangan bulat $ m $ dengan $ 0 < m < 2021 $, terdapat bilangan bulat $ k $ yang memenuhi
+		\[ \frac{m}{2021} < \frac{k}{n} < \frac{m + 1}{2022}. \]
+		\item Ada berapa banyak bilangan prima yang digit-digitnya bergantian antara 1 dengan 0, yang digit-digitnya dimulai dari 1 dan diakhiri dengan 1 juga?
+		\item Misalkan $ n $ bilangan bulat positif genap. Tuliskan bilangan $ 1, 2, \dots, n^{2} $ pada suatu persegi dengan $ n \times n $ persegi satuan sedemikian sehingga pada baris ke-$ k $, dari kanan ke kiri berisi bilangan-bilangan sebagi berikut:
+		\[ \left(k - 1\right)n + 1, \left(k - 1\right)n + 2, \dots, \left(k - 1\right)n + n. \]
+		Warnai setiap persegi satuan sedemikian sehingga setengah dari persegi satuan pada setiap baris dan setiap kolom berwarna hitam dan setengah yang lainnya berwarna putih (papan catur adalah salah satu contohnya). Buktikan bahwa untuk setiap pewarnaan seperti ini, jumlah bilangan-bilangan pada persegi satuan yang berwarna hitam sama dengan jumlah bilangan-bilangan pada persegi satuan yang berwarna putih.
+		\item Misalkan $ n $ bilangan bulat positif tetap. Ada berapa banyak cara menuliskan $ n $ sebagai penjumlahan dari bilangan-bilangan positif
+		\[ n = a_{1} + a_{2} + \cdots + a_{k} \]
+		dengan $ k $ sebarang bilangan bulat positif dan $ a_{1} \leq a_{2} \leq \cdots \leq a_{k} \leq a_{1} + 1 $?
+		\par \noindent Sebagai contoh, jika $ n = 4 $, maka terdapat empat cara, yaitu $ 4, 2 + 2, 1 + 1 + 2, 1 + 1 + 1 $.
+		\item Buktikan bahwa setiap bilangan bulat positif merupakan penjumlahan dari satu atau lebih bilangan bulat yang berbentuk $ 2^{r}3^{s} $ dengan $ r $ dan $ s $ bilangan bulat nonnegatif dan tidak ada dari bilangan tersebut yang membagi bilangan lainnya. Sebagi contoh, $ 23 = 9 + 8 + 6 $.
+		\item Misalkan $ f $ polinomial dengan koefisien bilangan bulat. Buktikan bahwa jika $ n $ bilangan bulat positif, maka $ \func{f}{n} $ membagi $ \func{f}{\func{f}{n} + 1} $ jika dan hanya jika $ n = 1 $.
+		\item Buktikan bahwa setiap bilangan rasional positif dapat dituliskan sebagai pembagian dari perkalian perkalian faktorial bilangan prima. Sebagai contoh,
+		\[ \frac{10}{9} = \frac{2! \cdot 5!}{3! \cdot 3! \cdot 3!}. \]
+		\item Diberikan bilangan bulat positif $ n $. Cari bilangan bulat terbesar $ k $ sedemikian sehingga bilangan-bilangan $ 1, 2, \dots, n $ dapat ditempatkan ke $ k $ kotak yang mana jumlah semua bilangan dalam setiap kotak sama besar. Sebagai contoh, ketika $ n = 8 $, maka bilangan-bilangan $ 1, 2, \dots, 8 $ dapat ditempatkan pada tiga kotak $ \lrbr{1, 2, 3, 6} $, $ \lrbr{4, 8} $, dan $ \lrbr{5, 7} $.
+		\item Misalkan $ h $ dan $ k $ bilangan bulat positif. Buktikan bahwa untuk setiap $ \epsilon > 0 $, terdapat bilangan bulat positif $ m $ dan $ n $ sedemikian sehingga
+		\[ \epsilon < \left|h\sqrt{m} - k\sqrt{n}\right| < 2\epsilon \]
+		\item Misalkan $ \func{E}{n} $ dinotasikan sebagai bilangan bulat terbesar $ k $ sedemikian sehingga $ 5^{k} $ adalah faktor dari $ 1^{1}2^{2}3^{3} \cdots n^{n} $. Tentukan nilai dari
+		\[ \lim_{n \to \infty}{\frac{\func{E}{n}}{n^{2}}}. \]
+		\item \textit{Ekspansi rakus berbasis-10} dari bilangan bulat positif $ N $ adalah ekspresi dengan bentuk
+		\[ N = d_{k}10^{k} + d_{k - 1}10^{k - 1} + \cdots + d_{0}10^{0} \]
+		dengan $ d_{k} \ne 0 $ dan $ d_{i} \in \lrbr{0, 1, 2, \dots, 10} $ untuk $ 0 \leq i \leq k $. Sebagai contoh, bilangan bulat $ N = 10 $ memiliki dua ekspansi rakus berbasis-10, yaitu $ 10 = 10 \cdot 10^{0} $ dan ekspansi berbasis 10 biasanya, yaitu $ 10 = 1 \cdot 10^{1} + 0 \cdot 10^{0} $. Tentukan semua bilangan bulat positif yang memiliki tepat satu ekspansi rakus berbasis-10.
+		\item Misalkan $ r $ dan $ s $ bilangan bulat positif. Turunkan suatu formula untuk setiap pasangan terurut bilangan bulat positif $ \left(a, b, c, d\right) $ sedemikian sehingga
+		\[ 3^{r} \cdot 7^{s} = \func{\lcm}{a, b, c} = \func{\lcm}{a, b, d} = \func{\lcm}{a, c, d} = \func{\lcm}{b, c, d}. \]
+		\item Barisan digit-digit
+		\[ 1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7 \, 8 \, 9 \, 1 \, 0 \, 1 \, 1 \, 1 \, 2 \, 1 \, 3 \, 1 \, 4 \, 1 \, 5 \, 1 \, 6 \, 1 \, 7 \, 1 \, 8 \, 1 \, 9 \, 2 \, 0 \, 2 \, 1 \, \dots \]
+		didapatkan dari penulisan digit-digit bilangan bulat positif secara urut. Jika digit ke-$ 10^{n} $ dalam barisan ini merupakan digit dari bilangan bulat asal yang memiliki $ m $ digit, definisikan $ \func{f}{n} $ menjadi $ m $. Sebagai contoh, $ \func{f}{1} = 2 $ karena digit ke-$ 10^{1} $ pada barisan tersebut (yaitu 1) merupakan salah satu digit dari 10 (yaitu bilangan bulat asalnya) yang memiliki 2 digit dan $ \func{f}{2} = 2 $ karena digit ke-$ 10^{2} $ dari barisan tersebut merupakan salah satu digit dari 55 yang memiliki 2 digit. Tentukan nilai dari $ \func{f}{2021} $.
+		\item Untuk setiap bilangan bulat positif $ m $ dan $ n $, buktikan bahwa
+		\[ \frac{\func{\gcd}{m, n}}{n}\binom{n}{m} \]
+		juga bulat.
+		\item Buktikan bahwa terdapat tak berhingga banyaknya bilangan bulat $ n $ sedemikian sehingga $ n $, $ n + 1 $, dan $ n + 2 $ semuanya merupakan jumlah dari dua bilangan kuadrat. Sebagai contoh, $ 0 = 0^{2} + 0^{2} $, $ 1 = 0^{2} + 1^{2} $, dan $ 2 = 1^{2} + 1^{2} $.
+		\item Misalkan $ n $ bilangan bulat positif. Dimulai dari barisan $ \dfrac{1}{1}, \dfrac{1}{2}, \dfrac{1}{3}, \dots, \dfrac{1}{n} $, bentuk suatu barisan baru $ \dfrac{3}{4}, \dfrac{5}{12}, \dots, \dfrac{2n - 1}{2n\left(n - 1\right)} $ yang memiliki $ n - 1 $ suku dengan merata-ratakan setiap dua suku berurutan dari barisan pertama. Ulangi proses perata-rataan ini pada barisan kedua untuk mendapatkan barisan baru dengan $ n - 1 $ suku dan lanjutkan hingga mendapatkan barisan terakhir yang terdiri dari satu suku $ x_{n} $. Buktikan bahwa $ x_{n} < \dfrac{2}{n} $.
+		\item Misalkan $ m $ dan $ n $ bilangan bulat positif. Buktikan bahwa
+		\[ \frac{\left(m + n\right)!}{\left(m + n\right)^{m + n}} < \frac{m!}{m^{m}} \cdot \frac{n!}{n^{n}}. \]
+		\item Cari semua bilangan bulat positif $ n, k_{1}, k_{2}, \dots, k_{n} $ sedemikian sehingga
+		\[ k_{1} + k_{2} + \cdots + k_{n} = 5n - 4 \quad \mbox{dan} \quad \frac{1}{k_{1}} + \cdots + \frac{1}{k_{n}} = 1. \]
+		\item Misalkan $ S $ himpunan dari tripel bilangan prima $ \left(p, q, r\right) $ sedemikian sehingga setidaknya satu bilangan rasional $ x $ memenuhi $ px^{2} + qx + r = 0 $. Bilangan prima manakah yang muncul tujuh kali atau lebih pada elemen-elemen dari $ S $?
+		\item Misalkan $ S $ himpunan setiap bilangan bulat positif yang bukan merupakan kuadrat sempurna. Untuk setiap $ n \in S $, tinjau pemilihan bilangan-bilangan bulat $ a_{1}, a_{2}, \dots, a_{r} $ sedemikian sehingga $ n < a_{1} < a_{2} < \cdots < a_{r} $ dan $ na_{1}a_{2} \cdots a_{r} $ kuadrat sempurna. Misalkan $ \func{f}{n} $ dinotasikan sebagai nilai minimum dari $ a_{r} $ untuk setiap pemilihan tersebut. Sebagai contoh, $ 2 \cdot 3 \cdot 6 $ adalah kuadrat sempurna, sedangkan $ 2 \cdot 3 $, $ 2 \cdot 4 $, $ 2 \cdot 5 $, $ 2 \cdot 3 \cdot 4 $, $ 2 \cdot 3 \cdot 5 $, $ 2 \cdot 4 \cdot 5 $, dan $ 2 \cdot 3 \cdot 4 \cdot 5 $ bukan merupakan kuadrat sempurna sehingga $ \func{f}{2} = 6 $. Buktikan bahwa fungsi $ f : S \to \mathbb{Z} $ merupakan fungsi injektif. Apakah $ f $ juga fungsi bijektif?
+		\item Misalkan $ S $ himpunan terkecil dari bilangan bulat positif sedemikian sehingga
+		\begin{enumerate}
+			\item $ 2 \in S $;
+			\item $ n \in S $ ketika $ n^{2} \in S $;
+			\item $ \left(n + 5\right)^{2} \in S $ ketika $ n \in S $.
+		\end{enumerate}
+		Bilangan bulat positif apa yang tidak berada di $ S $?
+		\item Asumsikan bahwa bilangan bulat positif $ N $ dapat diekspresikan sebagai jumlah dari $ k $ bilangan bulat berurutan
+		\[ N = a + \left(a + 1\right) + \left(a + 2\right) + \cdots + \left(a + k - 1\right) \]
+		untuk $ k = 2021 $, tetapi tidak untuk nilai $ k > 1 $ lainnya. Untuk setiap bilangan bulat positif $ N $ dengan sifat seperti ini, berapakah bilangan bulat terkecil $ a $ yang mungkin dari ekspresi ini?
+		\item Cari bilangan bulat positif terkecil $ j $ sedemikian sehingga untuk setiap polinomial $ \func{P}{x} $ dengan koefisien bilangan bulat, $ \func{P^{\left(j\right)}}{k} $ habis dibagi oleh 2021 untuk setiap bilangan bulat $ k $.
+		\par \noindent \textit{Catatan: $ \func{P^{\left(j\right)}}{k} $ berarti turunan ke-$ j $ dari $ \func{P}{x} $ di $ x = k $.}
+		\item Misalkan $ a_{0} = 1 $, $ a_{1} = 2 $, dan
+		\[ a_{n} = 4a_{n - 1} - a_{n - 2} \]
+		untuk $ n \geq 2 $. Cari suatu faktor prima ganjil dari $ a_{2021} $.
+		\item Cari semua bilangan prima $ p $ sedemikian sehingga terdapat tepat satu $ a \in \lrbr{1, 2, \dots, p} $ sedemikian sehingga $ a^{3} - 3a + 1 $ habis dibagi oleh $ p $.
+		\item Untuk $ x \in \left(0, 1\right) $, misalkan $ y \in \left(0, 1\right) $ merupakan bilangan yang mana digit ke-$ n $-nya setelah koma merupakan digit ke-$ 2^{n} $ setelah koma dari $ x $. Buktikan bahwa jika $ x $ rasional, maka $ y $ juga rasional.
+		\item Barisan $ \func{f}{1}, f_{2}, f_{3}, \dots $ didefinisikan oleh
+		\[ \func{f}{n} = \frac{1}{n}\left(\floor{\frac{n}{1}} + \floor{\frac{n}{2}} + \cdots + \floor{\frac{n}{n}}\right). \]
+		\begin{enumerate}
+			\item Buktikan bahwa $ \func{f}{n + 1} > \func{f}{n} $ tak berhingga kali.
+			\item Buktikan bahwa $ \func{f}{n + 1} < \func{f}{n} $ tak berhingga kali.
+		\end{enumerate}
+		\item Cari semua pasngan bilangan bulat $ \left(k, n\right) $ sedemikian sehingga $ 7^{k} - 3^{n} $ membagi $ k^{4} + n^{2} $.
+		\item Misalkan $ b, n > 1 $ bilangan bulat. Asumsikan untuk setiap $ k > 1 $ terdapat suatu bilangan bulat $ a_{k} $ sedemikian sehingga $ b - a_{k}^{n} $ habis dibagi oleh $ k $. Buktikan bahwa $ b = A^{n} $ untuk suatu bilangan bulat $ A $.
+		\item Misalkan $ X $ himpunan dari $ 10.000 $ bilangan bulat, tidak ada dari bilangan-bilangan bulat tersebut yang habis dibagi oleh 47. Buktikan bahwa terdapat himpunan bagian $ Y $ beranggota 2021 dari $ X $ sedemikian sehingga $ a - b + c - d + e $ tidak habis dibagi oleh 47 untuk setiap $ a, b, c, d, e \in Y $.
+		\item Misalkan $ n $ bilangan bulat positif dan misalkan $ p $ bilangan prima. Buktikan bahwa jika $ a $, $ b $, dan $ c $ bilangan bulat yang memenuhi persamaan
+		\[ a^{n} + pb = b^{n} + pc = c^{n} + pa, \]
+		maka $ a = b = c $.
+		\item Misalkan $ a_{1}, a_{2}, \dots, a_{n} $ bilangan bulat berbeda dengan $ n \geq 3 $. Buktikan bahwa terdapat indeks $ i $ dan $ j $ sedemikian sehingga $ a_{i} + a_{j} $ tidak membagi salah satu bilangan $ 3a_{1}, 3a_{2}, \dots, 3a_{n} $.
+		\item Misalkan $ a_{0}, a_{1}, a_{2}, \dots $ barisan bilangan bulat positif sedemikian sehingga faktor persekutuan terbesar dari setiap dua suku berurutan lebih besar dari suku sebelumnya; dalam simbol, $ \func{\gcd}{a_{i}, a_{i + 1}} > a_{i - 1} $. Buktikan bahwa $ a_{n} \geq 2^{n} $ untuk setiap $ n \geq 0 $.
+		\item Suatu bilangan bulat positif $ N $ disebut \textit{seimbang} jika $ N = 1 $ atau $ N $ dapat dituliskan sebagai hasil kali dari bilangan-bilangan prima sebanyak bilangan genap. Diberikan bilangan bulat positif $ a $ dan $ b $. Tinjau suatu polinomial $ P $ yang didefinisikan sebagai $ \func{P}{x} = \left(x + a\right)\left(x + b\right) $.
+		\begin{enumerate}
+			\item Buktikan bahwa terdapat bilangan bulat berbeda $ a $ dan $ b $ sedemikian sehingga setiap bilangan $ \func{P}{1}, \func{P}{2}, \dots, \func{P}{50} $ semuanya seimbang.
+			\item Bukan bahwa jika $ \func{P}{n} $ seimbang untuk setiap bilangan bulat positif $ n $, maka $ a = b $.
+		\end{enumerate}
+		\item Misalkan $ f : \mathbb{Z}^{+} \to \mathbb{Z}^{+} $ fungsi tak konstan sedemikian sehingga $ a - b $ membagi $ \func{f}{a} - \func{f}{b} $ untuk setiap bilangan bulat positif berbeda $ a $ dan $ b $. Buktikan bahwa terdapat tak berhingga banyaknya bilangan prima sedemikian sehingga $ p $ membagi $ \func{f}{c} $ untuk suatu bilangan bulat positif $ c $.
+		\item Cari semua pasangan bilangan bulat nonnegatif $ \left(m, n\right) $ yang memenuhi
+		\[ m^{2} + 2 \cdot 3^{n} = m\left(2^{n + 1} - 1\right). \]
+		\item Cari bilangan bulat terkecil $ n $ sedemikian sehingga terdapat polinomial $ f_{1}, f_{2}, \dots, f_{n} $ berkoefisien bilangan rasional yang memenuhi
+		\[ x^{2} + y = \sum_{k = 1}^{n}{\left(\func{f_{k}}{x}\right)^{2}}. \]
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		% IMO 2/5 & Putnam 34 & IMC 37 & IMO SL 456
+		\item Cari semua bilangan asli $ x $ sedemikian sehingga hasil kali digit-digitnya sama dengan $ x^{2} - 10x - 22 $.
+		\item Misalkan $ n $ dan $ k $ bilangan asli yang relatif prima dengan $ k < n $. Setiap bilangan pada himpunan $ M = \lrbr{1, 2, \dots, n - 1} $ diwarnai dengan warna biru atau warna putih. Diketahui bahwa
+		\begin{enumerate}
+			\item Untuk setiap $ i \in M $, $ i $ dan $ n - i $ keduanya memiliki warna yang sama, dan
+			\item Untuk setiap $ i \in M $ dengan $ i \ne k $, $ i $ dan $ \left|i - k\right| $ memiliki warna yang sama.
+		\end{enumerate}
+		Buktikan bahwa semua bilangan di $ M $ memiliki warna yang sama.
+		\item Buktikan bahwa untuk setiap bilangan bulat positif $ n $, terdapat $ n $ bilangan bulat positif berurutan yang semuanya bukan merupakan pangkat bulat dari bilangan prima.
+		\par \noindent \textit{Catatan: Pangkat bulat dari bilangan prima adalah suatu bilangan yang berbentuk $ p^{k} $ dengan $ p $ prima dan $ k $ bilangan bulat positif.}
+		\item Diberikan bilangan bulat awal $ n_{0} > 1 $. Dua pemain $ \mathcal{A} $ dan $ \mathcal{B} $ memilih bilangan bulat $ n_{1}, n_{2}, n_{3}, \dots $ secara bergantian dengan aturan sebagai berikut:
+		\begin{enumerate}
+			\item Mengetahui $ n_{2k} $, $ \mathcal{A} $ memilih sebarang bilangan bulat $ n_{2k + 1} $ sedemikian sehingga
+			\[ n_{2k} \leq n_{2k + 1} \leq n_{2k}^{2}. \]
+			\item Mengetahui $ n_{2k + 1} $, $ \mathcal{B} $ memilih sebarang bilangan bulat $ n_{2k + 2} $ sedemikian sehingga
+			\[ \frac{n_{2k + 1}}{n_{2k + 2}} \]
+			merupakan bilangan prima yang berpangkat bilangan bulat positif.
+		\end{enumerate}
+		Pemain $ \mathcal{A} $ memenangkan permainan dengan memilih bilangan 2021 dan pemain $ \mathcal{B} $ memenangkan permainan dengan memilih bilangan 1. Berapakah nilai $ n_{0} $ harus dipilih sedemikian sehingga
+		\begin{enumerate}
+			\item $ \mathcal{A} $ memiliki strategi untuk dapat memenangkan permainan?
+			\item $ \mathcal{B} $ memiliki strategi untuk dapat memenangkan permainan?
+		\end{enumerate}
+		\item Cari semua pasangan bilangan bulat $ \left(a, b\right) $ dengan $ a, b \geq 1 $ yang memenuhi persamaan
+		\[ a^{b^{2}} = b^{a}. \]
+		\item Dapatkah kita mencari bilangan bulat positif $ N $ yang habis dibagi oleh tepat 2000 bilangan prima berbeda, sedemikian sehingga $ N $ membagi $ 2^{N} + 1 $?
+		\item Cari semua pasangan bilangan bulat positif $ \left(m, n\right) $ sedemikian sehingga $ \dfrac{m^{2}}{2mn^{2} - n^{3} + 1} $ merupakan bilangan bulat positif.
+		\item Misalkan $ a $ dan $ b $ bilangan-bilangan asli. Buktikan bahwa jika $ 4ab - 1 $ membagi $ \left(4a^{2} - 1\right)^{2} $, maka $ a = b $.
+		\item Misalkan $ f : \mathbb{Z} \to \mathbb{Z}^{+} $. Anggap bahwa untuk sebarang dua bilangan bulat $ m $ dan $ n $, beda $ \func{f}{m} - \func{f}{n} $ terbagi oleh $ \func{f}{m - n} $. Buktikan bahwa untuk semua bilangan bulat $ m $ dan $ n $ dengan $ \func{f}{m} \leq \func{f}{n} $, bilangan $ \func{f}{n} $ terbagi oleh $ \func{f}{m} $.
+		\item Tentukan semua tripel bilangan bulat positif $ \left(a, b, c\right) $ sehingga masing-masing dari
+		\[ ab - c, \quad bc -a, \quad \mbox{dan} \quad ca - b \]
+		merupakan bilangan $ 2 $-berpangkat.
+		\par \noindent \textit{Catatan: Bilangan $ 2 $-berpangkat adalah bilangan bulat yang berbentuk $ 2^{n} $, dengan n bilangan bulat taknegatif.}
+		\item Suatu himpunan bilangan asli dikatakan \textit{harum} jika memiliki setidaknya dua anggota dan masing-masing anggota mempunyai faktor prima persekutuan dengan setidaknya satu anggota lainnya. Misalkan $ \func{P}{n} = n^{2} + n + 1 $. Berapakah bilangan asli terkecil $ b $ yang mungkin agar terdapat suatu bilangan bulat nonnegatif $ a $ sehingga himpunan
+		\[ \lrbr{\func{P}{a + 1}, \func{P}{a + 2}, \dots, \func{P}{a + b}} \]
+		harum?
+		\item Misalkan $ a_{1}, a_{2}, \dots $ suatu barisan tak hingga bilangan bulat positif. Misalkan terdapat bilangan bulat $ N > 1 $ sehingga untuk setiap $ n \geq N $,
+		\[ \frac{a_{1}}{a_{2}} + \frac{a_{2}}{a_{3}} + \cdots + \frac{a_{n - 1}}{a_{n}} + \frac{a_{n}}{a_{1}} \]
+		merupakan bilangan bulat. Buktikan bahwa terdapat suatu bilangan bulat positif $ M $ sehingga $ a_{m} = a_{m + 1} $ untuk setiap $ m \geq M $.
+		\item Diberikan bilangan bulat positif $ m $. Cari semua tripel bilangan bulat positif $ \left(n, x, y\right) $ dengan $ n $ relatif prima dengan $ m $ yang memenuhi persamaan
+		\[ \left(x^{2} + y^{2}\right)^{m} = \left(xy\right)^{n}. \]
+		\item Buktikan bahwa terdapat tak berhingga banyaknya bilangan bulat positif $ n $ dengan sifat bahwa jika $ p $ pembagi prima dari $ n^{2} + 3 $, maka $ p $ juga merupakan pembagi prima dari $ k^{2} + 3 $ untuk suatu bilangan bulat $ k $ dengan $ k^{2} < n $.
+		\item Misalkan $ x_{1}, x_{2}, \dots, x_{9} $ bilangan bulat positif yang kurang dari atau sama dengan 93. Misalkan juga $ y_{1}, y_{2}, \dots, y_{93} $ bilangan bulat positif yang kurang dari atau sama dengan 19. Buktikan bahwa terdapat penjumlahan dari beberapa $ x_{i} $ yang sama dengan penjumlahan dari beberapa $ y_{j} $.
+		\item Untuk setiap bilangan bulat positif $ n $, notasikan $ H_{n} $ sebagai jumlah $ n $ bilangan harmonik pertama. Jika $ \func{H}{n} = \dfrac{p_{n}}{q_{n}} $ dimana $ p_{n} $ dan $ q_{n} $ bilangan bulat yang relatif prima, maka tentukanlah semua bilangan bulat positif $ n $ sedemikian sehingga 5 tidak membagi $ q_{n} $.
+		\item Untuk setiap bilangan bulat positif $ n $, misalkan $ \braket{n} $ dinotasikan sebagai bilangan bulat yang terdekat ke $ \sqrt{n} $. Tentukan nilai dari
+		\[ \sum_{n = 1}^{\infty}{\frac{2^{\, \braket{n}} + 2^{-\braket{n}}}{2^{n}}}. \]
+		\item Diberikan bilangan bulat $ n \geq 2 $. Misalkan $ T_{n} $ dinotasikan sebagai banyaknya himpunan bagian tak kosong $ S $ dari $ \lrbr{1, 2, \dots, n} $ dengan sifat bahwa rata-rata dari setiap elemen di $ S $ merupakan bilangan bulat. Buktikan bahwa $ T_{n} - n $ selalu genap.
+		\item Buktikan bahwa untuk setiap bilangan bulat positif $ n $,
+		\[ n! = \prod_{i = 1}^{n}{\func{\lcm}{1, 2, \dots, \floor{\frac{n}{i}}}}. \]
+		\item Definisikan barisan $ \left(u_{n}\right)_{n = 0}^{\infty} $ dengan $ u_{0} = u_{1} = u_{2} = 1 $. Jika barisan tersebut memenuhi
+		\[ \func{\det}{\begin{matrix}
+				u_{n} & u_{n + 1} \\
+				u_{n + 2} & u_{n + 3}
+		\end{matrix}} = n! \]
+		untuk setiap $ n \geq 0 $. Buktikan bahwa $ u_{n} $ merupakan bilangan bulat untuk setiap $ n \geq 0 $.
+		\item Andi sedang bepergian ke Tana Toraja. Disana, Andi membeli sebuah kalung dengan $ n $ manik-manik. Setiap manik-manik dilabeli dengan bilangan bulat yang jumlah totalnya adalah $ n - 1 $. Buktikan bahwa kita dapat memotong kalung tersebut untuk membentuk suatu string yang label-label berurutan $ x_{1}, x_{2}, \dots, x_{n} $-nya memenuhi
+		\[ \sum_{i = 1}^{k}{x_{i}} \leq k - 1 \quad \mbox{untuk} \quad k = 1, 2, \dots, n. \]
+		\item Dimulai dari suatu barisan berhingga bilangan-bilangan bulat $ a_{1}, a_{2}, \dots, a_{n} $. Jika mungkin, pilih dua indeks $ j < k $ sedemikian sehingga $ a_{j} $ tidak membagi $ a_{k} $, kemudian ganti $ a_{j} $ dan $ a_{k} $ berturut-turut dengan $ \func{\gcd}{a_{j}, a_{k}} $ dan $ \func{\lcm}{a_{j}, a_{k}} $. Buktikan bahwa jika proses ini dilanjutkan terus menerus, maka proses ini akan berhenti pada suatu saat dimana barisan terakhir yang didapatkan tidak akan berubah untuk setiap pemilihan yang dibuat.
+		\item Sebut suatu himpunan bagian $ S $ dari $ \lrbr{1, 2, \dots, n} $ sebagai himpunan bagian \textit{biasa} jika untuk setiap $ a, b \in S $, maka $ \dfrac{a + b}{2} \in S $. Misalkan $ \func{A}{n} $ dinotasikan sebagai banyaknya himpunan bagian biasa dari $ \lrbr{1, 2, \dots, n} $. Tentukan semua bilangan bulat positif $ n $ sedemikian sehingga
+		\[ \func{A}{n + 2} - 2\func{A}{n + 1} + \func{A}{n} = 1. \]
+		\item Misalkan $ A $ matriks berordo $ m \times n $ dengan entri-entri rasional. Asumsikan bahwa terdapat setidaknya $ m + n $ bilangan prima berbeda untuk setiap nilai mutlak entri-entri $ A $. Buktikan bahwa $ \func{\rank}{A} \geq 2 $.
+		\item Misalkan $ S $ dinotasikan sebagai himpunan semua bilangan rasional selain $ -1 $, 0, dan 1. Definisikan $ f : S \to S $ sebagai $ \func{f}{x} = x - \dfrac{1}{x} $. Buktikan atau bantah bahwa
+		\[ \bigcap_{n = 1}^{\infty}{\func{\ubr{\left(f \circ f \circ \cdots \circ f\right)}{n \mbox{ kali komposisi}}}{S}} = \emptyset. \]
+		\par \noindent \textit{Catatan: Disini, $ \func{f}{S} $ dinotasikan sebagai himpunan dari seluruh nilai $ \func{f}{s} $ yang mungkin untuk $ s \in S $.}
+		\item Untuk setiap bilangan bulat positif $ m $ dan $ n $, misalkan $ \func{f}{m, n} $ dinotasikan sebagai banyaknya pasangan terurut bilangan bulat $ \left(x_{1}, x_{2}, \dots, x_{n}\right) $ sedemikian sehingga $ \left|x_{1}\right| + \left|x_{2}\right| + \cdots + \left|x_{n}\right| \leq m $. Buktikan bahwa $ \func{f}{m, n} = \func{f}{n, m} $.
+		\item Suatu \textit{repunit} adalah bilangan bulat positif yang digit-digitnya (basis-10) semuanya sama dengan satu. Cari semua polinomial $ f $ berkoefisien real sedemikian sehingga jika $ n $ repunit, maka $ \func{f}{n} $ juga repunit.
+		\item Misalkan $ p $ bilangan prima. Misalkan juga $ \func{h}{x} $ polinomial berkoefisien bilangan bulat sedemikian sehingga $ \func{h}{0}, \func{h}{1}, \dots, \func{h}{p^{2} - 1} $ semuanya berbeda modulo $ p^{2} $. Buktikan bahwa $ \func{h}{0}, \func{h}{1}, \dots, \func{h}{p^{3} - 1} $ berbeda modulo $ p^{3} $.
+		\item Misalkan $ S $ himpunan semua bilangan rasional sedemikian sehingga
+		\begin{enumerate}
+			\item $ 0 \in S $;
+			\item Jika $ x \in S $, maka $ x + 1 \in S $ dan $ x - 1 \in S $; dan
+			\item Jika $ x \in S $ dan $ x \ne \left(0, 1\right) $, maka $ \dfrac{1}{x\left(x - 1\right)} \in S $.
+		\end{enumerate}
+		Buktikan atau bantah bahwa $ S = \mathbb{Q} $.
+		\item Buktikan bahwa untuk setiap bilangan bulat positif $ n $, bilangan
+		\[ 10^{10^{10^{n}}} + 10^{10^{n}} + 10^{n} - 1 \]
+		bukan merupakan bilangan prima.
+		\item Misalkan $ q $ dan $ r $ bilangan bulat dengan $ q > 0 $. Misalkan juga $ A $ dan $ B $ merupakan interval pada garis bilangan real. Misalkan $ T $ himpunan semua bilangan bulat berbentuk $ b + mq $ dimana $ b $ dan $ m $ bilangan bulat dengan $ b \in B $. Misalkan juga $ S $ himpunan semua bilangan bulat $ a \in A $ sedemikian sehingga $ ra \in T $. Buktikan bahwa jika hasil kali panjang dari interval $ A $ dengan panjang dari interval $ B $ kurang dari $ q $, maka $ S $ adalah perpotongan dari $ A $ dengan beberapa barisan aritmatika.
+		\item Cari semua bilangan bulat positif $ n < 10^{100} $ sedemikian sehingga $ n $ membagi $ 2^{n} $, $ n - 1 $ membagi $ 2^{n} - 1 $, dan $ n - 2 $ membagi $ 2^{n} - 2 $.
+		\item Suatu kelas dengan murid sebanyak $ 2N $ sedang melakukan kuis. Skor yang mungkin didapatkan oleh masing-masing murid adalah $ 1, 2, \dots, 10 $. Skor-skor ini setidaknya muncul sekali dan rata-rata perolehan skornya tepat $ 7,4 $. Buktikan bahwa kelas tersebut dapat dibagi menjadi dua grup masing-masing dengan $ N $ murid sedemikian sehingga rata-rata skor masing-masing kedua grup tersebut tepat $ 7,4 $.
+		\item Misalkan $ T $ himpunan semua tripel bilangan bulat positif $ \left(a, b, c\right) $ sehingga terdapat suatu segitiga dengan panjang sisi $ a $, $ b $, dan $ c $. Ekspresikan
+		\[ \sum_{\left(a, b, c\right) \in T}{\frac{2^{a}}{3^{b}5^{c}}} \]
+		dalam suatu bilangan rasional yang paling sederhana.
+		\item Misalkan $ n $ bilangan bulat positif. Diberikan himpunan $ S $ yang beranggotakan $ 2n - 1 $ bilangan irasional berbeda. Buktikan bahwa terdapat $ n $ anggota berbeda $ x_{1}, x_{2}, \dots, x_{n} \in S $ sedemikian sehingga untuk setiap bilangan rasional nonnegatif $ a_{1}, a_{2}, \dots, a_{n} $ dengan $ a_{1} + a_{2} + \cdots + a_{n} > 0 $, kita punyai $ a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} $ merupakan bilangan irasional.
+		\item Misalkan $ P $ polinomial berderajat $ n > 1 $ berkoefisien bilangan bulat dan misalkan $ k $ sebarang bilangan bulat positif. Tinjau polinomial $ \func{Q}{x} = \func{P}{\func{P}{\dots \func{P}{\func{P}{x}} \dots}} $ dengan $ k $ pasang tanda kurung. Buktikan bahwa $ Q $ memiliki tidak lebih dari $ n $ titik tetap, yaitu bilangan bulat yang memenuhi persamaan $ \func{Q}{x} = x $.
+		\item Cari semua solusi bulat dari persamaan
+		\[ \frac{x^{7} - 1}{x - 1} = y^{5} - 1. \]
+		\item Misalkan $ a > b > 1 $ bilangan bulat yang relatif prima. Definisikan \textit{berat} dari suatu bilangan bulat $ c $, $ \func{w}{c} $, sebagai nilai minimum yang mungkin dari $ \left|x\right| + \left|y\right| $ untuk setiap pasangan bilangan bulat $ x $ dan $ y $ sedemikian sehingga
+		\[ ax + by = c. \]
+		Suatu bilangan bulat $ c $ disebut sebagai \textit{pemenang lokal} jika $ \func{w}{c} \geq \func{w}{c \pm a} $ dan $ \func{w}{c} \geq \func{w}{c \pm b} $.
+		\par \noindent Cari semua pemenang lokal dan tentukan nilainya.
+		\item Untuk setiap bilangan bulat $ k \geq 2 $, buktikan bahwa $ 2^{3k} $ membagi
+		\[ \binom{2^{k + 1}}{2^{k}} - \binom{2^{k}}{2^{k - 1}}, \]
+		tetapi $ 2^{3k + 1} $ tidak.
+		\item Misalkan $ k $ bilangan bulat positif. Buktikan bahwa $ \left(4k^{2} - 1\right)^{2} $ memiliki faktor positif berbentuk $ 8kn - 1 $ jika dan hanya jika $ k $ genap.
+		\item Misalkan $ n $ bilangan bulat positif. Buktikan bahwa bilangan-bilangan
+		\[ \binom{2^{n} - 1}{0}, \quad \binom{2^{n} - 1}{1}, \quad \binom{2^{n - 1}}{1}, \quad \dots, \quad \binom{2^{n} - 1}{2^{n - 1} - 1} \]
+		semuanya kongruen modulo $ 2^{n} $ ke $ 1, 3, 5, \dots, 2^{n - 1} $ pada suatu susunan.
+		\item Untuk setiap $ n \in \mathbb{N} $, misalkan $ \func{d}{n} $ dinotasikan sebagai banyaknya faktor positif dari $ n $. Cari semua fungsi $ f : \mathbb{N} \to \mathbb{N} $ dengan sifat berikut:
+		\begin{enumerate}
+			\item $ \func{d}{\func{f}{x}} = x $ untuk setiap $ x \in \mathbb{N} $;
+			\item $ \func{f}{xy} $ membagi $ \left(x - 1\right)y^{xy - 1}\func{f}{x} $ untuk setiap $ x, y \in \mathbb{N} $.
+		\end{enumerate}
+		\item Cari semua bilangan bulat positif $ n $ sedemikian sehingga terdapat barisan bilangan bulat positif $ a_{1}, a_{2}, \dots, a_{n} $ yang memenuhi
+		\[ a_{k + 1} = \frac{a_{k}^{2} + 1}{a_{k - 1} + 1} - 1 \]
+		untuk setiap $ k $ dengan $ 2 \leq k \leq n - 1 $.
+		\item Misalkan $ \func{P}{x} $ polinomial tak konstan dengan koefisien bilangan bulat. Buktikan bahwa tidak terdapat fungsi $ T : \mathbb{Z} \to \mathbb{Z} $ sedemikian sehingga banyaknya bilangan bulat $ x $ yang memenuhi $ \func{T^{n}}{x} = x $ sama dengan $ \func{P}{n} $ untuk setiap $ n \geq 1 $, dimana $ T^{n} $ dinotasikan sebagai pengaplikasian $ T $ berlipat-$ n $.
+		\item Misalkan $ k $ bilangan bulat positif. Buktikan bahwa jika terdapat barisan bilangan bulat $ a_{0}, a_{1}, \dots $ yang memenuhi kondisi
+		\[ a_{n} = \frac{a_{n - 1} + n^{k}}{n} \quad \mbox{untuk setiap} \quad n \geq 1, \]
+		maka $ k - 2 $ habis dibagi oleh 3.
+		\item Misalkan $ a $ dan $ b $ bilangan bulat dan misalkan $ \func{P}{x} = ax^{3} + bx $. Untuk setiap bilangan bulat positif $ n $, kita katakan pasangan $ \left(a, b\right) $ \textit{keren}-$ n $ jika $ \divid{n}{\left(\func{P}{m} - \func{P}{k}\right)} $ mengimplikasikan $ \divid{n}{\left(m - k\right)} $ untuk setiap bilangan bulat $ m $ dan $ k $. Kita katakan pasangan $ \left(a, b\right) $ \textit{sangat keren} jika $ \left(a, b\right) $ \textit{keren}-$ n $ untuk tak berhingga banyaknya bilangan bulat positif $ n $.
+		\begin{enumerate}
+			\item Cari pasangan $ \left(a, b\right) $ yang keren-51, tetapi tidak sangat keren.
+			\item Buktikan atau bantah bahwa semua pasangan keren-2021 merupakan pasangan yang sangat keren.
+		\end{enumerate}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		% IMO 3/6 & Putnam 56 & IMC 48 & IMO SL 789
+		\item* Misalkan $ k $, $ m $, dan $ n $ bilangan asli sedemikian sehingga $ m + k + 1 $ merupakan bilangan prima yang lebih besar dari $ n + 1 $. Misalkan juga $ c_{s} = s\left(s + 1\right) $. Buktikan bahwa
+		\[ \left(c_{m + 1} - c_{k}\right)\left(c_{m + 2} - c_{k}\right) \cdots \left(c_{m + n} - c_{k}\right) \]
+		habis dibagi oleh $ c_{1}c_{2} \cdots c_{n} $.
+		\item* Untuk setiap bilangan asli $ n $, tentukan nilai dari
+		\[ \sum_{k = 0}^{\infty}{\floor{\frac{n + 2^{k}}{2^{k + 1}}}}. \]
+		\item* Buktikan bahwa himpunan bilangan bulat yang dapat dinyatakan dalam bentuk $ 2^{k} - 3 $ dengan $ k = 2, 3, \dots $ mengandung tak berhingga banyaknya himpunan bagian sedemikian sehingga setiap pasangan anggota himpunan bagian tersebut relatif prima.
+		\item* Misalkan $ m $ dan $ n $ sebarang bilangan bulat nonnegatif. Buktikan bahwa
+		\[ \frac{\left(2m\right)!\left(2n\right)!}{m!n!\left(m + n\right)!} \]
+		merupakan bilangan bulat.
+		\item* Buktikan bahwa $ \ds{\sum_{k = 0}^{n}{\binom{2n + 1}{2k + 1}2^{3k}}} $ tidak habis dibagi oleh 5 untuk setiap bilangan bulat $ n \geq 0 $.
+		\item* Tentukan nilai maksimum dari $ m^{2} + n^{2} $ dimana $ m $ dan $ n $ bilangan bulat yang memenuhi $ m, n \in \lrbr{1, 2, \dots, 2021} $ dan $ \left(n^{2} - mn - m^{2}\right)^{2} = 1 $.
+		\item* Misalkan $ a $, $ b $, dan $ c $ bilangan bulat positif dengan $ \func{\gcd}{a, b} = \func{\gcd}{b, c} = \func{\gcd}{c, a} = 1 $. Buktikan bahwa $ 2abc - ab - bc - ca $ merupakan bilangan bulat terbesar yang tidak dapat diekspresikan dalam bentuk $ xbc + yca + zab $, dimana $ x, y, z $ bilangan bulat nonnegatif.
+		\item* Misalkan $ n $ bilangan bulat yang lebih besar dari atau sama dengan 2. Buktikan bahwa jika $ k^{2} + k + n $ prima untuk setiap bilangan bulat $ k $ dengan $ 0 \leq k \leq \sqrt{n/3} $, maka $ k^{2} + k + n $ juga prima untuk setiap bilangan bulat $ k $ dengan $ 0 \leq k \leq n - 2 $.
+		\item* Cari semua bilangan bulat $ n > 1 $ sedemikian sehingga
+		\[ \frac{2^{n} + 1}{n^{2}} \]
+		merupakan bilangan bulat.
+		\item* Misalkan $ S = \lrbr{1, 2, 3, \dots, 280} $. Cari bilangan bulat terkecil $ n $ sedemikian sehingga untuk setiap himpunan bagian beranggota sebanyak $ n $ mengandung lima bilangan yang setiap pasangannya relatif prima.
+		\item* Untuk setiap bilangan bulat positif $ n $, $ \func{S}{n} $ didefinisikan sebagai bilangan bulat terbesar sedemikian sehingga untuk setiap bilangan bulat positif $ k \leq \func{S}{n} $, $ n^{2} $ dapat dituliskan sebagai jumlah dari $ k $ bilangan kuadrat.
+		\begin{enumerate}
+			\item Buktikan bahwa $ \func{S}{n} \leq n^{2} - 14 $ untuk setiap $ n \geq 4 $.
+			\item Cari bilangan bulat $ n $ sedemikian sehingga $ \func{S}{n} = n^{2} - 14 $.
+			\item Buktikan bahwa terdapat tak berhingga banyaknya bilangan bulat $ n $ sedemikian sehingga $ \func{S}{n} = n^{2} - 14 $.
+		\end{enumerate}
+		\item* Terdapat $ n > 1 $ lampu $ L_{0}, \dots, L_{n - 1} $ pada suatu lingkaran, dimana kita notasikan $ L_{n + k} = L_{k} $. Lakukan langkah $ s_{0}, s_{1}, \dots $ sebagai berikut: pada langkah ke-$ s_{i} $, jika $ L_{i - 1} $ menyala, ganti kondisi saklar $ L_{i} $ dari nyala ke mati atau sebaliknya, tetapi jika $ L_{i - 1} $ mati, jangan lakukan apa-apa. Pada awalnya semua lampu menyala. Buktikan bahwa
+		\begin{enumerate}
+			\item Terdapat suatu bilangan bulat positif $ \func{M}{n} $ sedemikian sehingga setelah $ \func{M}{n} $ langkah, semua lampu menyala kembali.
+			\item Jika $ n = 2^{k} $, kita dapat mengambil $ \func{M}{n} = n^{2} - 1 $.
+			\item Jika $ n = 2^{k} + 1 $, kita dapat mengambil $ \func{M}{n} = n^{2} - n + 1 $.
+		\end{enumerate}
+		\item* Misalkan $ p $ bilangan prima. Ada berapa banyak himpunan bagian $ A $ dari $ \lrbr{1, 2, \dots, 2p} $ yang beranggota sebanyak $ p $ sedemikian sehingga jumlah semua anggota $ A $ habis dibagi oleh $ p $.
+		\item* Misalkan $ p, q, n $ tiga bilangan bulat positif dengan $ p + q < n $. Misalkan $ \left(x_{0}, x_{1}, \dots, x_{n}\right) $ merupakan tupel dari $ \left(n + 1\right) $ bilangan bulat yang memenuhi kondisi berikut:
+		\begin{enumerate}
+			\item $ x_{0} = x_{n} = 0 $.
+			\item Untuk setiap $ i $ dengan $ 1 \leq i \leq n $, berlaku $ x_{i} - x_{i - 1} = p $ atau $ x_{i} - x_{i - 1} = -q $.
+		\end{enumerate}
+		Buktikan bahwa terdapat indeks $ i < j $ dengan $ \left(i, j\right) \ne \left(0, n\right) $ sedemikian sehingga $ x_{i} = x_{j} $.
+		\item* Untuk setiap bilangan bulat positif $ n $, misalkan $ \func{\xi}{n} $ dinotasikan sebagai banyaknya cara merepresentasikan $ n $ sebagai jumlah dari bilangan eksponen berbasis 2 dengan pangkat bulat nonnegatif. Representasi yang berbeda hanya pada penyusunan penjumlahannya dianggap sama. Sebagai contoh, $ \func{\xi}{4} = 4 $, karena bilangan 4 dapat direpresentasikan dalam empat cara, yaitu
+		\[ 4; 2 + 2; 2 + 1 + 1; 1 + 1 + 1 + 1. \]
+		Buktikan bahwa untuk setiap bilangan bulat $ n \geq 3 $, berlaku
+		\[ 2^{n^{2}/4} < \func{f}{2^{n}} < 2^{n^{2}/2}. \]
+		\item* Untuk setiap bilangan bulat positif $ n $, misalkan $ \func{d}{n} $ dinotasikan sebagai banyaknya pembagi positif dari $ n $ (termasuk 1 dan $ n $ itu sendiri). Tentukan semua bilangan bulat positf $ k $ sedemikian sehingga
+		\[ \frac{\func{d}{n^{2}}}{\func{d}{n}} = k \]
+		untuk suatu $ n $.
+		\item* Cari semua pasangan bilangan bulat $ \left(m, n\right) $ dengan $ m, n > 2 $ sedemikian sehingga terdapat tak berhingga banyaknya bilangan bulat positif $ k $ yang memenuhi $ k^{n} + k^{2} - 1 $ membagi $ k^{m} + k - 1 $.
+		\item* Misalkan $ a $ dan $ b $ bilangan bulat positif sedemikian sehingga $ ab + 1 $ membagi $ a^{2} + b^{2} $. Apakah $ \dfrac{a^{2} + b^{2}}{ab + 1} $ selalu merupakan kuadrat dari suatu bilangan bulat?
+		\item* Misalkan $ a, b, c, d $ bilangan bulat dengan $ a > b > c > d > 0 $. Asumsikan bahwa
+		\[ ac + bd = \left(b + d + a - c\right)\left(b + d - a + c\right). \]
+		Buktikan bahwa $ ab + cd $ bukan bilangan prima.
+		\item* Kita katakan suatu bilangan bulat positif \textit{berganti-tanda} jika setiap dua digit berurutan dalam representasi desimalnya berbeda paritas. Cari semua bilangan bulat positif $ n $ sedemikian sehingga $ n $ memiliki kelipatan yang juga berganti-tanda.
+		\item* Buktikan bahwa untuk setiap bilangan prima $ p $, terdapat suatu bilangan prima $ q $ sedemikian sehingga $ n^{p} - p $ tidak habis dibagi oleh $ q $ untuk setiap bilangan bulat positif $ n $.
+		\item* Buktikan bahwa ada tak berhingga banyaknya bilangan bulat positif $ n $ sehingga $ n^{2} + 1 $ mempunyai suatu pembagi prima yang lebih besar dari $ 2n + \sqrt{2n} $.
+		\item* Misalkan $ \mathbb{N} $ himpunan bilangan bulat positif. Tentukan semua fungsi $ g : \mathbb{N} \to \mathbb{N} $ sehingga
+		\[ \left(\func{g}{m} + n\right)\left(m + \func{g}{n}\right) \]
+		merupakan suatu kuadrat sempurna untuk semua $ m, n \in \mathbb{N} $.
+		\item* Misalkan $ q $ bilangan bulat positif ganjil, dan misalkan $ N_{q} $ dinotasikan sebagai banyaknya bilangan bulat $ a $ sedemikian sehingga $ 0 < a < q/4 $ dan $ \func{\gcd}{a, q} = 1 $. Buktikan bahwa $ N_{q} $ ganjil jika dan hanya jika $ q $ berbentuk $ p^{k} $ dengan $ k $ bilangan bulat positif dan $ p $ bilangan prima yang kongruen dengan 5 atau 7 modulo 8.
+		\item* \textit{Permainan tebakan pembohong} adalah permainan yang dimainkan oleh dua pemain $ A $ dan $ B $. Aturan permainan tergantung pada dua bilangan bulat positif $ k $ dan $ n $ yang diketahui kedua pemain.
+		\par \noindent Pada awal permainan, $ A $ memilih bilangan bulat $ x $ dan $ N $ dengan $ 1 \leq x \leq N $. Pemain $ A $ menjaga kerahasiaan $ x $ dan dengan jujur mengatakan $ N $ ke pemain $ B $. Pemain $ B $ sekarang mencoba untuk mendapatkan informasi tentang $ x $ dengan menanyakan kepada pemain $ A $ pertanyaan-pertanyaan sebagai berikut: masing-masing pertanyaan berisikan $ B $ menspesifikasikan sebarang himpunan $ S $ dari bilangan bulat positif (dimungkinkan himpunan itu telah dispesifikasikan di beberapa pertanyaan sebelumnya), dan menanyakan kepada $ A $ apakah $ x $ di dalam $ S $. Pemain $ B $ boleh bertanya sebanyak mungkin pertanyaan sesuai keinginannya. Setelah masing-masing pertanyaan, pemain $ A $ harus segera menjawab pertanyaan itu dengan \textit{ya} atau \textit{tidak}, tetapi diperbolehkan untuk berbohong sebanyak yang dia inginkan; satu-satunya batasan adalah bahwa diantara sebarang $ k + 1 $ jawaban berturutan, setidaknya satu jawaban harus benar.
+		\par \noindent Setelah $ B $ mengajukan sebanyak mungkin pertanyaan-pertanyaan yang dia inginkan, dia harus menspesifikasikan himpunan $ X $ beranggotakan paling banyak $ n $ bilangan bulat positif. Jika $ x $ di dalam $ X $, maka $ B $ menang; jika tidak, ia kalah. Buktikan bahwa:
+		\begin{enumerate}
+			\item Jika $ n \geq 2^{k} $, maka $ B $ dapat menjamin suatu kemenangan.
+			\item Untuk semua $ k $ cukup besar, terdapat suatu bilangan bulat $ n \geq \left(1,99\right)^{k} $ sehingga $ B $ tidak dapat menjamin suatu kemenangan.
+		\end{enumerate}
+		\item* Cari semua bilangan bulat positif $ n $ yang mana terdapat bilangan bulat nonnegatif $ a_{1}, a_{2}, \dots, a_{n} $ sehingga
+		\[ \frac{1}{2^{a_{1}}} + \frac{1}{2^{a_{2}}} + \cdots + \frac{1}{2^{a_{n}}} = \frac{1}{3^{a_{1}}} + \frac{2}{3^{a_{2}}} + \cdots + \frac{n}{3^{a_{n}}} = 1. \]
+		\item* Misalkan $ n \geq 3 $ adalah bilangan bulat, dan perhatikan suatu lingkaran yang ditandai dengan $ n + 1 $ titik-titik yang berjarak sama antar dua titik bersebelahan. Anggap semua pelabelan titik-titik itu dengan bilangan $ 0, 1, \dots, n $ sehingga masing-masing label digunakan tepat satu kali; dua pelabelan tersebut dipandang sama jika salah satu bisa diperoleh dari yang lain menggunakan rotasi pada lingkaran itu. Suatu pelabelan disebut \textit{cantik} jika untuk sebarang empat label $ a < b < c < d $ dengan $ a + d = b + c $, talibusur yang menghubungkan titik-titik yang dilabeli $ a $ dan $ d $ tidak memotong talibusur yang menghubungkan titik-titik yang dilabeli $ b $ dan $ c $.
+		\par \noindent Misalkan $ M $ adalah pelabelan cantik, dan misalkan $ N $ adalah banyaknya pasangan terurut bilangan bulat positif $ \left(x, y\right) $ sehingga $ x + y \leq n $ dan $ \func{\gcd}{x, y} = 1 $. Buktikan bahwa
+		\[ M = N + 1. \]
+		\item* Misalkan $ P = A_{1}A_{2} \dots A_{k} $ adalah suatu poligon konveks pada bidang. Titik-titik sudut $ A_{1}, A_{2}, \dots, A_{k} $ mempunyai koordinat bilangan bulat dan terletak pada sebuah lingkaran. Misalkan $ S $ adalah luas dari $ P $. Suatu bilangan asli ganjil $ n $ diberikan sedemikian sehingga kuadrat setiap sisi dari $ P $ adalah bilangan bulat yang habis dibagi $ n $. Buktikan bahwa $ 2S $ adalah bilangan bulat yang habis dibagi $ n $.
+		\item* Suatu pasangan terurut bilangan bulat $ \left(x, y\right) $ merupakan \textit{titik primitif} jika pembagi sekutu terbesar dari $ x $ dan $ y $ adalah 1. Diberikan $ S $, himpunan berhingga titik-titik primitif. Buktikan bahwa terdapat bilangan asli $ n $ dan bilangan bulat $ a_{0}, a_{1}, \dots, a_{n} $ sehingga untuk setiap $ \left(x, y\right) $ di $ S $ berlaku
+		\[ a_{0}x^{n} + a_{1}x^{n - 1}y + a_{2}x^{n - 2}y^{2} + \cdots + a_{n - 1}xy^{n - 1} + a_{n}y^{n} = 1. \]
+		\item* Suatu \textit{segitiga anti-Pascal} adalah susunan bilangan dalam bentuk segitiga sehingga setiap bilangan selain bilangan pada baris terbawah merupakan nilai mutlak dari selisih dua bilangan tepat dibawahnya. Sebagai contoh, susunan berikut merupakan segitiga anti-Pascal yang terdiri dari empat baris dan mengandung semua bilangan dari 1 sampai dengan 10.
+		\begin{center}
+			\[
+				\begin{array}{c c c c c c c c c}
+					&&&&4&&&& \\
+					&&&2&&6&&& \\
+					&&5&&7&&1&& \\
+					&8&&3&&10&&9&
+				\end{array}
+			\]
+		\end{center}
+		Apakah terdapat suatu segitiga anti-Pascal dengan 2021 baris yang mengandung semua bilangan dari 1 sampai dengan $ 1 + 2 + \cdots + 2021 $?
+		\item* Suatu permainan \textit{soliter} dimainkan sebagai berikut. Setelah selesai permainan, berdasarkan hasil yang diperoleh, pemain tersebut mendapatkan $ a $ poin atau $ b $ poin (dengan $ a $ dan $ b $ bilangan bulat positif serta $ a > b $). Skor pemain tersebut terakumulasi pada setiap permainan. Diketahui bahwa terdapat tiga puluh lima skor terakumulasi yang tidak mungkin dicapai, salah satunya adalah 58. Carilah nilai dari $ a $ dan $ b $.
+		\item* Untuk setiap bilangan bulat positif $ n $, misalkan
+		\[
+			a_{n} =	\begin{cases}
+						0 & \mbox{jika banyaknya angka 1 pada representasi biner dari } n \mbox{ genap}, \\
+						1 & \mbox{jika banyaknya angka 1 pada representasi biner dari } n \mbox{ ganjil}.
+					\end{cases}
+		\]
+		Buktikan bahwa tidak terdapat bilangan bulat positif $ k $ dan $ m $ sedemikian sehingga
+		\[ a_{k + j} = a_{k + m + j} = a_{k + 2m + j} \quad \mbox{untuk} \quad 0 \leq j \leq m - 1. \]
+		\item* Jika $ p $ bilangan prima yang lebih besar dari 3 dan $ l = \floor{\dfrac{2p}{3}} $, maka buktikan bahwa
+		\[ \binom{p}{1} + \binom{p}{2} + \cdots + \binom{p}{k} \]
+		habis dibagi oleh $ p^{2} $.
+		\item* Definisikan barisan $ a_{n} $ oleh $ a_{1} = 2 $, $ a_{n + 1} = 2^{a_{n}} $. Buktikan bahwa $ a_{n} \equiv a_{n - 1} \Mod{n} $ untuk $ n \geq 2 $.
+		\item* Misalkan $ N_{n} $ dinotasikan sebagai banyaknya pasangan terurut bilangan bulat positif $ \left(a_{1}, a_{2}, \dots, a_{n}\right) $ sedemikian sehingga
+		\[ \frac{1}{a_{1}} + \frac{1}{a_{2}} + \cdots + \frac{1}{a_{n}} = 1. \]
+		Tentukan apakah $ N_{10} $ genap atau ganjil.
+		\item* Misalkan $ N $ bilangan bulat positif dengan 2021 digit yang semua digitnya sama dengan 1. Cari digit ke-1000 setelah koma dari $ \sqrt{N} $.
+		\item* Misalkan $ S_{0} $ himpunan berhingga bilangan bulat positif. Kita definisikan himpunan $ S_{1}, S_{2}, \dots $ dari bilangan bulat positif sebagai berikut: Bilangan bulat $ a $ berada di $ S $ jika dan hanya jika tepat satu dari $ a - 1 $ atau $ a $ berada di $ S $. Buktikan bahwa terdapat tak berhingga banyaknya bilangan bulat $ N $ sedemikian sehingga
+		\[ S_{N} = S_{0} \cup \set{a \in S_{0}}{N + a} \]
+		\item* Cari semua bilangan bulat positif $ t $ sedemikian sehingga terdapat tepat satu pasangan bilangan bulat positif $ \left(a, n\right) $ sedemikian sehingga
+		\[ a^{n + 1} - \left(a + 1\right)^{n} = t. \]
+		\item* Definisikan suatu barisan dengan $ a_{0} = 1 $ bersama-sama dengan aturan $ a_{2n + 1} = a_{n} $ dan $ a_{2n + 2} = a_{n} + a_{n + 1} $ untuk setiap bilangan bulat $ n \geq 0 $. Buktikan bahwa setiap bilangan rasional positif muncul pada himpunan
+		\[ \set{n \geq 1}{\frac{a_{n - 1}}{a_{n}}} = \lrbr{\frac{1}{1}, \frac{1}{2}, \frac{2}{1}, \frac{1}{3}, \frac{3}{2}, \dots}. \]
+		\item* Misalkan $ \mathbf{F}_{p} $ dinotasikan sebagai lapangan atas bilangan bulat modulo bilangan prima $ p $ dan misalkan $ n $ bilangan bulat positif. Misalkan $ v $ lapangan vektor di $ \mathbf{F}_{p}^{n} $ dan misalkan $ M $ matriks berordo $ n \times n $ dengan entri-entri di $ \mathbf{F}_{p} $, serta definisikan $ G : \mathbf{F}_{p}^{n} \to \mathbf{F}_{p}^{n} $ dengan $ \func{G}{x} = v + Mx $. Misalkan $ G^{\left(k\right)} $ dinotasikan sebagai komposisi $ G $ terhadap dirinya sendiri sebanyak $ k $-kali. Tentukan semua pasangan $ p, n $ sedemikian sehingga terdapat $ v $ dan $ M $ sedemikian sehingga $ p^{n} $ vektor $ \func{G^{\left(k\right)}}{0} $ dengan $ k = 1, 2, \dots, p^{n} $ semuanya berbeda.
+		\item* Buktikan bahwa jika $ n $ adalah bilangan bulat positif yang lebih besar daripada 1, maka $ n $ tidak membagi $ 2^{n} - 1 $.
+		\item* Misalkan $ \func{B}{n} $ dinotasikan sebagai banyaknya angka 1 pada representasi bilangan berbasis 2 dari bilangan bulat positif $ n $. Sebagai contoh, $ \func{B}{6} = \func{B}{110_{2}} = 2 $ dan $ \func{B}{15} = \func{B}{1111_{5}} = 4 $. Tentukan apakah ekspresi
+		\[ \func{\exp}{\sum_{n = 1}^{\infty}{\frac{\func{B}{n}}{n\left(n + 1\right)}}} \]
+		merupakan bilangan rasional atau tidak. Disini, $ \func{\exp}{x} $ dinotasikan sebagai $ e^{x} $.
+		\item* Buktikan bahwa tidak terdapat empat titik pada bidang Euclidean sedemikian sehingga setiap dua titik, jaraknya semuanya merupakan bilangan bulat positif ganjil.
+		\item* Misalkan $ c $ bilangan real sedemikian sehingga $ n^{c} $ merupakan bilangan bulat untuk setiap bilangan bulat positif $ n $. Buktikan bahwa $ c $ adalah bilangan bulat nonnegatif.
+		\item* Misalkan $ \func{\delta}{x} $ dinotasikan sebagai pembagi positif ganjil terbesar dari $ x $. Buktikan bahwa untuk setiap bilangan bulat positif $ x $ berlaku
+		\[ \left|\frac{2x}{3} - \sum_{n = 1}^{x}{\frac{\func{\delta}{n}}{n}}\right| < 1. \]
+		\item* Buktikan bahwa setiap bilangan komposit selalu dapat diekspresikan sebagai $ xy + yz + zx + 1 $ dengan $ x $, $ y $, dan $ z $ bilangan bulat positif.
+		\item* Misalkan $ S $ himpunan dari tiga bilangan bulat (tidak mesti berbeda). Buktikan bahwa kita dapat mentransformasikan $ S $ menjadi suatu himpunan yang mengandung 0 dengan aturan transformasi sebagai berikut: Pilih dua dari tiga bilangan bulat, misalkan $ x $ dan $ y $ dengan $ x \leq y $, kemudian ganti dengan $ 2x $ dan $ y - x $.
+		\item* Untuk setiap bilangan bulat $ a $, misalkan $ n_{a} = 101a - 100 \cdot 2^{a} $. Buktikan bahwa untuk $ 0 \leq a, b, c, d \leq 99 $,
+		\[ n_{2} + n_{b} \equiv n_{c} + n_{d} \pmod{n}. \]
+		\item* Buktikan bahwa terdapat tak berhingga banyaknya pasangan terurut bilangan bulat $ \left(a, b\right) $ sedemikian sehingga setiap bilangan bulat positif $ t $, $ at + b $ merupakan bilangan segitiga jika dan hanya jika $ t $ bilangan segitiga.
+		\par \noindent \textit{Catatan: Suatu bilangan segitiga adalah bilangan bulat taknegatif yang berbentuk $ n\left(n + 1\right)/2 $ dengan $ n $ bilangan bulat taknegatif.}
+		\item* Misalkan $ p $ bilangan prima ganjil sedemikian sehingga $ p \equiv 2 \Mod{3} $. Definisikan permutasi $ \pi $ dari kelas residu modulo $ p $ dengan $ \func{\pi}{x} \equiv x^{3} \Mod{p} $. Buktikan bahwa $ \pi $ merupakan permutasi genap jika dan hanya jika $ p \equiv 3 \Mod{4} $.
+		\item* Buktikan bahwa untuk setiap bilangan bulat $ a, b, c $ terdapat bilangan bulat positif $ n $ sedemikian sehingga
+		\[ \sqrt{n^{3} + an^{2} + bn + c} \]
+		bukan merupakan bilangan bulat.
+		\item* Misalkan $ S $ himpunan berhingga dari bilangan bulat yang lebih besar dari 1. Asumsikan bahwa untuk setiap bilangan bulat $ n $, terdapat $ s \in S $ sedemikian sehingga $ \func{\gcd}{s, n} = 1 $ atau $ \func{\gcd}{s, n} = 1 $. Buktikan bahwa terdapat $ s, t \in S $ sedemikian sehingga $ \func{\gcd}{s, t} $ prima.
+		\item* Barisan $ \left(a_{n}\right)_{n \geq 1} $ didefinisikan dengan $ a_{1} = 1 $, $ a_{2} = 2 $, $ a_{3} = 24 $, dan untuk $ n \geq 4 $,
+		\[ a_{n} = \frac{6a_{n - 1}^{2}a_{n - 3} - 8a_{n - 1}a_{n - 2}^{2}}{a_{n - 2}a_{n - 3}}. \]
+		Buktikan bahwa untuk setiap $ n \geq 1 $, $ a_{n} $ merupakan kelipatan dari $ n $.
+		\item* Tetapkan suatu bilangan bulat $ b \geq 2 $. Misalkan $ \func{f}{1} = 1 $, $ \func{f}{2} = 2 $, dan untuk setiap $ n \geq 3 $, definisikan $ \func{f}{n} = n\func{f}{d} $ dimana $ d $ adalah bilangan dengan basis-$ b $ dari $ n $. Tentukan semua nilai $ b $ sedemikian sehingga deret
+		\[ \sum_{n = 1}^{\infty}{\frac{1}{\func{f}{n}}} \]
+		konvergen.
+		\item* Untuk suatu himpunan bilangan bulat taknegatif $ S $, misalkan $ \func{r_{S}}{n} $ dinotasikan sebagai banyaknya pasangan terurut $ \left(s_{1}, s_{2}\right) $ sedemikian sehingga $ s_{1} \in S $, $ s_{2} \in S $, $ s_{1} \ne s_{2} $, dan $ s_{1} + s_{2} = n $. Apakah mungkin untuk mempartisi bilangan bulat taknegatif tersebut kedalam dua himpunan $ A $ dan $ B $ sedemikian sehingga $ \func{r_{A}}{n} = \func{r_{B}}{n} $ untuk setiap $ n $?
+		\item* Misalkan $ \mathfrak{A} $ himpunan bilangan bulat positif takkosong dan misalkan $ \func{N}{x} $ dinotasikan sebagai banyaknya anggota $ \mathfrak{A} $ yang tidak lebih besar dari $ x $. Misalkan $ \mathfrak{B} $ dinotasikan sebagai himpunan bilangan bulat positif $ b $ yang dapat dituliskan dalam bentuk $ b = a - a' $ dengan $ a \in \mathfrak{A} $ dan $ a' \in \mathfrak{A} $. Misalkan $ b_{1} < b_{2} < \cdots $ anggota-anggota dari $ \mathfrak{B} $ yang disusun dengan urutan yang menaik. Buktikan bahwa jika barisan $ b_{i + 1} - b_{i} $ tidak terbatas, maka $ \ds{\lim_{x \to \infty}{\frac{\func{N}{x}}{x}}} = 0. $
+		\item* Misalkan $ p $ bilangan prima ganjil. Buktikan bahwa setidaknya $ \frac{p + 1}{2} $ nilai dari $ n $ pada $ \lrbr{0, 1, 2, \dots, p - 1} $,
+		\[ \sum_{k = 0}^{p - 1}{k!n^{k}} \]
+		tidak habis dibagi $ p $.
+		\item* Cari semua pasangan terurut dari 64 bilangan bulat $ \left(x_{0}, x_{1}, \dots, x_{63}\right) $ sedemikian sehingga $ x_{0}, x_{1}, \dots, x_{63} $ merupakan anggota berbeda dari himpunan $ \lrbr{1, 2, \dots, 2021} $ dan
+		\[ x_{0} + x_{1} + 2x_{2} + 3x_{3} + \cdots + 63x_{63} \]
+		habis dibagi oleh 2021.
+		\item* Untuk setiap bilangan bulat positif $ k $, misalkan $ \func{A}{k} $ dinotasikan sebagai banyaknya pembagi ganjil dari $ k $ pada interval $ \lkrb{1, \sqrt{2k}} $. Tentukan nilai dari
+		\[ \sum_{k = 1}^{\infty}{\left(-1\right)^{k + 1}\frac{\func{A}{k}}{k}}. \]
+		\item* Buktikan bahwa untuk setiap bilangan bulat positif $ n $, terdapat bilangan bulat $ m $ sedemikian sehingga $ 2^{m} + m $ habis dibagi oleh $ n $.
+		\item* Untuk suatu bilangan prima $ p $ dan suatu bilangan bulat positif $ n $, notasikan $ \func{\nu_{p}}{n} $ sebagai eksponen dari $ p $ pada faktorisasi prima dari $ n! $. Diberikan bilangan bulat positif $ d $ dan himpunan berhingga bilangan prima $ \lrbr{p_{1}, \dots, p_{k}} $. Buktikan bahwa terdapat tak berhingga banyaknya bilangan bulat positif $ n $ sedemikian sehingga $ \divid{d}{\func{\nu_{p_{i}}}{n}} $ untuk setiap $ 1 \leq 1 \leq k $.
+		\item* Misalkan $ a $ dan $ b $ bilangan bulat berbeda yang lebih besar dari 1. Buktikan bahwa terdapat bilangan bulat positif $ n $ sedemikian sehingga $ \left(a^{n} - 1\right)\left(b^{n} - 1\right) $ bukan kuadrat sempurna.
+		\item* Baris dan kolom dari $ 2^{n} \times 2^{n} $ tabel diberi nomor dari 0 hingga $ 2^{n} - 1 $. Sel-sel dalam tabel tersebut diberi warna dengan sifat sebagai berikut: untuk setiap $ 0 \leq i, j \leq 2^{n} - 1 $, sel ke-$ j $ pada baris ke-$ i $ dan sel ke-$ \left(i + j\right) $ pada baris ke-$ j $ memiliki warna yang sama. (Indeks-indeks pada sel-sel setiap baris dianggap modulo $ 2^{n} $)
+		\par \noindent Buktikan bahwa maksimal banyaknya warna adalah $ 2^{n} $.
+	\end{enumerate}
+\end{document}

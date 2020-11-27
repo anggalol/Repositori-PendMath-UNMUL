@@ -1,0 +1,174 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{f_aops}{online}{}
+      \name{author}{1}{}{%
+        {{hash=abe1f5f1888a3412e434219ff8337cd8}{%
+           family={artofproblemsolving.com},
+           familyi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{abe1f5f1888a3412e434219ff8337cd8}
+      \strng{fullhash}{abe1f5f1888a3412e434219ff8337cd8}
+      \strng{bibnamehash}{abe1f5f1888a3412e434219ff8337cd8}
+      \strng{authorbibnamehash}{abe1f5f1888a3412e434219ff8337cd8}
+      \strng{authornamehash}{abe1f5f1888a3412e434219ff8337cd8}
+      \strng{authorfullhash}{abe1f5f1888a3412e434219ff8337cd8}
+      \field{labelalpha}{art}
+      \field{sortinit}{a}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Diakses pada: 11 November 2020}
+      \field{title}{Factoring}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://artofproblemsolving.com/wiki/index.php/Factoring
+      \endverb
+      \verb{url}
+      \verb https://artofproblemsolving.com/wiki/index.php/Factoring
+      \endverb
+    \endentry
+    \entry{ai_bri}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7cf0dd93132ce13d1c6e002fd167080c}{%
+           family={brilliant.org},
+           familyi={b\bibinitperiod}}}%
+      }
+      \strng{namehash}{7cf0dd93132ce13d1c6e002fd167080c}
+      \strng{fullhash}{7cf0dd93132ce13d1c6e002fd167080c}
+      \strng{bibnamehash}{7cf0dd93132ce13d1c6e002fd167080c}
+      \strng{authorbibnamehash}{7cf0dd93132ce13d1c6e002fd167080c}
+      \strng{authornamehash}{7cf0dd93132ce13d1c6e002fd167080c}
+      \strng{authorfullhash}{7cf0dd93132ce13d1c6e002fd167080c}
+      \field{labelalpha}{bri}
+      \field{sortinit}{b}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Diakses pada: 11 November 2020}
+      \field{title}{Algebraic Identities}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://brilliant.org/wiki/algebraic-identities/
+      \endverb
+      \verb{url}
+      \verb https://brilliant.org/wiki/algebraic-identities/
+      \endverb
+    \endentry
+    \entry{med19}{book}{}
+      \name{author}{1}{}{%
+        {{hash=126136c848c344fcbfa7145e7ed54041}{%
+           family={Medika},
+           familyi={M\bibinitperiod},
+           given={Anggara\bibnamedelima Duta},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Bontang}%
+      }
+      \list{publisher}{1}{%
+        {SMA Negeri 1 Bontang}%
+      }
+      \strng{namehash}{126136c848c344fcbfa7145e7ed54041}
+      \strng{fullhash}{126136c848c344fcbfa7145e7ed54041}
+      \strng{bibnamehash}{126136c848c344fcbfa7145e7ed54041}
+      \strng{authorbibnamehash}{126136c848c344fcbfa7145e7ed54041}
+      \strng{authornamehash}{126136c848c344fcbfa7145e7ed54041}
+      \strng{authorfullhash}{126136c848c344fcbfa7145e7ed54041}
+      \field{labelalpha}{Med19}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Daftar Rumus dan Sifat Matematika SMA/MA}
+      \field{year}{2019}
+      \true{nocite}
+    \endentry
+    \entry{pur07}{book}{}
+      \name{author}{3}{}{%
+        {{hash=2c41ba6f8d1e0abef4dfe91d8f11adc0}{%
+           family={Purell},
+           familyi={P\bibinitperiod},
+           given={Edwin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=166b1733b7283eef0a018afe4d4f18af}{%
+           family={Rigdon},
+           familyi={R\bibinitperiod},
+           given={Christopher\bibnamedelima J},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=fdfbe22949a5bac63edf7467cba68dd2}{%
+           family={Varberg},
+           familyi={V\bibinitperiod},
+           given={Dale\bibnamedelima E},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Prentice Hall}%
+      }
+      \strng{namehash}{e352120374f4cf812fc4135da7cac25f}
+      \strng{fullhash}{e352120374f4cf812fc4135da7cac25f}
+      \strng{bibnamehash}{e352120374f4cf812fc4135da7cac25f}
+      \strng{authorbibnamehash}{e352120374f4cf812fc4135da7cac25f}
+      \strng{authornamehash}{e352120374f4cf812fc4135da7cac25f}
+      \strng{authorfullhash}{e352120374f4cf812fc4135da7cac25f}
+      \field{labelalpha}{PRV07}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{9}
+      \field{title}{Calculus}
+      \field{year}{2007}
+      \true{nocite}
+    \endentry
+    \entry{sub18}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d08dd39cde17bb689b2f388853d2b1bd}{%
+           family={Subhan},
+           familyi={S\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Padang}%
+      }
+      \list{publisher}{1}{%
+        {Universitas Negeri Padang}%
+      }
+      \strng{namehash}{d08dd39cde17bb689b2f388853d2b1bd}
+      \strng{fullhash}{d08dd39cde17bb689b2f388853d2b1bd}
+      \strng{bibnamehash}{d08dd39cde17bb689b2f388853d2b1bd}
+      \strng{authorbibnamehash}{d08dd39cde17bb689b2f388853d2b1bd}
+      \strng{authornamehash}{d08dd39cde17bb689b2f388853d2b1bd}
+      \strng{authorfullhash}{d08dd39cde17bb689b2f388853d2b1bd}
+      \field{labelalpha}{Sub18}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Pengantar Dasar Matematika}
+      \field{year}{2018}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

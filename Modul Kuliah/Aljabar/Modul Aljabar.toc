@@ -1,0 +1,75 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\changetocdepth {2}
+\babel@toc {british}{}
+\contentsline {chapter}{Hak Cipta}{i}{Doc-Start}%
+\contentsline {chapter}{Kata Pengantar}{iii}{chapter*.1}%
+\contentsline {chapter}{Ucapan Terima Kasih}{v}{chapter*.2}%
+\contentsline {chapter}{Cara Menggunakan Buku}{vii}{chapter*.3}%
+\contentsline {chapter}{Daftar Notasi}{ix}{chapter*.4}%
+\contentsline {chapter}{Contents}{xi}{section*.5}%
+\contentsline {chapter}{\chapternumberline {1}Pendahuluan}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Operasi-operasi Aljabar}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Himpunan}{2}{section.1.2}%
+\contentsline {paragraph}{Definisi 1.2.1 }{3}{section*.6}%
+\contentsline {subsection}{\numberline {1.2.1}Latihan Soal 1.2}{6}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Identitas Aljabar}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Latihan Soal 1.3}{7}{subsection.1.3.1}%
+\contentsline {chapter}{\chapternumberline {2}Persamaan Kuadrat dan Fungsi Kuadrat}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Persamaan Kuadrat}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Cara Mencari Solusi Persamaan Kuadrat}{10}{subsection.2.1.1}%
+\contentsline {subsubsection}{Faktorisasi}{10}{section*.11}%
+\contentsline {subsubsection}{Melengkapkan Kuadrat}{12}{section*.12}%
+\contentsline {subsubsection}{Rumus Kuadratik}{13}{section*.13}%
+\contentsline {subsection}{\numberline {2.1.2}Diskriminan}{15}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Jenis-jenis Akar Persamaan Kuadrat}{15}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Bentuk-bentuk Simetris Akar-Akar Persamaan Kuadrat}{17}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Sifat-sifat Akar Persamaan Kuadrat}{19}{subsection.2.1.5}%
+\contentsline {subsubsection}{Kedua Akarnya Bernilai Positif}{20}{section*.14}%
+\contentsline {subsubsection}{Kedua Akarnya Bernilai Negatif}{20}{section*.15}%
+\contentsline {subsubsection}{Kedua Akarnya Berlainan/Berlawanan Tanda}{21}{section*.16}%
+\contentsline {subsubsection}{Kedua Akarnya Berlawanan}{21}{section*.17}%
+\contentsline {subsubsection}{Kedua Akarnya Berkebalikan}{22}{section*.18}%
+\contentsline {subsection}{\numberline {2.1.6}Akar Tunggal vs Akar Ganda}{23}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Menyusun Persamaan Kuadrat Baru}{24}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}Contoh Soal HOTS}{25}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}Latihan Soal 2.1}{28}{subsection.2.1.9}%
+\contentsline {subsubsection}{Bagian Pertama}{28}{section*.20}%
+\contentsline {subsubsection}{Bagian Kedua \textthreequartersemdash \xspace Soal Tantangan}{31}{section*.21}%
+\contentsline {section}{\numberline {2.2}Fungsi Kuadrat}{33}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Grafik Fungsi Kuadrat}{34}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Menentukan Fungsi Kuadrat}{34}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Domain dan Jangkauan Fungsi Kuadrat}{35}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Definit Positif dan Definit Negatif}{35}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Sifat Fungsi Kuadrat Terhadap Fungsi Lainnya}{36}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Titik Tetap Fungsi Kuadrat}{37}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Penerapan Fungsi Kuadrat dalam Kehidupan Sehari-hari}{37}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Fungsi Kuadrat Umum*}{38}{subsection.2.2.8}%
+\contentsline {subsection}{\numberline {2.2.9}Latihan Soal 2.2}{38}{subsection.2.2.9}%
+\contentsline {section}{\numberline {2.3}Uji Kompetensi Bab \ref {sec:second}}{40}{section.2.3}%
+\contentsline {chapter}{\chapternumberline {3}Pertidaksamaan}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Pertidaksamaan Polinomial}{43}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Pertidaksamaan Nilai Mutlak}{44}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pertidaksamaan Rasional}{44}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Pertidaksamaan Irasional}{44}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Uji Kompetensi Bab \ref {sec:third}}{45}{section.3.5}%
+\contentsline {chapter}{\chapternumberline {4}Eksponen dan Logaritma}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Eksponen}{48}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Logaritma}{49}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Uji Kompetensi Bab \ref {sec:fourth}}{50}{section.4.3}%
+\contentsline {chapter}{\chapternumberline {5}Barisan dan Deret}{53}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Barisan dan Deret Aritmetika}{53}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Barisan dan Deret Geometri}{54}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Uji Kompetensi Bab \ref {sec:fifth}}{56}{section.5.3}%
+\contentsline {chapter}{Appendices}{59}{section*.22}%
+\contentsline {appendix}{\chapternumberline {A}Notasi Sigma dan Notasi Pi}{61}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Notasi Sigma}{61}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Notasi Pi}{62}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Uji Kompetensi Apendiks \ref {sec:first-app}}{62}{section.A.3}%
+\contentsline {appendix}{\chapternumberline {B}Metode Pembuktian Matematika}{65}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Pembuktian Langsung}{67}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Pembuktian Tidak Langsung}{67}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Induksi Matematika}{67}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Uji Kompetensi Apendiks \ref {sec:second-app}}{67}{section.B.4}%
+\contentsline {chapter}{Tentang Penulis}{69}{appendix*.23}%
+\contentsline {chapter}{Sumber-sumber Soal}{71}{appendix*.24}%
+\contentsline {chapter}{Daftar Pustaka}{73}{section*.26}%
