@@ -785,23 +785,185 @@ Sebelum membahas mengenai fungsi kuadrat, kita harus mengetahui terlebih dahulu 
 
 \par Dalam hal ini, himpunan semua input yang mungkin bagi suatu fungsi $ f $ kita katakan sebagai domain dari fungsi $ f $ dan himpunan semua output yang mungkin bagi suatu fungsi $ f $ dikatakan sebagai jangkauan (\textit{range}) dari fungsi $ f $. Domain fungsi $ f $ biasa dinotasikan sebagai $ \func{\Dom}{f} $ atau $ D_{f} $, dan jangkauan fungsi $ f $ biasa dinotasikan sebagai $ \func{\Ran}{f} $ atau $ R_{f} $. Pada contoh sebelumnya, $ \func{f}{x} = 2x + 1 $ memiliki domain $ \func{\Dom}{f} = \mathbb{R} $ dan jangkauan $ \func{\Ran}{f} = \mathbb{R} $, serta $ \func{g}{x} = \sqrt{x} $ memiliki domain $ \func{\Dom}{g} = \mathbb{R}_{\geq 0} $ dan jangkauan $ \func{\Ran}{g} = \mathbb{R}_{\geq 0} $ (mengapa?).
 
+\par Jika $ f $ memiliki domain $ A $ dan jangkauan $ B $, maka $ f $ merupakan fungsi dari himpunan $ A $ ke himpunan $ B $. Secara simbolik, kita bisa tuliskan sebagai $ f \colon A \to B $. Tentunya notasi ini akan lebih mempermudah penulisannya.
+
+\begin{warningbox}
+	Jika diketahui $ f \colon A \to B $, belum tentu jangkauan fungsi $ f $ adalah $ B $. Dalam banyak kasus, biasanya jangkauan fungsi $ f $ merupakan himpunan bagian sejati dari $ B $ atau biasa disimbolkan dengan $ \func{\Ran}{f} \subset B $. Artinya, jangkauan fungsi $ f $ ini termuat di dalam himpunan $ B $ yang dapat diilustrasikan sebagai berikut.
+	\begin{center}
+		\begin{tikzpicture}
+			\draw (0, 0) circle (2cm);
+			\draw (-0.5, -0.5) circle (1cm);
+			
+			\node[below] at (1, 1) {$ B $};
+			\node at (-0.5, -0.5) {$ \func{\Ran}{f} $};
+		\end{tikzpicture}
+	\end{center}
+\end{warningbox}
+
+\par Perlu diketahui juga bahwa fungsi $ \func{g}{x} = x + 1 $ sebenarnya ekuivalen dengan fungsi $ \func{r}{y} = y + 1 $. Variabel yang digunakan dalam suatu fungsi sebenarnya tidak terlalu penting, yang penting dalam suatu fungsi adalah aturan pemetaannya itu sendiri atau formulanya.
+
 \begin{explbox}
-	Coba cari tahu mengenai kodomain dan \textit{image} dari suatu fungsi. Apakah perbedaan antara jangkauan, kodomain, dan \textit{image}?
+	Coba cari tahu mengenai kodomain dan peta (\textit{image}) dari suatu fungsi. Apakah perbedaan antara jangkauan, kodomain, dan peta?
 \end{explbox}
 
-\par Jika $ f $ memiliki domain $ A $ dan jangkauan $ B $, maka $ f $ merupakan fungsi dari himpunan $ A $ ke himpunan $ B $. Secara simbolik, kita bisa tuliskan sebagai $ f \colon A \to B $. Tentunya notasi ini akan lebih mempermudah penulisannya. Perlu diketahui juga bahwa fungsi $ \func{g}{x} = x + 1 $ sebenarnya ekuivalen dengan fungsi $ \func{r}{y} = y + 1 $. Variabel yang digunakan dalam suatu fungsi sebenarnya tidak terlalu penting, yang penting dalam suatu fungsi adalah aturan pemetaannya itu sendiri atau formulanya.
-
-\par Setelah mengetahui sekilas mengenai fungsi secara umum, kita kemudian siap untuk mempelajari fungsi kuadrat. Fungsi kuadrat memiliki bentuk umum
+\par Setelah mengetahui sekilas mengenai fungsi secara umum, kita kemudian siap untuk mempelajari fungsi kuadrat. Fungsi kuadrat adalah salah satu dari banyak jenis fungsi yang memiliki bentuk umum
 \begin{equation} \label{eq:222}
 	\func{f}{x} = ax^{2} + bx + c
 \end{equation}
 dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 
-\par Bentuk umum fungsi kuadrat di atas mengingatkan kita kepada sesuatu yang familiar, yaitu persamaan kuadrat. Tetapi dalam persamaan kuadrat, salah satu ruasnya adalah nol. Salah satu contoh fungsi kuadrat adalah $ \func{f}{x} = x^{2} - 3x + 1 $. Disini, nilai $ a = 1 $, $ b = -3 $, dan $ c = 1 $. Selain itu, $ \func{g}{x} = x^{2} $ juga merupakan fungsi kuadrat dengan nilai $ a = 1 $, $ b = 0 $, dan $ c = 0 $.
+\par Salah satu contoh dari fungsi kuadrat adalah $ \func{f}{x} = x^{2} - 3x + 1 $. Disini, nilai $ a = 1 $, $ b = -3 $, dan $ c = 1 $. Selain itu, $ \func{g}{x} = x^{2} $ juga merupakan fungsi kuadrat dengan nilai $ a = 1 $, $ b = 0 $, dan $ c = 0 $.
 
 \subsection{Grafik Fungsi Kuadrat}
 	
-	\kant[1-2]
+	Grafik fungsi kuadrat adalah berupa parabola, yaitu suatu kurva pada bidang yang simetris dan berbentuk mirip seperti huruf 'U'. Dalam matematika sendiri, terdapat definisi matematis mengenai parabola ini yang melibatkan titik dan garis. Definisi tersebut tidak akan kita bahas pada buku ini. Saat ini kita cukup setuju dengan fakta bahwa fungsi kuadrat berbentuk parabola.
+	
+	\begin{explbox}
+		Bagi pembaca yang tertarik, Anda dapat mencoba mencari definisi dari parabola dan membuktikan bahwa fungsi kuadrat sebenarnya merupakan parabola.
+	\end{explbox}
+	
+	\par Grafik fungsi kuadrat juga sangat berkaitan erat dengan koefisien-koefisiennya (dalam fungsi kuadrat pada persamaan \ref{eq:222}, koefisien-koefisien yang dimaksud adalah $ a $, $ b $, dan $ c $). Koefisien $ a $ mengatur derajat kelengkungan grafik fungsi kuadrat; semakin besar nilai $ a $ akan memberikan grafik fungsi kuadrat yang lebih tertutup (melengkung tajam). Selain itu, koefisien $ a $ juga mengatur arah kecekungan grafik fungsi kuadrat; jika $ a > 0 $, maka grafik fungsi kuadrat tersebut akan cekung ke atas (terbuka ke atas), dan jika $ a < 0 $, maka grafik fungsi kuadrat tersebut akan cekung ke bawah (terbuka ke bawah). Hal ini akan dipelajari lebih lanjut pada mata kuliah kalkulus. Berikut merupakan ilustrasi grafik fungsi kuadrat untuk berbagai nilai $ a $.
+	\begin{multicols}{2}
+		\noindent
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.5]
+				\begin{axis}
+					[axis x line=center, axis y line=center, ymax=40, axis line style={<->}]
+					\addplot[smooth, red] {0.5 * x^2};
+					\addplot[smooth, blue] {x^2};
+					\addplot[smooth, pink] {1.5 * x^2};
+					\addplot[smooth, purple] {2 * x^2};
+					
+					\legend{$ \func{f}{x} = 0.5x^2 $, $ \func{f}{x} = 1.0x^2 $, $ \func{f}{x} = 1.5x^2 $, $ \func{f}{x} = 2.0x^2 $};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Grafik fungsi kuadrat $ \func{f}{x} $ untuk beberapa nilai $ a $.}
+		\end{figure}
+		
+		\columnbreak
+		
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.5]
+				\begin{axis}
+					[axis x line=center, axis y line=center, axis line style={<->}]
+					\addplot[smooth, red] {x^2 + 1};
+					\addplot[smooth, blue] {-x^2 - 1};
+					
+					\legend{$ \func{f}{x} = x^2 + 1 $, $ \func{f}{x} = -x^2 - 1 $};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Grafik fungsi kuadrat $ \func{f}{x} $ ketika $ a > 0 $ dan ketika $ a < 0 $.}
+		\end{figure}
+	\end{multicols}
+	
+	\par Selanjutnya pada fungsi kuadrat juga terdapat koefisien $ c $. Kita akan membahas koefisien $ b $ di akhir karena agak rumit. Perhatikan bahwa pada fungsi kuadrat umum \ref{eq:222}, jika kita substitusi $ x = 0 $, kita akan mendapatkan $ \func{f}{0} = a\left(0\right)^{2} + b\left(0\right) + c = c $. Akibatnya, $ f $ akan berpotongan dengan sumbu-$ y $ tepat pada titik $ \left(0, c\right) $. Oleh karena itu, koefisien $ c $ pada fungsi kuadrat mengatur dimana fungsi kuadrat tersebut akan berpotongan dengan sumbu-$ y $. Jika $ c > 0 $, maka fungsi kuadrat akan berpotongan dengan sumbu-$ y $ positif. Sedangkan jika $ c < 0 $, maka fungsi kuadrat akan berpotongan dengan sumbu-$ y $ negatif (bagaimana jika $ c = 0 $?). Berikut merupakan ilustrasi grafik fungsi kuadrat untuk berbagai nilai $ c $.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.7]
+			\begin{axis}
+				[axis x line=center, axis y line=center, ymin=-15, axis line style={<->}]
+				\addplot[smooth, red] {x^2 + x + -10};
+				\addplot[smooth, blue] {x^2 + x + 0};
+				\addplot[smooth, pink] {x^2 + x + 10};
+				\addplot[smooth, purple] {x^2 + x + 20};
+				
+				\legend{$ \func{f}{x} = x^2 + x - 10 $, $ \func{f}{x} = x^2 + x + 00 $, $ \func{f}{x} = x^2 + x + 10 $, $ \func{f}{x} = x^2 + x + 20 $};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Grafik fungsi kuadrat $ \func{f}{x} $ untuk beberapa nilai $ c $.}
+	\end{figure}
+	
+	\par Sama seperti persamaan kuadrat, pada fungsi kuadrat juga terdapat diskriminan, yaitu $ b^{2} - 4ac $. Diskriminan fungsi kuadrat tidak dilambangkan dengan $ D $ seperti pada persamaan kuadrat, tetapi langsung disebutkan dengan $ b^{2} - 4ac $. Diskriminan pada persamaan kuadrat memberikan kita informasi mengenai banyaknya akar persamaan kuadrat. Akar persamaan kuadrat disini adalah beberapa nilai $ x $ yang 'menghasilkan' 0 pada persamaan tersebut. Oleh karena itu, diskriminan pada fungsi kuadrat akan memberikan kita informasi mengenai banyaknya titik potong grafik fungsi kuadrat dengan sumbu-$ x $. Jika $ b^{2} - 4ac > 0 $, maka grafik fungsi kuadrat akan berpotongan dengan sumbu-$ x $ di dua titik berbeda. Sedangkan jika $ b^{2} - 4ac < 0 $, maka grafik fungsi kuadrat tidak akan berpotongan dengan sumbu-$ x $ (bagaimana jika $ b^{2} - 4ac = 0 $?). Berikut merupakan ilustrasi grafik fungsi kuadrat untuk berbagai nilai diskriminannya.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.7]
+			\begin{axis}
+				[axis x line=center, axis y line=center, axis line style={<->}]
+				\addplot[smooth, red] {x^2 + x + 20};
+				\addplot[smooth, blue] {-x^2 + x + 10};
+				
+				\legend{$ b^2 - 4ac < 0 $, $ b^2 - 4ac > 0 $};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Grafik fungsi kuadrat $ \func{f}{x} $ untuk beberapa nilai $ c $.}
+	\end{figure}
+	
+	\par Ketika fungsi kuadrat memiliki diskriminan yang bernilai positif, maka grafiknya akan berpotongan dengan sumbu-$ x $ pada dua titik berbeda. Misalkan titik-titik tersebut adalah $ \left(x_{1}, 0\right) $ dan $ \left(x_{2}, 0\right) $. Perhatikan bahwa $ x_{1} $ dan $ x_{2} $ disini adalah solusi dari persamaan $ \func{f}{x} = ax^{2} + bx + c = 0 $. Mudah dilihat bahwa jika kita menarik garis vertikal yang melalui titik tengah antara $ x_{1} $ dan $ x_{2} $, maka garis tersebut akan membagi dua grafik fungsi kuadrat menjadi dua bagian yang simetris. Garis vertikal tersebut dinamakan sumbu simetri dan biasa dinotasikan sebagai $ x_{p} $.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}
+				[ticks=none, axis x line=center, axis y line=center, xmin=-1, xmax=4, ymin=-1.5, ymax=4, axis line style={<->}]
+				\addplot[smooth, red] {x^2 - 4*x + 3};
+				\addplot[smooth, blue] coordinates {(2, -1.5) (2, 4)} node[below=0.5cm, right] {$ x = x_{p} $};
+				
+				\addplot[black, mark = *] coordinates {(1, 0)};
+				\addplot[black, mark = *] coordinates {(3, 0)};
+				
+				\node[below left] at (axis cs:1,0) {$ x_{1} $};
+				\node[below right] at (axis cs:3,0) {$ x_{2} $};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Ilustrasi sumbu simetri pada suatu grafik fungsi kuadrat. Perhatikan bahwa sumbu simetri tersebut pastilah bernilai positif karena berada di sebelah kanan sumbu-$ y $.}
+	\end{figure}
+	Karena sumbu simetri melalui titik tengah $ x_{1} $ dan $ x_{2} $, maka persamaan garisnya adalah
+	\begin{equation} \label{eq:223}
+		x = x_{p} = \frac{x_{1} + x_{2}}{2}.
+	\end{equation}
+	Oleh karena itu, dengan menggunakan formula \ref{eq:210}, kita dapat menulis ulang persamaan \ref{eq:223} sebagai
+	\begin{equation} \label{eq:224}
+		x = x_{p} = -\frac{b}{2a}.
+	\end{equation}
+	
+	\par Perpotongan sumbu simetri dengan grafik fungsi kuadrat disebut sebagai titik puncak atau titik ekstrim\footnote{Biasa juga disebut sebagai titik balik.}. Ada dua tipe titik ekstrim yang bergantung pada tanda dari koefisien $ a $. Jika $ a > 0 $, maka titik ekstrimnya berupa titik minimum (titik balik minimum). Sedangkan jika $ a < 0 $, maka titik ekstrimnya berupa titik maksimum (titik balik maksimum). Hal ini dapat dicek dengan menggunakan uji turunan pertama yang akan dipelajari pada mata kuliah kalkulus. Koordinat dari titik ekstrim ini adalah
+	\[ \left(x_{p}, \func{f}{x_{p}}\right) \quad \mbox{atau} \quad \left(-\frac{b}{2a}, -\frac{b^{2} - 4ac}{4a}\right). \]
+	Disini, $ x_{p} $ disebut sebagai absis dan $ \func{f}{x_{p}} $ disebut sebagai ordinat. Faktanya, untuk sebrang titik koordinat $ \left(u, v\right) $, $ u $ disebut sebagai absis dan $ v $ disebut sebagai ordinat.
+	
+	\begin{explbox}
+		Coba uraikan mengapa $ \func{f}{x_{p}} = -\dfrac{b^{2} - 4ac}{4a} $.
+	\end{explbox}
+	
+	\par Terakhir, kita akan membahas mengenai koefisien $ b $. Dari persamaan \ref{eq:224}, kita tahu bahwa koefisien $ a $ dan koefisien $ b $ bersama-sama mengontrol lokasi dari sumbu simetri (dan tentunya juga mengontrol lokasi dari absis titik ekstrim) suatu fungsi kuadrat. Dari persamaan \ref{eq:224} juga mudah didapatkan bahwa $ b = -2ax_{p} $. Oleh karena itu, jika $ a $ dan $ x_{p} $ bertanda sama, maka $ b $ akan bernilai negatif. Sedangkan jika $ a $ dan $ x_{p} $ berbeda tanda, maka $ b $ akan bernilai positif.
+	
+	\begin{explbox}
+		Periksa apakah konvers dari pernyataan-pernyataan berikut juga benar.
+		\begin{enumerate}[leftmargin=*]
+			\item Jika $ a > 0 $, maka grafik fungsi kuadratnya akan cekung ke atas (terbuka ke atas).
+			\item Jika $ b > 0 $, maka $ a $ dan $ x_{p} $ berbeda tanda.
+			\item Jika $ c > 0 $, maka grafik fungsi kuadratnya akan memotong sumbu-$ y $ positif.
+			\item Jika $ b^{2} - 4ac > 0 $, maka grafik fungsi kuadratnya akan memotong sumbu-$ x $ tepat pada dua titik berbeda.
+		\end{enumerate}
+	\end{explbox}
+	
+	\par Untuk mengakhiri bagian ini, kita akan mengerjakan beberapa contoh soal agar Anda dapat lebih memantapkan diri dalam mengerjakan soal-soal latihan yang diberikan.
+	
+	\begin{contoh}
+		Tentukan tanda dari $ a $, $ b $, $ c $, dan $ b^{2} - 4ac $ dari grafik fungsi kuadrat berikut.
+		\begin{center}
+			\begin{tikzpicture}[scale=0.7]
+				\begin{axis}
+					[ticks=none, axis x line=center, axis y line=center, xmin=-8, xmax=5, ymin=-40, ymax=15, axis line style={<->}, legend pos=south west]
+					\addplot[smooth, red, domain=-8:5] {-x^2 - (17/5)*x + 5};
+					
+					\legend{$ \func{f}{x} = ax^{2} + bx + c $}
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+	\end{contoh}
+	\begin{jawab}
+		Karena grafik fungsinya terbuka ke bawah, maka $ a < 0 $. Karena grafik fungsinya memotong sumbu-$ y $ positif, maka $ c > 0 $. Karena grafik fungsinya memotong sumbu-$ x $ tepat di dua titik berbeda, maka $ b^{2} - 4ac > 0 $. Karena $ x_{p} < 0 $ dan $ a < 0 $, berarti $ x_{p} $ dan $ a $ bertanda sama sehingga $ b > 0 $.
+	\end{jawab}
+	
+	\begin{contoh}
+		Sketsakan grafik fungsi kuadrat $ \func{f}{x} = ax^{2} + bx + c $ jika diketahui $ a > 0 $, $ b > 0 $, $ c < 0 $, dan $ b^{2} - 4ac = 0 $.
+	\end{contoh}
+	\begin{jawab}
+		Karena $ a > 0 $, maka $ f $ terbuka ke atas. Karena $ c < 0 $, maka $ f $ memotong sumbu-$ y $ negatif. Karena $ b^{2} - 4ac = 0 $, maka $ f $ menyinggung sumbu-$ x $ tepat di satu titik. Karena $ b > 0 $, maka $ a $ dan $ x_{p} $ berbeda tanda sehingga $ x_{p} > 0 $.
+		\par \noindent Sebelum mensketsakan grafik, cermati dahulu apakah mungkin untuk mensketsakan grafik dengan kondisi yang diberikan. Perhatikan bahwa $ f $ terbuka ke atas dan memotong sumbu-$ y $ negatif. Berarti titik puncaknya (dalam hal ini titik balik minimum) haruslah berada di bawah sumbu-$ x $. Akibatnya, $ f $ memotong sumbu-$ x $ tepat di dua titik. Hal ini berkontradiksi dengan fakta bahwa $ f $ haruslah menyinggung sumbu-$ x $ tepat di satu titik.
+		\par \noindent Jadi tidak mungkin ada fungsi kuadrat yang memenuhi kondisi yang diberikan sehingga tidak mungkin juga untuk mensketsakan grafiknya.
+	\end{jawab}
 
 \subsection{Menentukan Fungsi Kuadrat}
 	
