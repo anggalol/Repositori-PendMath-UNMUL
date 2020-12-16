@@ -5,11 +5,14 @@
 \documentclass[a4paper, british]{memoir}
 % Add [final] to remove marginal notes
 
+\ProvidesFile{mtc-mem.tex}
+
 \usepackage{style}       % Custom style
 \usepackage{mnfrontpage} % Front page
 \usepackage{kantlipsum}  % Dummy text
 \usepackage{venndiagram}
 \usepackage{tcolorbox}
+\usepackage{appendix}
 \usepackage{multicol}
 \usepackage{float}
 \usepackage{pgfplots}
@@ -48,6 +51,17 @@
 \declaretheorem[style = remark,     sibling = teorema]{catatan}
 \declaretheorem[style = pfs]{bukti}
 \declaretheorem[style = answer]{jawab}
+
+%% Toggle untuk package etoolbox %%
+\providetoggle{blx@lang@captions@indonesian}
+
+%% Perubahan bahasa %%
+\addto\captionsindonesian{%
+	\renewcommand{\appendixname}%
+	{Apendiks}%
+}
+\renewcommand{\appendixpagename}{Apendiks}
+\renewcommand{\appendixtocname}{Apendiks}
 
 %% Better dash %%
 \newcommand{\dashh}{\dash \space}
@@ -207,13 +221,14 @@
     sections/chapter3,
     sections/chapter4,
     sections/chapter5,
+    sections/chapter6,
     sections/appendixA,
     sections/appendixB,
     sections/about,
     sections/source
 }
 
-\settocdepth{subsection}
+\settocdepth{section}
 \setsecnumdepth{subsection}
 
 \begin{document}
@@ -231,8 +246,8 @@
     \cleartorecto%
     
     {
-    	\hypersetup{linkcolor=black}
-    	\tableofcontents    % Or \tableofcontents*
+    	\hypersetup{linkcolor=black}%
+    	\tableofcontents*    % Or \tableofcontents*
     }
 
     \mainmatter         % Folios in Arabic numerals, numbered chapters.
@@ -243,6 +258,7 @@
     \include{sections/chapter3}
     \include{sections/chapter4}
     \include{sections/chapter5}
+    \include{sections/chapter6}
 
     \appendix           % "Chapter" is renamed "Appendix"
     \appendixpage       % Similar to \part*{Appendices}, but appears in TOC.

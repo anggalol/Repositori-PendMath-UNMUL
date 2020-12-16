@@ -6,6 +6,7 @@
 \contentsline {chapter}{Ucapan Terima Kasih}{v}{chapter*.2}%
 \contentsline {chapter}{Cara Menggunakan Buku}{vii}{chapter*.3}%
 \contentsline {chapter}{Daftar Notasi}{ix}{chapter*.4}%
+\contentsline {chapter}{Daftar Isi}{xi}{section*.5}%
 \contentsline {chapter}{\chapternumberline {1}Pendahuluan}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Operasi-operasi Aljabar}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Himpunan}{2}{section.1.2}%
@@ -14,23 +15,24 @@
 \contentsline {section}{\numberline {1.3}Identitas Aljabar}{6}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Latihan Soal 1.3}{7}{subsection.1.3.1}%
 \contentsline {chapter}{\chapternumberline {2}Persamaan Kuadrat dan Fungsi Kuadrat}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Persamaan Kuadrat}{9}{section.2.1}%
+\ttl@starttoc {chapters@1}
+\contentsline {section}{\numberline {2.1}Persamaan Kuadrat}{10}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Cara Mencari Solusi Persamaan Kuadrat}{10}{subsection.2.1.1}%
 \contentsline {subsubsection}{Faktorisasi}{10}{section*.11}%
 \contentsline {subsubsection}{Melengkapkan Kuadrat}{12}{section*.12}%
-\contentsline {subsubsection}{Rumus Kuadratik}{13}{section*.13}%
+\contentsline {subsubsection}{Rumus Kuadratik}{14}{section*.13}%
 \contentsline {subsection}{\numberline {2.1.2}Diskriminan}{15}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Jenis-jenis Akar Persamaan Kuadrat}{15}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.3}Jenis-jenis Akar Persamaan Kuadrat}{16}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Bentuk-bentuk Simetris Akar-Akar Persamaan Kuadrat}{17}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Sifat-sifat Akar Persamaan Kuadrat}{19}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.5}Sifat-sifat Akar Persamaan Kuadrat}{20}{subsection.2.1.5}%
 \contentsline {subsubsection}{Kedua Akarnya Bernilai Positif}{20}{section*.14}%
-\contentsline {subsubsection}{Kedua Akarnya Bernilai Negatif}{20}{section*.15}%
+\contentsline {subsubsection}{Kedua Akarnya Bernilai Negatif}{21}{section*.15}%
 \contentsline {subsubsection}{Kedua Akarnya Berlainan/Berlawanan Tanda}{21}{section*.16}%
-\contentsline {subsubsection}{Kedua Akarnya Berlawanan}{21}{section*.17}%
+\contentsline {subsubsection}{Kedua Akarnya Berlawanan}{22}{section*.17}%
 \contentsline {subsubsection}{Kedua Akarnya Berkebalikan}{22}{section*.18}%
 \contentsline {subsection}{\numberline {2.1.6}Akar Tunggal vs Akar Ganda}{23}{subsection.2.1.6}%
 \contentsline {subsection}{\numberline {2.1.7}Menyusun Persamaan Kuadrat Baru}{24}{subsection.2.1.7}%
-\contentsline {subsection}{\numberline {2.1.8}Contoh Soal HOTS}{25}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.8}Contoh Soal HOTS}{26}{subsection.2.1.8}%
 \contentsline {subsection}{\numberline {2.1.9}Latihan Soal 2.1}{28}{subsection.2.1.9}%
 \contentsline {subsubsection}{Bagian Pertama}{28}{section*.20}%
 \contentsline {subsubsection}{Bagian Kedua \textthreequartersemdash \xspace Soal Tantangan}{31}{section*.21}%
@@ -78,3 +80,4 @@
 \contentsline {chapter}{Tentang Penulis}{77}{appendix*.23}%
 \contentsline {chapter}{Sumber-sumber Soal}{79}{appendix*.24}%
 \contentsline {chapter}{Daftar Pustaka}{81}{section*.26}%
+\contentsfinish 

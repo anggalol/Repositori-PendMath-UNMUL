@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.7)  27 NOV 2020 00:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.7)  15 DEC 2020 18:37
 entering extended mode
 **"./Modul Aljabar.tex"
 ("Modul Aljabar.tex"
@@ -330,7 +330,9 @@ Package tocloft [2008/07/23] emulated by memoir.
 Package tocvsec2 [2008/07/23] emulated by memoir.
 Package verbatim [2008/07/23] emulated by memoir.
 Package verse [2008/07/23] emulated by memoir.
-) (style.sty
+)
+File: mtc-mem.tex 
+ (style.sty
 Package: style 2019/06/27 Custom LaTeX style
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/silence\silence.sty"
@@ -1249,7 +1251,11 @@ Package babel Info: \l@australian = using hyphenrules for ukenglish
 (babel)             (\language77) on input line 105.
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language77) on input line 108.
-)))
+))
+("C:\Program Files\MiKTeX 2.9\tex/latex/babel-indonesian\indonesian.ldf"
+Language: indonesian 2017/02/15 v1.0m Bahasa Indonesia support from the babel s
+ystem
+))
 ("C:\Program Files\MiKTeX 2.9\tex/latex/csquotes\csquotes.sty"
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
 
@@ -2292,7 +2298,7 @@ Class memoir Info: For the caption package to function properly with memoir, we
  will now reset \caption and friends to kernel defaults and then let the
 caption package take over. Remember: all caption configuration now goes via the
  caption package interface, not the interface from the memoir class.  on input 
-line 17.
+line 20.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption.sty"
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
@@ -2329,44 +2335,49 @@ Package caption Info: listings package is loaded.
 Package thmtools Info: Key `qed' (with value `$\square $')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=pfs' on input line 33.
+(thmtools)             that uses `style=pfs' on input line 36.
 Package thmtools Info: Key `numbered' (with value `no')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=pfs' on input line 33.
+(thmtools)             that uses `style=pfs' on input line 36.
 Package thmtools Info: Key `numbered' (with value `no')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=answer' on input line 38.
+(thmtools)             that uses `style=answer' on input line 41.
 \c@teorema=\count558
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
-Package csquotes Info: Redefining alias 'default' -> 'british'.
 
+
+Package csquotes Warning: No style for language 'indonesian'.
+(csquotes)                Using fallback style on input line 234.
+
+Package csquotes Info: Redefining alias 'default' -> 'fallback'.
 ("Modul Aljabar.aux" (sections/copyright.aux) (sections/preface.aux)
 (sections/acknowledgements.aux) (sections/using.aux) (sections/notation.aux)
 (sections/introduction.aux) (sections/chapter2.aux) (sections/chapter3.aux)
-(sections/chapter4.aux) (sections/chapter5.aux) (sections/appendixA.aux)
-(sections/appendixB.aux) (sections/about.aux) (sections/source.aux))
+(sections/chapter4.aux) (sections/chapter5.aux) (sections/chapter6.aux)
+(sections/appendixA.aux) (sections/appendixB.aux) (sections/about.aux)
+(sections/source.aux))
 \openout1 = `"Modul Aljabar.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 219.
-LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -2386,14 +2397,14 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-LaTeX Info: Redefining \microtypecontext on input line 219.
+LaTeX Info: Redefining \microtypecontext on input line 234.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 219.
+LaTeX Info: Redefining \showhyphens on input line 234.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2410,13 +2421,21 @@ English.dict"
 Dictionary: translator-basic-dictionary, Language: English 
 )
 \c@lstlisting=\count565
+Package biblatex Info: Trying to load language 'indonesian'...
+Package biblatex Info: ... file 'indonesian.lbx' not found.
+
+
+Package biblatex Warning: Language 'indonesian' not supported.
+(biblatex)                Using dummy definitions on input line 234.
+
 Package biblatex Info: Trying to load language 'british'...
 Package biblatex Info: ... file 'british.lbx' found.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/lbx\british.lbx"
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/lbx\british.lbx"
 File: british.lbx 2020/08/23 v3.15a biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/lbx\english.lbx"
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/biblatex/lbx\english.lbx"
 File: english.lbx 2020/08/23 v3.15a biblatex localization (PK/MW)
 ))
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -2428,9 +2447,9 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '"Modul Aljabar".bbl' found.
 
 ("Modul Aljabar.bbl")
-Package biblatex Info: Reference section=0 on input line 219.
-Package biblatex Info: Reference segment=0 on input line 219.
-Package hyperref Info: Link coloring ON on input line 219.
+Package biblatex Info: Reference section=0 on input line 234.
+Package biblatex Info: Reference segment=0 on input line 234.
+Package hyperref Info: Link coloring ON on input line 234.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -2446,15 +2465,15 @@ LaTeX Info: Redefining \Ref on input line 520.
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 219.
-LaTeX Info: Redefining \ref on input line 219.
-LaTeX Info: Redefining \pageref on input line 219.
-LaTeX Info: Redefining \nameref on input line 219.
+LaTeX Info: Redefining \nameref on input line 234.
+LaTeX Info: Redefining \ref on input line 234.
+LaTeX Info: Redefining \pageref on input line 234.
+LaTeX Info: Redefining \nameref on input line 234.
 ("Modul Aljabar.out") ("Modul Aljabar.out")
 \@outlinefile=\write9
 \openout9 = `"Modul Aljabar.out"'.
 
-LaTeX Info: Redefining \Ref on input line 219.
+LaTeX Info: Redefining \Ref on input line 234.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.17} (current compat level: 1.12).
@@ -2463,35 +2482,35 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package newfloat Info: `float' package detected.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-19.
+34.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-19.
+34.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-219.
+234.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-219.
+234.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 219.
+(Font)              <10> on input line 234.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 219.
+(Font)              <7> on input line 234.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 219.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 219
+(Font)              <5> on input line 234.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 234
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -2500,7 +2519,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 219
+LaTeX Font Info:    Trying to load font information for U+msb on input line 234
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -2509,18 +2528,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 21
-9.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23
+4.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-19.
+34.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/stmaryrd\ustmry.fd")
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-219.
+234.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmss.fd"
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2530,7 +2549,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-219.
+234.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmtt.fd"
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2539,22 +2558,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf, id=274, 639.8304pt x 886
+<figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf, id=214, 639.8304pt x 886
 .99379pt>
 File: figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf Graphic file (type p
 df)
 <use figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf>
 Package pdftex.def Info: figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf  
-used on input line 223.
+used on input line 238.
 (pdftex.def)             Requested size: 639.82883pt x 886.99162pt.
-<figures//mnfrontpage-images/unmul.png, id=275, 1204.5pt x 1204.5pt>
+<figures//mnfrontpage-images/unmul.png, id=215, 1204.5pt x 1204.5pt>
 File: figures//mnfrontpage-images/unmul.png Graphic file (type png)
 <use figures//mnfrontpage-images/unmul.png>
 Package pdftex.def Info: figures//mnfrontpage-images/unmul.png  used on input l
-ine 223.
+ine 238.
 (pdftex.def)             Requested size: 76.82243pt x 76.80653pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 22
-3.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 23
+8.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
@@ -2564,8 +2583,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 \MNFPtitlelength=\skip301
-LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 22
-3.
+LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 23
+8.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/arial\t1ua1.fd"
 File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
@@ -2601,7 +2620,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.225 	\include{sections/copyright}
+l.240 	\include{sections/copyright}
                                     [2]
 \openout2 = `sections/preface.aux'.
 
@@ -2635,10 +2654,10 @@ Underfull \vbox (badness 3735) has occurred while \output is active []
 
  [7]
 Underfull \hbox (badness 1852) in paragraph at lines 24--25
-\T1/lmr/m/n/10 (+20) mend-alami al-jabar. Vi-ete di-lahirkan di
+\T1/lmr/m/n/10 (+20) men-da-la-mi alja-bar. Vi-e-te di-la-hirk-an di
  []
 
-<src/viete.jpg, id=334, 736.25063pt x 1154.06157pt>
+<src/viete.jpg, id=274, 736.25063pt x 1154.06157pt>
 File: src/viete.jpg Graphic file (type jpg)
 <use src/viete.jpg>
 Package pdftex.def Info: src/viete.jpg  used on input line 26.
@@ -2778,55 +2797,101 @@ Underfull \vbox (badness 4366) has occurred while \output is active []
 
 
 ] [53] [54] [55]) [56] [57]
-[58
+\openout2 = `sections/chapter6.aux'.
+
+
+(sections/chapter6.tex [58
 
 
 
-] [59]
+
+] [59] [60] [61] [62] [63] [64] [65]) [66] [67
+
+
+
+]
 \openout2 = `sections/appendixA.aux'.
 
- (sections/appendixA.tex [60
+
+(sections/appendixA.tex [68
 
 
-] [61]) [62] [63]
+] [69]) [70] [71]
 \openout2 = `sections/appendixB.aux'.
 
- (sections/appendixB.tex
-[64
+ (sections/appendixB.tex [72
 
 
 
 
-] [65]
+]
+[73]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66])
-[67] [68]
+ [74])
+[75] [76]
 \openout2 = `sections/about.aux'.
 
  (sections/about.tex)
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
- [69
+ [77
 
 
 
 
 
 ]
-[70]
+[78]
 \openout2 = `sections/source.aux'.
 
- (sections/source.tex [71
+ (sections/source.tex [79
 
 
 
 
-]) [72]
+]) [80]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
- [73
+
+
+Package biblatex Warning: Using fallback definition for \mkbibdatelong.
+(biblatex)                The command should be defined in the .lbx file.
+(biblatex)                If you see this message, the .lbx file could not be
+(biblatex)                loaded, is faulty or does not contain a definition
+(biblatex)                for \mkbibdatelong.
+
+
+Package biblatex Warning: Bibliography string 'and' untranslated
+(biblatex)                at entry 'pur07' on input line 275.
+
+
+Package biblatex Warning: Using fallback definition for \mkbibordinal.
+(biblatex)                The command should be defined in the .lbx file.
+(biblatex)                If you see this message, the .lbx file could not be
+(biblatex)                loaded, is faulty or does not contain a definition
+(biblatex)                for \mkbibordinal.
+
+
+Package biblatex Warning: Bibliography string 'edition' untranslated
+(biblatex)                at entry 'pur07' on input line 275.
+
+
+Package biblatex Warning: Using fallback definition for \mkbibdatelong.
+(biblatex)                The command should be defined in the .lbx file.
+(biblatex)                If you see this message, the .lbx file could not be
+(biblatex)                loaded, is faulty or does not contain a definition
+(biblatex)                for \mkbibdatelong.
+
+
+Package biblatex Warning: Using fallback definition for \mkbibdatelong.
+(biblatex)                The command should be defined in the .lbx file.
+(biblatex)                If you see this message, the .lbx file could not be
+(biblatex)                loaded, is faulty or does not contain a definition
+(biblatex)                for \mkbibdatelong.
+
+[81
 
 
 
@@ -2834,14 +2899,14 @@ Package microtype Info: Character `029' is missing
 \tf@toc=\write10
 \openout10 = `"Modul Aljabar.toc"'.
 
- ("Modul Aljabar.aux"
-(sections/copyright.aux) (sections/preface.aux) (sections/acknowledgements.aux)
-(sections/using.aux) (sections/notation.aux) (sections/introduction.aux)
-(sections/chapter2.aux) (sections/chapter3.aux) (sections/chapter4.aux)
-(sections/chapter5.aux) (sections/appendixA.aux) (sections/appendixB.aux)
-(sections/about.aux) (sections/source.aux))
+ ("Modul Aljabar.aux" (sections/copyright.aux) (sections/preface.aux)
+(sections/acknowledgements.aux) (sections/using.aux) (sections/notation.aux)
+(sections/introduction.aux) (sections/chapter2.aux) (sections/chapter3.aux)
+(sections/chapter4.aux) (sections/chapter5.aux) (sections/chapter6.aux)
+(sections/appendixA.aux) (sections/appendixB.aux) (sections/about.aux)
+(sections/source.aux))
 Package rerunfilecheck Info: File `"Modul Aljabar".out' has not changed.
-(rerunfilecheck)             Checksum: ED646A93D457FF1BA10EEFC4E4E10B40;4153.
+(rerunfilecheck)             Checksum: 4C79602E5EF127FFF906F31709C42A78;2890.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2859,10 +2924,10 @@ Package logreq Info: Writing requests to '"Modul Aljabar".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56712 strings out of 479765
- 1249828 string characters out of 2876400
- 2457957 words of memory out of 3000000
- 71968 multiletter control sequences out of 15000+200000
+ 56748 strings out of 479765
+ 1252567 string characters out of 2876400
+ 2451843 words of memory out of 3000000
+ 71979 multiletter control sequences out of 15000+200000
  693135 words of font info for 226 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  136i,13n,137p,1162b,2529s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2892,9 +2957,9 @@ bm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1r8a.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
-Output written on "Modul Aljabar.pdf" (87 pages, 1770425 bytes).
+Output written on "Modul Aljabar.pdf" (95 pages, 1793752 bytes).
 PDF statistics:
- 1297 PDF objects out of 1440 (max. 8388607)
- 440 named destinations out of 1000 (max. 500000)
- 43108 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1280 PDF objects out of 1440 (max. 8388607)
+ 454 named destinations out of 1000 (max. 500000)
+ 42988 words of extra memory for PDF output out of 42996 (max. 10000000)
 
