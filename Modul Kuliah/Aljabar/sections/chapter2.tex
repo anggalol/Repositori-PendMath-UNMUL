@@ -33,7 +33,7 @@ dengan $ a, b, c \in \mathbb{R} $ dan $ a \ne 0 $.
 		\end{equation}
 		Disini, $ p $ dan $ q $ bisa jadi bukan termasuk bilangan real. Tetapi dalam buku ini, kita tidak akan membahas mengenai pemfaktoran dimana $ p $ dan $ q $ bukan bilangan real sehingga kita bisa anggap $ p, q \in \mathbb{R} $. Untuk lebih jauhnya mengenai hal ini akan dibahas pada bagian selanjutnya.
 		
-		\par Perhatikan kembali persamaan \ref{eq:202}. Jika kita substitusi $ x = p $, maka ruas kiri akan sama dengan nol. Tetapi, jika kita substitusi $ x = q $, maka ruas kiri juga akan menjadi nol. Oleh karena itu, $ p $ dan $ q $ merupakan akar-akar dari persamaan \ref{eq:202}. Dalam hal ini, kita tuliskan akar-akar dari persamaan \ref{eq:202} adalah $ x = p $ atau $ x = q $ (mengapa bukan 'dan'?). Jika kita pandang $ p $ sebagai akar pertama dan $ q $ sebagai akar kedua dari persamaan \ref{eq:202}, maka kita dapat tuliskan akar-akar dari persamaan $ \ref{eq:202} $ adalah $ x_{1} = p $ dan $ x_{2} = q $ (mengapa bukan 'atau'?).
+		\par Perhatikan kembali persamaan \ref{eq:202}. Jika kita substitusi $ x = p $, maka ruas kiri akan sama dengan nol. Tetapi, jika kita substitusi $ x = q $, maka ruas kiri juga akan menjadi nol. Oleh karena itu, $ p $ dan $ q $ merupakan akar-akar dari persamaan \ref{eq:202}. Dalam hal ini, kita tuliskan akar-akar dari persamaan \ref{eq:202} adalah $ x = p $ atau $ x = q $ (mengapa bukan 'dan'?). Jika kita pandang $ p $ sebagai akar pertama dan $ q $ sebagai akar kedua dari persamaan \ref{eq:202}, maka kita dapat tuliskan akar-akar dari persamaan \ref{eq:202} adalah $ x_{1} = p $ dan $ x_{2} = q $ (mengapa bukan 'atau'?).
 		
 		\par Pada persamaan \ref{eq:201}, jika $ a = 1 $, maka persamaan tersebut dapat ditulis sebagai
 		\begin{equation} \label{eq:203}
@@ -916,10 +916,11 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 	\begin{equation} \label{eq:224}
 		x = x_{p} = -\frac{b}{2a}.
 	\end{equation}
+	Persamaan \ref{eq:224} ini akan sangat membantu untuk mengetahui sumbu simetri suatu fungsi kuadrat yang sukar difaktorkan (juga untuk fungsi kuadrat yang akar-akarnya tidak diketahui secara eksplisit). Bahkan persamaan \ref{eq:224} ini juga berlaku untuk fungsi kuadrat yang akar-akarnya takreal (mengapa?).
 	
-	\par Perpotongan sumbu simetri dengan grafik fungsi kuadrat disebut sebagai titik puncak atau titik ekstrim\footnote{Biasa juga disebut sebagai titik balik.}. Ada dua tipe titik ekstrim yang bergantung pada tanda dari koefisien $ a $. Jika $ a > 0 $, maka titik ekstrimnya berupa titik minimum (titik balik minimum). Sedangkan jika $ a < 0 $, maka titik ekstrimnya berupa titik maksimum (titik balik maksimum). Hal ini dapat dicek dengan menggunakan uji turunan pertama yang akan dipelajari pada mata kuliah kalkulus. Koordinat dari titik ekstrim ini adalah
+	\par Perpotongan sumbu simetri dengan grafik fungsi kuadrat disebut sebagai titik puncak atau titik ekstrim\footnote{Biasa juga disebut sebagai titik balik atau titik stasioner.}. Ada dua tipe titik ekstrim yang bergantung pada tanda dari koefisien $ a $. Jika $ a > 0 $, maka titik ekstrimnya berupa titik minimum (titik balik minimum). Sedangkan jika $ a < 0 $, maka titik ekstrimnya berupa titik maksimum (titik balik maksimum). Hal ini dapat dicek dengan menggunakan uji turunan pertama yang akan dipelajari pada mata kuliah kalkulus. Koordinat dari titik ekstrim ini adalah
 	\[ \left(x_{p}, \func{f}{x_{p}}\right) \quad \mbox{atau} \quad \left(-\frac{b}{2a}, -\frac{b^{2} - 4ac}{4a}\right). \]
-	Disini, $ x_{p} $ disebut sebagai absis dan $ \func{f}{x_{p}} $ disebut sebagai ordinat. Faktanya, untuk sebrang titik koordinat $ \left(u, v\right) $, $ u $ disebut sebagai absis dan $ v $ disebut sebagai ordinat.
+	Disini, $ x_{p} $ disebut sebagai absis dan $ \func{f}{x_{p}} $ disebut sebagai ordinat. Faktanya, untuk sebarang titik koordinat $ \left(u, v\right) $, $ u $ disebut sebagai absis dan $ v $ disebut sebagai ordinat.
 	
 	\begin{explbox}
 		Coba uraikan mengapa $ \func{f}{x_{p}} = -\dfrac{b^{2} - 4ac}{4a} $.
@@ -961,17 +962,194 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 	\end{contoh}
 	\begin{jawab}
 		Karena $ a > 0 $, maka $ f $ terbuka ke atas. Karena $ c < 0 $, maka $ f $ memotong sumbu-$ y $ negatif. Karena $ b^{2} - 4ac = 0 $, maka $ f $ menyinggung sumbu-$ x $ tepat di satu titik. Karena $ b > 0 $, maka $ a $ dan $ x_{p} $ berbeda tanda sehingga $ x_{p} > 0 $.
-		\par \noindent Sebelum mensketsakan grafik, cermati dahulu apakah mungkin untuk mensketsakan grafik dengan kondisi yang diberikan. Perhatikan bahwa $ f $ terbuka ke atas dan memotong sumbu-$ y $ negatif. Berarti titik puncaknya (dalam hal ini titik balik minimum) haruslah berada di bawah sumbu-$ x $. Akibatnya, $ f $ memotong sumbu-$ x $ tepat di dua titik. Hal ini berkontradiksi dengan fakta bahwa $ f $ haruslah menyinggung sumbu-$ x $ tepat di satu titik.
-		\par \noindent Jadi tidak mungkin ada fungsi kuadrat yang memenuhi kondisi yang diberikan sehingga tidak mungkin juga untuk mensketsakan grafiknya.
+		\par Sebelum mensketsakan grafik, cermati dahulu apakah mungkin untuk mensketsakan grafik dengan kondisi yang diberikan. Perhatikan bahwa $ f $ terbuka ke atas dan memotong sumbu-$ y $ negatif. Berarti titik puncaknya (dalam hal ini titik balik minimum) haruslah berada di bawah sumbu-$ x $. Akibatnya, $ f $ memotong sumbu-$ x $ tepat di dua titik. Hal ini berkontradiksi dengan fakta bahwa $ f $ haruslah menyinggung sumbu-$ x $ tepat di satu titik.
+		\par Jadi tidak mungkin ada fungsi kuadrat yang memenuhi kondisi yang diberikan sehingga tidak mungkin juga untuk mensketsakan grafiknya.
+	\end{jawab}
+	
+	\begin{contoh}
+		Sketsakan grafik fungsi kuadrat $ \func{f}{x} = 2x^{2} - 4x + 5 $.
+	\end{contoh}
+	\begin{jawab}
+		Dengan membandingkan koefisien-koefisien fungsi kuadrat pada soal dengan fungsi kuadrat umum \ref{eq:222}, kita punyai $ a = 2 $, $ b = -4 $, dan $ c = 5 $. Karena $ a > 0 $, maka $ f $ terbuka ke atas. Karena $ c > 0 $, maka $ f $ memotong sumbu-$ y $ positif. Karena $ b^{2} - 4ac = \left(-4\right)^{2} - 4\left(2\right)\left(5\right) = -24 < 0 $, maka fungsi $ f $ tidak memotong sumbu-$ x $. Dengan menggunakan persamaan \ref{eq:224}, kita tahu bahwa sumbu simetri $ f $ adalah $ x_{p} = -\dfrac{-4}{2\left(2\right)} = 1 > 0 $. Akibatnya, $ f $ mencapai nilai minimumnya ketika $ x = 1 $. Oleh karena itu, nilai minimum dari $ f $ adalah $ \func{f}{1} = 2\left(1\right)^{2} - 4\left(1\right) + 5 = 3 $.
+		\par Jadi, sketsa grafik fungsi kuadrat $ f $ adalah sebagai berikut.
+		\begin{center}
+			\begin{tikzpicture}[scale=0.7]
+				\begin{axis}
+					[axis x line=center, axis y line=center, xmin=-1, xmax=3, ymin=-1, ymax=15, extra y ticks={3}, extra y tick labels={3}, axis line style={<->}]
+					\addplot[smooth, red] {2*x^2 - 4*x + 5};
+					
+					\legend{$ \func{f}{x} = 2x^{2} - 4x + 5 $}
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
 	\end{jawab}
 
 \subsection{Menentukan Fungsi Kuadrat}
 	
-	\kant[3-4]
+	Kita telah mengetahui bahwa fungsi kuadrat memiliki bentuk umum seperti pada persamaan \ref{eq:222}. Bentuk umum ini biasa disebut sebagai bentuk standar fungsi kuadrat. Kita selalu bisa memfaktorkan ruas kanan persamaan \ref{eq:222}, terlepas dari kemungkinan sukarnya pemfaktoran untuk dilakukan. Jika $ x_{1} $ dan $ x_{2} $ adalah akar-akar dari fungsi kuadrat umum \ref{eq:222}, maka kita dapat tulis ulang $ \func{f}{x} $ sebagai
+	\begin{equation} \label{eq:225}
+		\func{f}{x} = a\left(x - x_{1}\right)\left(x - x_{2}\right).
+	\end{equation}
+	Bentuk ini biasa disebut sebagai bentuk terfaktorkan fungsi kuadrat. Akan sangat mudah untuk menentukan fungsi kuadrat apabila telah diketahui lokasi akar-akarnya dan satu titik lainnya dengan menggunakan persamaan \ref{eq:225} ini. Jika hanya diketahui lokasi akar-akarnya saja tentunya masih belum cukup untuk menentukan fungsi kuadratnya, karena masih ada konstanta $ a $ yang belum diketahui. Kita akan mengerjakan beberapa contoh soal untuk lebih memahami mengenai hal ini.
+	
+	\begin{contoh}
+		Tentukan fungsi kuadrat yang melalui titik $ \left(-3, 12\right) $ dan memotong sumbu-$ x $ di titik $ \left(1, 0\right) $ dan $ \left(-2, 0\right) $.
+	\end{contoh}
+	\begin{jawab}
+		Misalkan fungsi kuadrat yang memenuhi adalah $ \func{f}{x} $. Karena $ f $ memotong sumbu-$ x $ di titik $ \left(1, 0\right) $ dan $ \left(-2, 0\right) $, maka $ f $ memiliki akar-akar $ x_{1} = 1 $ dan $ x_{2} = -2 $. Oleh karena itu, dengan menggunakan persamaan \ref{eq:225}, kita punyai
+		\[ \func{f}{x} = a\left(x - 1\right)\left(x + 2\right). \]
+		Karena $ f $ melalui titik $ \left(-3, 12\right) $, maka $ f $ memenuhi
+		\[ \func{f}{-3} = 12 \iff a\left(-3 - 1\right)\left(-3 + 2\right) = 12 \iff \left(-4\right)\left(-1\right)a = 12 \iff a = 3. \]
+		Jadi, fungsi kuadrat yang memenuhi adalah
+		\[ \func{f}{x} = 3\left(x - 1\right)\left(x + 2\right) = 3x^{2} + 3x - 6. \]
+	\end{jawab}
+	
+	\begin{contoh}
+		Tentukan fungsi kuadrat yang bernilai negatif untuk $ -2 < x < 3 $ dan melalui titik $ \left(1, -6\right) $.
+	\end{contoh}
+	\begin{jawab}
+		Soal ini mungkin agak mengintimidasi pada awal ketika kita membacanya. Tetapi, jika kita memperhatikan lebih lanjut mengenai grafik fungsi kuadrat, kita akan dapat dengan mudah menyelesaikannya. Ingat kembali bahwa berdasarkan tanda koefisien $ a $ pada persamaan kuadrat umum \ref{eq:222}, maka terdapat dua kemungkinan grafik dari suatu fungsi kuadrat, yaitu terbuka ke atas atau terbuka ke bawah. Ilustrasinya adalah sebagai berikut.
+		\begin{figure}[H]
+			\centering
+			\begin{multicols}{2}
+				\noindent
+				\begin{tikzpicture}[scale=0.7]
+					\begin{axis}
+						[ticks=none, axis x line=center, axis y line=none, ymin=-5, ymax=5, axis line style={<->}]
+						\addplot[smooth, red] {x^2 - 4};
+						
+						\legend{$ a > 0 $}
+					\end{axis}
+				\end{tikzpicture}
+				
+				\columnbreak
+				
+				\begin{tikzpicture}[scale=0.7]
+					\begin{axis}
+						[ticks=none, axis x line=center, axis y line=none, ymin=-5, ymax=5, axis line style={<->}]
+						\addplot[smooth, red] {-x^2 + 4};
+						
+						\legend{$ a < 0 $}
+					\end{axis}
+				\end{tikzpicture}
+			\end{multicols}
+			\caption{Dua kemungkinan grafik fungsi kuadrat berdasarkan tanda koefisien $ a $.}
+		\end{figure}
+		Perhatikan bahwa perpotongan grafik fungsi kuadrat pada gambar ilustrasi di atas dengan sumbu-$ x $ adalah akar-akar dari fungsi kuadrat tersebut. Misalkan akar-akarnya adalah $ x_{1} $ dan $ x_{2} $ dengan $ x_{1} < x_{2} $. Oleh karena itu, pada gambar sebelah kiri, fungsi kuadrat tersebut akan bernilai negatif untuk $ x_{1} < x < x_{2} $, dan bernilai positif untuk $ x < x_{1} $ atau $ x > x_{2} $. Selain itu, pada gambar sebelah kanan, fungsi kuadrat tersebut akan bernilai positif untuk $ x_{1} < x < x_{1} $, dan bernilai negatif untuk $ x < x_{1} $ atau $ x > x_{2} $.
+		\par Dengan pemahaman mengenai hal ini, kita akan dapat dengan mudah mengerjakan soal ini. Misalkan fungsi kuadrat yang memenuhi kondisi pada soal adalah $ \func{f}{x} $. Karena $ f $ bernilai negatif untuk $ -2 < x < 3 $, maka dari ilustrasi di atas, grafik fungsi $ f $ yang mungkin adalah grafik sebelah kiri. Oleh karena itu, koefisien $ a $ pada fungsi kuadrat $ f $ bernilai positif. Lebih jauh, akar-akar dari fungsi $ f $ adalah $ x_{1} = -2 $ dan $ x_{2} = 3 $. Oleh karena itu, kita punyai
+		\[ \func{f}{x} = a\left(x + 2\right)\left(x - 3\right). \]
+		Sampai disini proses pencarian $ a $ sama seperti contoh sebelumnya dan diserahkan kepada pembaca.
+	\end{jawab}
+	
+	\par Selain memiliki bentuk terfaktorkan, ternyata fungsi kuadrat umum \ref{eq:222} juga memiliki bentuk lainnya yang bergantung pada lokasi titik ekstrim. Bentuk ini dinamakan bentuk titik puncak (\textit{vertex form}). Kita dapat dengan mudah mendapatkan bentuk ini dari bentuk umumnya dengan melengkapkan kuadrat. Perhatikan bahwa bentuk umum \ref{eq:222} dapat ditulis ulang sebagai
+	\begin{align*}
+		\func{f}{x} &= ax^{2} + bx + c \\
+		&= a\left(x^{2} + \frac{b}{a}x + \frac{c}{a}\right) \\
+		&= a\left(x^{2} + 2 \cdot \frac{b}{2a}x + \frac{b^{2}}{4a^{2}} - \frac{b^{2}}{4a^{2}} + \frac{c}{a}\right) \\
+		&= a\left(x^{2} + 2 \cdot \frac{b}{2a}x + \frac{b^{2}}{4a^{2}}\right) - \frac{b^{2}}{4a} + c \\
+		&= a\left(x + \frac{b}{2a}\right)^{2} - \frac{b^{2} - 4ac}{4a}
+	\end{align*}
+	Padahal kita punyai
+	\[ x_{p} = -\frac{b}{2a} \quad \mbox{dan} \quad \func{f}{x_{p}} = -\dfrac{b^{2} - 4ac}{4a}. \]
+	Oleh karena itu, kita dapat tulis ulang hasil yang kita dapatkan sebagai
+	\[ \func{f}{x} = a\left(x - x_{p}\right)^{2} + \func{f}{x_{p}}. \]
+	Disini, $ \func{f}{x_{p}} $ biasa dituliskan sebagai $ y_{p} $ sehingga
+	\begin{equation} \label{eq:226}
+		\func{f}{x} = a\left(x - x_{p}\right)^{2} + y_{p}.
+	\end{equation}
+	Bentuk inilah yang disebut sebagai bentuk titik puncak fungsi kuadrat. Akan sangat mudah untuk menentukan fungsi kuadrat apabila telah diketahui lokasi titik puncaknya dan satu titik lainnya dengan menggunakan persamaan \ref{eq:226} ini. Jika hanya diketahui lokasi titik puncaknya saja tentunya masih belum cukup untuk menentukan fungsi kuadratnya, karena masih ada konstanta $ a $ yang belum diketahui. Kita akan mengerjakan beberapa contoh soal untuk lebih memahami mengenai hal ini.
+	
+	\begin{contoh}
+		Tentukan fungsi kuadrat yang memiliki titik ekstrim $ \left(3, 9\right) $ dan melalui titik $ \left(1, 5\right) $.
+	\end{contoh}
+	\begin{jawab}
+		Misalkan fungsi kuadrat yang memenuhi adalah $ \func{f}{x} $. Karena $ f $ memiliki titik ekstrim $ \left(3, 9\right) $, maka $ x_{p} = 3 $ dan $ \func{f}{x_{p}} = y_{p} = 9 $. Oleh karena itu, dengan menggunakan persamaan \ref{eq:226} kita punyai
+		\[ \func{f}{x} = a\left(x - 3\right)^{2} + 9. \]
+		Karena $ f $ juga melalui titik $ \left(1, 5\right) $, maka $ f $ memenuhi
+		\[ \func{f}{1} = 5 \iff a\left(1 - 3\right)^{2} + 9 = 5 \iff 4a = -4 \iff a = -1. \]
+		Jadi, fungsi kuadrat yang memenuhi adalah
+		\[ \func{f}{x} = -\left(x - 3\right)^{2} + 9 = -x^{2} + 6x. \]
+	\end{jawab}
+	
+	\par Setelah mempelajari dua bentuk fungsi kuadrat selain bentuk umumnya, kita sudah semakin yakin untuk menentukan fungsi kuadrat dengan mudah. Jika diketahui lokasi-lokasi akar dan satu titik lain, bisa digunakan persamaan \ref{eq:225} untuk menentukan fungsi kuadrat yang berkaitan. Selain itu, jika diketahui lokasi titik puncak dan satu titik lain, bisa digunakan persamaan \ref{eq:226} untuk menentukan fungsi kuadrat yang berkaitan. Tetapi kemudian muncul permasalahan baru. Bagaimana cara menentukan fungsi kuadrat yang tidak diketahui lokasi akar-akarnya ataupun lokasi titik puncaknya, tetapi hanya diketahui titik-titik yang dilaluinya? Mudah saja, kita hanya tinggal menggunakan bentuk umum fungsi kuadrat seperti pada persamaan \ref{eq:222} untuk kemudian ditentukan nilai dari koefisien $ a $, $ b $, dan $ c $. Tentunya karena ada tiga koefisien yang harus dicari, maka harus diketahui juga tiga titik berbeda yang dilalui oleh suatu fungsi kuadrat. Hal ini dikarenakan jika diketahui tiga titik, maka akan terbentuk sistem persamaan linear tiga variabel yang dapat diselesaikan. Sebagai contoh, kita akan mengerjakan soal berikut.
+	
+	\begin{contoh}
+		Tentukan fungsi kuadrat yang melalui titik-titik $ \left(1, 2\right) $, $ \left(-1, 4\right) $, dan $ \left(3, 8\right) $.
+	\end{contoh}
+	\begin{jawab}
+		Misalkan fungsi kuadrat yang memenuhi adalah $ \func{f}{x} $. Oleh karena itu, dengan menggunakan persamaan \ref{eq:222} kita punyai
+		\[ \func{f}{x} = ax^{2} + bx + c. \]
+		Karena $ f $ melalui $ \left(1, 2\right) $, $ \left(-1, 4\right) $, dan $ \left(3, 8\right) $, maka kita akan mendapatkan sistem persamaan
+		\begin{center}
+			\systeme{
+				a + b + c = 2,
+				a - b + c = 4,
+				9a + 3b + c = 8
+			}
+		\end{center}
+		yang jika diselesaikan akan didapatkan $ a = 1 $, $ b = -1 $, dan $ c = 2 $. Akibatnya, fungsi kuadrat yang memenuhi adalah
+		\[ \func{f}{x} = x^{2} - x + 2. \]
+	\end{jawab}
 	
 \subsection{Domain dan Jangkauan Fungsi Kuadrat}
 	
-	\kant[5-6]
+	Secara umum, untuk sebarang fungsi kuadrat $ \func{f}{x} $, domainnya adalah himpunan bilangan real dan jangkauannya bergantung pada letak titik puncak beserta nilai dari koefisien $ a $-nya. Jika $ a > 0 $, maka fungsi $ f $ akan mencapai titik minimum di $ \left(x_{p}, y_{p}\right) $ sehingga jangkauannya adalah $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{\func{f}{x} \geq y_{p}} $. Sedangkan jika $ a < 0 $, maka $ f $ akan mencapai titik maksimum di $ \left(x_{p}, y_{p}\right) $ sehingga jangkauannya adalah $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{\func{f}{x} \leq y_{p}} $. Agar lebih jelas, kita akan mengerjakan contoh berikut.
+	
+	\begin{contoh}
+		Tentukan domain dan jangkauan dari fungsi $ \func{f}{x} = x^{2} - 2x + 3 $.
+	\end{contoh}
+	\begin{jawab}
+		Jelas bahwa fungsi $ f $ dapat menerima input untuk setiap bilangan real $ x $ sehingga domain dari fungsi $ f $ adalah $ \func{\Dom}{f} = \mathbb{R} $. Perhatikan bahwa karena koefisien $ x^{2} $ pada fungsi $ f $ lebih besar daripada nol, maka $ f $ akan mencapai titik minimum ketika $ x = x_{p} = -\dfrac{-2}{2\left(1\right)} = 1 $. Oleh karena itu, nilai minimum dari $ f $ adalah $ \func{f}{x_{p}} = \func{f}{1} = 1^{2} - 2\left(1\right) + 3 = 2 $. Sketsa grafik fungsi $ f $ adalah sebagai berikut (cek!).
+		\begin{center}
+			\begin{tikzpicture}[scale=0.7]
+				\begin{axis}
+					[axis x line=center, axis y line=center, xmin=-1, xmax=3, ymin=-1, ymax=6, extra y ticks={3}, extra y tick labels={3}, axis line style={<->}]
+					\addplot[smooth, red] {x^2 - 2*x + 3};
+					
+					\legend{$ \func{f}{x} = x^{2} - 2x + 3 $}
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		Jika kita lihat sketsa grafiknya, maka nilai dari $ \func{f}{x} $ akan selalu lebih besar dari atau sama dengan $ \func{f}{x_{p}} = \func{f}{1} = 2 $. Inilah alasan mengapa jangkauan dari fungsi kuadrat dengan $ a > 0 $ selalu lebih besar dari atau sama dengan $ y_{p} $ atau nilai minimumnya. Oleh karena itu, jangkauan dari fungsi $ f $ adalah $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{\func{f}{x} \leq 2} $.
+		\par Jadi, domain dan jangkaun dari fungsi $ f $ berturut-turut adalah $ \func{\Dom}{f} = \mathbb{R} $ dan $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{\func{f}{x} \geq 2} $.
+	\end{jawab}
+	
+	\par Apabila domain fungsi kuadrat $ \func{f}{x} $ dibatasi, kita harus bekerja dengan lebih keras untuk mendapatkan jangkauannya. Disini kita perkenalkan istilah \textit{titik kritis}. Titik kritis adalah calon titik maksimum atau calon titik minimum (calon titik ekstrim). Untuk mengetahui jangkauan dari fungsi kuadrat yang domainnya dibatasi, kita harus mengecek titik-titik kritisnya terlebih dahulu untuk mencari nilai maksimum dan nilai minimumnya. Dalam fungsi kuadrat, titik-titik kritisnya adalah titik ujung interval atau titik balik. Setelah dicari titik-titik kritisnya, kita kemudian mencari manakah titik kritis yang menghasilkan nilai maksimum dan nilai minimum. Agar lebih jelas, kita akan mengerjakan beberapa contoh berikut.
+	
+	\begin{contoh}
+		Untuk $ 1 \leq x \leq 4 $, tentukan jangkauan dari fungsi $ \func{f}{x} = 2x^{2} - 4x - 3 $.
+	\end{contoh}
+	\begin{jawab}
+		Disini, $ 1 \leq x \leq 4 $ merupakan domain dari fungsi $ f $. Titik-titik kritisnya adalah $ \left(1, \func{f}{1}\right) $ dan $ \left(4, \func{f}{4}\right) $ yang merupakan titik ujungnya, serta $ \left(x_{p}, \func{f}{x_{p}}\right) $ yang merupakan titik balik minimumnya mengingat $ a = 2 > 0 $. Perhatikan bahwa $ x_{p} = -\dfrac{-4}{2\left(2\right)} = 1 $ sehingga $ x_{p} \in \func{\Dom}{f} $ yang kebetulan juga merupakan salah satu absis titik ujung. Berarti kita juga harus cek juga titik balik minimumnya.
+		\par Kita punyai $ \func{f}{1} = -5 $, $ \func{f}{4} = 13 $, dan $ \func{f}{x_{p}} = \func{f}{1} = -5 $. Oleh karena itu, nilai minimum $ f $ dan nilai maksimum $ f $ untuk $ 1 \leq x \leq 4 $ berturut-turut adalah $ -5 $ dan 13.
+		\par Jadi, jangkauan dari fungsi $ f $ adalah $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{-5 \leq \func{f}{x} \leq 13} $.
+	\end{jawab}
+	
+	\begin{contoh}
+		Untuk $ 0 < x \leq 5 $, tentukan jangkauan dari fungsi $ \func{f}{x} = -x^{2} - 3x + 1 $.
+	\end{contoh}
+	\begin{jawab}
+		Karena salah satu titik ujungnya bukan merupakan domain dari fungsi $ f $, yaitu $ 0 \notin \func{\Dom}{f} $, maka $ \func{f}{0} $ tidak terdefinisi. Untuk mengatasi hal ini, kita dapat mendefinisikan fungsi $ g $ sebagai $ \func{g}{x} = -x^{2} - 3x + 1 $ untuk $ 0 \leq x \leq 5 $.
+		\par Perhatikan bahwa titik-titik kritis fungsi $ g $ adalah $ \left(0, \func{g}{0}\right) $, $ \left(5, \func{g}{5}\right) $ yang merupakan titik ujungnya. Karena absis titik balik maksimum fungsi $ g $ adalah $ x_{p} = -\dfrac{-3}{2\left(-1\right)} = -\dfrac{3}{2} \notin \func{\Dom}{g} $, maka kita tidak perlu mengecek titik balik maksimumnya.
+		\par Kita punyai $ \func{g}{0} = 1 $ dan $ \func{g}{5} = -39 $. Oleh karena itu, nilai minimum $ g $ dan nilai maksimum $ g $ untuk $ 0 \leq x \leq 5 $ berturut-turut adalah $ -39 $ dan 1. Akibatnya, jangkauan dari fungsi $ g $ adalah $ \func{\Ran}{g} = \set{\func{g}{x} \in \mathbb{R}}{-39 \leq \func{g}{x} \leq 1} $.
+		\par Karena $ x = 0 $ tidak termasuk dalam domain fungsi $ f $, maka nilai dari $ f $ akan selalu kurang dari $ \func{g}{0} = 1 $ sehingga jangkauan fungsi $ f $ adalah $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{-39 \leq \func{f}{x} < 1} $ dan kita selesai.
+	\end{jawab}
+	
+	\par Pada kasus khusus ketika jangkauan fungsi kuadrat $ \func{f}{x} $ merupakan himpunan bagian dari himpunan bilangan real positif, atau merupakan himpunan bagian dari himpunan bilangan real negatif (seperti interval $ \left[2, 10\right] $ atau $ \lbrk{-4, -1} $, tetapi tidak untuk $ \lkrb{-3, 10} $), maka kita juga akan bisa mencari jangkauan dari fungsi $ \left(\func{f}{x}\right)^{n} $ untuk $ n \in \mathbb{Z} \backslash \lrbr{0} $. Sebagai contoh, jika diketahui $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{1 \leq \func{f}{x} < 5} $, maka kita bisa mengetahui jangkauan dari fungsi $ \func{g}{x} = \dfrac{1}{\func{f}{x}} $. Mengingat $ 1 \leq \func{f}{x} < 5 $, maka dengan aturan ketaksamaan pada bab 3, kita punyai
+	\[ \frac{1}{5} < \frac{1}{\func{f}{x}} \leq 1 \iff \frac{1}{5} < \func{g}{x} \leq 1 \]
+	sehingga jangkauan dari fungsi $ \func{g}{x} $ adalah $ \func{\Ran}{g} = \set{\func{g}{x} \in \mathbb{R}}{\dfrac{1}{5} < \func{g}{x} \leq 1} $.
+	
+	\par Khusus untuk $ n \in \mathbb{Z}^{+} $, jangkauan dari fungsi kuadrat $ \func{f}{x} $ diperbolehkan mengandung nol, asalkan selain nol tersebut, anggota yang lainnya tidak ada yang berbeda tanda, seperti interval $ \left[0, 1\right] $ atau $ \lbrk{-5, 0} $.
+	
+	\begin{explbox}
+		Diberikan fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $. Tentukan syarat-syarat bagi jangkauan kedua fungsi kuadrat tersebut agar jangkauan dari fungsi $ \func{h}{x} = \dfrac{\func{f}{x}}{\func{g}{x}} $ dapat diketahui hanya dari jangkauan kedua fungsi tersebut.
+	\end{explbox}
+	
+	\par Anda tidak bisa mencari jangkauan dari fungsi $ \left(\func{f}{x}\right)^{n} $ untuk $ n \in \mathbb{Z} $ hanya dengan menggunakan jangkauan dari fungsi kuadrat $ \func{f}{x} $ apabila jangkauan dari fungsi kuadrat $ \func{f}{x} $ memiliki anggota yang berbeda tanda (seperti interval $ \left(-2, 6\right) $ atau $ \left[-4, 2\right] $). Untuk mencarinya, Anda perlu menggunakan bantuan kalkulus yang tentunya tidak akan kita bahas di sini. Oleh karena itu, Anda harus cermat dalam melihat jangkauan fungsi $ f $ ini. Jika terdapat soal dalam buku ini dimana diketahui $ \func{\Ran}{f} $ mengandung anggota-anggota yang berbeda tanda, cukup Anda jawab dengan "jangkauan dari fungsi $ \left(\func{f}{x}\right)^{n} $ tidak dapat diketahui hanya dengan jangkauan fungsi $ f $".
+	
+	\begin{explbox}
+		Mengapa harus menggunakan bantuan kalkulus? Mengapa tidak digunakan saja aturan ketaksamaan untuk mencarinya?
+	\end{explbox}
 
 \subsection{Definit Positif dan Definit Negatif}
 	

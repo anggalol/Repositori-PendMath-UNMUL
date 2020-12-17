@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  17 DEC 2020 01:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  17 DEC 2020 22:14
 entering extended mode
 **"./Modul Aljabar.tex"
 ("Modul Aljabar.tex"
@@ -330,9 +330,7 @@ Package tocloft [2008/07/23] emulated by memoir.
 Package tocvsec2 [2008/07/23] emulated by memoir.
 Package verbatim [2008/07/23] emulated by memoir.
 Package verse [2008/07/23] emulated by memoir.
-)
-File: mtc-mem.tex 
- (style.sty
+) (style.sty
 Package: style 2019/06/27 Custom LaTeX style
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/silence\silence.sty"
@@ -2193,12 +2191,27 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \colbreak@box=\box134
 \mc@col@check@num=\count550
 )
+("C:\Program Files\MiKTeX 2.9\tex/latex/systeme\systeme.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/xstring\xstring.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/xstring\xstring.tex"
+\integerpart=\count551
+\decimalpart=\count552
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/systeme\systeme.tex"
+\SYS_systemecode=\toks66
+\SYS_systempreamble=\toks67
+\SYSeqnum=\count553
+)
+Package: systeme 2020/05/03 v0.34 Mise en forme de systemes d'equations (CT)
+)
 ("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count551
-\float@exts=\toks66
+\c@float@type=\count554
+\float@exts=\toks68
 \float@box=\box135
-\@float@everytoks=\toks67
+\@float@everytoks=\toks69
 \@floatcapt=\box136
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/pgfplots\pgfplots.sty"
@@ -2207,12 +2220,12 @@ Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
 
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots\pgfplots.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots\pgfplotscore.code.tex"
-\t@pgfplots@toka=\toks68
-\t@pgfplots@tokb=\toks69
-\t@pgfplots@tokc=\toks70
+\t@pgfplots@toka=\toks70
+\t@pgfplots@tokb=\toks71
+\t@pgfplots@tokc=\toks72
 \pgfplots@tmpa=\dimen366
-\c@pgfplots@coordindex=\count552
-\c@pgfplots@scanlineindex=\count553
+\c@pgfplots@coordindex=\count555
+\c@pgfplots@scanlineindex=\count556
 
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.
 tex"))
@@ -2227,14 +2240,14 @@ ructure.code.tex")
 ructureext.code.tex")
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/liststructure\pgfplotsarray.
 code.tex"
-\c@pgfplotsarray@tmp=\count554
+\c@pgfplotsarray@tmp=\count557
 )
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/liststructure\pgfplotsmatrix
 .code.tex")
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/numtable\pgfplotstableshared
 .code.tex"
-\c@pgfplotstable@counta=\count555
-\t@pgfplotstable@a=\toks71
+\c@pgfplotstable@counta=\count558
+\t@pgfplotstable@a=\toks73
 )
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/liststructure\pgfplotsdeque.
 code.tex")
@@ -2246,7 +2259,7 @@ e.tex"))
 tex")
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/libs\pgflibrarypgfplots.surf
 shading.code.tex"
-\c@pgfplotslibrarysurf@no=\count556
+\c@pgfplotslibrarysurf@no=\count559
 
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfs
 hading.pgfsys-pdftex.def")))
@@ -2277,7 +2290,7 @@ ecorations.pathmorphing.code.tex"))
 librarydecorations.pathreplacing.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/libraries/decorations\pgflibraryd
 ecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count557
+\pgfplots@numplots=\count560
 \pgfplots@xmin@reg=\dimen367
 \pgfplots@xmax@reg=\dimen368
 \pgfplots@ymin@reg=\dimen369
@@ -2297,7 +2310,7 @@ Class memoir Info: For the caption package to function properly with memoir, we
  will now reset \caption and friends to kernel defaults and then let the
 caption package take over. Remember: all caption configuration now goes via the
  caption package interface, not the interface from the memoir class.  on input 
-line 20.
+line 19.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption.sty"
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
@@ -2322,8 +2335,8 @@ put line 187.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/newfloat\newfloat.sty"
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
 )
-\c@caption@flags=\count558
-\c@continuedfloat=\count559
+\c@caption@flags=\count561
+\c@continuedfloat=\count562
 Package caption Info: changepage package is loaded.
 \caption@adjustwidth@hsize=\dimen380
 \caption@adjustwidth@linewidth=\dimen381
@@ -2334,23 +2347,23 @@ Package caption Info: listings package is loaded.
 Package thmtools Info: Key `qed' (with value `$\square $')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=pfs' on input line 36.
+(thmtools)             that uses `style=pfs' on input line 35.
 Package thmtools Info: Key `numbered' (with value `no')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=pfs' on input line 36.
+(thmtools)             that uses `style=pfs' on input line 35.
 Package thmtools Info: Key `numbered' (with value `no')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=answer' on input line 41.
-\c@teorema=\count560
+(thmtools)             that uses `style=answer' on input line 40.
+\c@teorema=\count563
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 
 
 Package csquotes Warning: No style for language 'indonesian'.
-(csquotes)                Using fallback style on input line 234.
+(csquotes)                Using fallback style on input line 233.
 
 Package csquotes Info: Redefining alias 'default' -> 'fallback'.
 ("Modul Aljabar.aux" (sections/copyright.aux) (sections/preface.aux)
@@ -2361,49 +2374,49 @@ Package csquotes Info: Redefining alias 'default' -> 'fallback'.
 (sections/source.aux))
 \openout1 = `"Modul Aljabar.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 233.
+LaTeX Font Info:    ... okay on input line 233.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count561
+\scratchcounter=\count564
 \scratchdimen=\dimen382
 \scratchbox=\box137
-\nofMPsegments=\count562
-\nofMParguments=\count563
-\everyMPshowfont=\toks72
-\MPscratchCnt=\count564
+\nofMPsegments=\count565
+\nofMParguments=\count566
+\everyMPshowfont=\toks74
+\MPscratchCnt=\count567
 \MPscratchDim=\dimen383
-\MPnumerator=\count565
-\makeMPintoPDFobject=\count566
-\everyMPtoPDFconversion=\toks73
+\MPnumerator=\count568
+\makeMPintoPDFobject=\count569
+\everyMPtoPDFconversion=\toks75
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-LaTeX Info: Redefining \microtypecontext on input line 234.
+LaTeX Info: Redefining \microtypecontext on input line 233.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 234.
+LaTeX Info: Redefining \showhyphens on input line 233.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2419,13 +2432,13 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 English.dict"
 Dictionary: translator-basic-dictionary, Language: English 
 )
-\c@lstlisting=\count567
+\c@lstlisting=\count570
 Package biblatex Info: Trying to load language 'indonesian'...
 Package biblatex Info: ... file 'indonesian.lbx' not found.
 
 
 Package biblatex Warning: Language 'indonesian' not supported.
-(biblatex)                Using dummy definitions on input line 234.
+(biblatex)                Using dummy definitions on input line 233.
 
 Package biblatex Info: Trying to load language 'british'...
 Package biblatex Info: ... file 'british.lbx' found.
@@ -2446,9 +2459,9 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '"Modul Aljabar".bbl' found.
 
 ("Modul Aljabar.bbl")
-Package biblatex Info: Reference section=0 on input line 234.
-Package biblatex Info: Reference segment=0 on input line 234.
-Package hyperref Info: Link coloring ON on input line 234.
+Package biblatex Info: Reference section=0 on input line 233.
+Package biblatex Info: Reference segment=0 on input line 233.
+Package hyperref Info: Link coloring ON on input line 233.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -2459,20 +2472,20 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ("C:\Program Files\MiKTeX 2.9\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count568
+\c@section@level=\count571
 LaTeX Info: Redefining \Ref on input line 520.
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 234.
-LaTeX Info: Redefining \ref on input line 234.
-LaTeX Info: Redefining \pageref on input line 234.
-LaTeX Info: Redefining \nameref on input line 234.
+LaTeX Info: Redefining \nameref on input line 233.
+LaTeX Info: Redefining \ref on input line 233.
+LaTeX Info: Redefining \pageref on input line 233.
+LaTeX Info: Redefining \nameref on input line 233.
 ("Modul Aljabar.out") ("Modul Aljabar.out")
 \@outlinefile=\write9
 \openout9 = `"Modul Aljabar.out"'.
 
-LaTeX Info: Redefining \Ref on input line 234.
+LaTeX Info: Redefining \Ref on input line 233.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.17} (current compat level: 1.12).
@@ -2481,35 +2494,35 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package newfloat Info: `float' package detected.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-34.
+33.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-34.
+33.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-234.
+233.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-234.
+233.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 234.
+(Font)              <10> on input line 233.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 234.
+(Font)              <7> on input line 233.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 234.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 234
+(Font)              <5> on input line 233.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 233
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -2518,7 +2531,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ("C:\Program Files\MiKTeX 2.9\tex/latex/microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 234
+LaTeX Font Info:    Trying to load font information for U+msb on input line 233
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -2528,17 +2541,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23
-4.
+3.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-34.
+33.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/stmaryrd\ustmry.fd")
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-234.
+233.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmss.fd"
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2548,7 +2561,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-234.
+233.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmtt.fd"
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2559,7 +2572,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 \MNFPtitlelength=\skip301
 LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 23
-8.
+7.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/arial\t1ua1.fd"
 File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
@@ -2569,22 +2582,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 \MNFP@titlelength=\skip302
-<figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf, id=214, 639.8304pt x 886
+<figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf, id=294, 639.8304pt x 886
 .99379pt>
 File: figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf Graphic file (type p
 df)
 <use figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf>
 Package pdftex.def Info: figures//mnfrontpage-images/mnfrontpage-bg-web-1.pdf  
-used on input line 238.
+used on input line 237.
 (pdftex.def)             Requested size: 639.82883pt x 886.99162pt.
-<figures//mnfrontpage-images/unmul.png, id=215, 1204.5pt x 1204.5pt>
+<figures//mnfrontpage-images/unmul.png, id=295, 1204.5pt x 1204.5pt>
 File: figures//mnfrontpage-images/unmul.png Graphic file (type png)
 <use figures//mnfrontpage-images/unmul.png>
 Package pdftex.def Info: figures//mnfrontpage-images/unmul.png  used on input l
-ine 238.
+ine 237.
 (pdftex.def)             Requested size: 76.82243pt x 76.80653pt.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 23
-8.
+7.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
@@ -2619,7 +2632,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.240 	\include{sections/copyright}
+l.239 	\include{sections/copyright}
                                     [2]
 \openout2 = `sections/preface.aux'.
 
@@ -2656,7 +2669,7 @@ Underfull \hbox (badness 1852) in paragraph at lines 24--25
 \T1/lmr/m/n/10 (+20) men-da-la-mi alja-bar. Vi-e-te di-la-hirk-an di
  []
 
-<src/viete.jpg, id=274, 736.25063pt x 1154.06157pt>
+<src/viete.jpg, id=354, 736.25063pt x 1154.06157pt>
 File: src/viete.jpg Graphic file (type jpg)
 <use src/viete.jpg>
 Package pdftex.def Info: src/viete.jpg  used on input line 26.
@@ -2788,28 +2801,57 @@ Missing character: There is no ; in font nullfont!
 Package pgfplots info on input line 898: Overriding colorspace to cmyk due to x
 color configuration.
  [35] [36]
-Package pgfplots info on input line 947: Overriding colorspace to cmyk due to x
+Package pgfplots info on input line 948: Overriding colorspace to cmyk due to x
 color configuration.
- [37] [38] [39] [40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [37]
+Package pgfplots info on input line 978: Overriding colorspace to cmyk due to x
+color configuration.
+ [38]
+Overfull \hbox (4.16411pt too wide) detected at line 1002
+[]  \OML/lmm/m/it/10 f[] \OT1/lmr/m/n/10 = 12  \OMS/lmsy/m/n/10 ([])  \OML/lmm/
+m/it/10 a [] [] \OT1/lmr/m/n/10 = 12  \OMS/lmsy/m/n/10 ([])  [] [] \OML/lmm/m/i
+t/10 a \OT1/lmr/m/n/10 = 12  \OMS/lmsy/m/n/10 ([])  \OML/lmm/m/it/10 a \OT1/lmr
+/m/n/10 = 3\OML/lmm/m/it/10 :
+ []
 
- [41]
-Underfull \vbox (badness 1005) has occurred while \output is active []
-
+Package pgfplots info on input line 1018: Overriding colorspace to cmyk due to 
+xcolor configuration.
+Package pgfplots info on input line 1029: Overriding colorspace to cmyk due to 
+xcolor configuration.
+[39] [40] [41]
+Package pgfplots info on input line 1106: Overriding colorspace to cmyk due to 
+xcolor configuration.
  [42]
-[43]) [44] [45]
+Overfull \hbox (1.53587pt too wide) in paragraph at lines 1125--1126
+[]\T1/lmr/m/n/10 (-20) Jadi, jang-ka-u-an da-ri fung-si $\OML/lmm/m/it/10 f$ \T
+1/lmr/m/n/10 (-20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (-20) = []  []$\T1/lmr/m/n
+/10 (-20) . 
+ []
+
+
+Overfull \hbox (7.31665pt too wide) in paragraph at lines 1139--1141
+\T1/lmr/m/n/10 (-20) sehingga jang-ka-u-an da-ri fung-si $[]  \OML/lmm/m/it/10 
+g[]$ \T1/lmr/m/n/10 (-20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (-20) = []  []$\T1/
+lmr/m/n/10 (-20) . 
+ []
+
+
+Underfull \vbox (badness 7291) has occurred while \output is active []
+
+ [43]
+[44] [45] [46] [47]) [48] [49]
 \openout2 = `sections/chapter3.aux'.
 
- (sections/chapter3.tex [46
+ (sections/chapter3.tex [50
 
 
 
 
-] [47] [48]) [49]
+] [51] [52]) [53]
 \openout2 = `sections/chapter4.aux'.
 
 
-(sections/chapter4.tex [50
+(sections/chapter4.tex [54
 
 
 
@@ -2817,25 +2859,25 @@ Underfull \vbox (badness 1005) has occurred while \output is active []
 ]
 Underfull \vbox (badness 4366) has occurred while \output is active []
 
- [51]
-[52] [53]) [54] [55]
+ [55]
+[56] [57]) [58] [59]
 \openout2 = `sections/chapter5.aux'.
 
- (sections/chapter5.tex [56
+ (sections/chapter5.tex [60
 
 
 
 
-] [57] [58] [59]) [60] [61]
+] [61] [62] [63]) [64] [65]
 \openout2 = `sections/chapter6.aux'.
 
 
-(sections/chapter6.tex [62
+(sections/chapter6.tex [66
 
 
 
 
-] [63] [64] [65] [66] [67] [68] [69]) [70] [71
+] [67] [68] [69] [70] [71] [72] [73]) [74] [75
 
 
 
@@ -2843,44 +2885,44 @@ Underfull \vbox (badness 4366) has occurred while \output is active []
 \openout2 = `sections/appendixA.aux'.
 
 
-(sections/appendixA.tex [72
+(sections/appendixA.tex [76
 
 
-] [73]) [74] [75]
+] [77]) [78] [79]
 \openout2 = `sections/appendixB.aux'.
 
- (sections/appendixB.tex [76
+ (sections/appendixB.tex [80
 
 
 
 
 ]
-[77]
+[81]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [78])
-[79] [80]
+ [82])
+[83] [84]
 \openout2 = `sections/about.aux'.
 
  (sections/about.tex)
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
- [81
+ [85
 
 
 
 
 
 ]
-[82]
+[86]
 \openout2 = `sections/source.aux'.
 
- (sections/source.tex [83
+ (sections/source.tex [87
 
 
 
 
-]) [84]
+]) [88]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2894,7 +2936,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 
 
 Package biblatex Warning: Bibliography string 'and' untranslated
-(biblatex)                at entry 'pur07' on input line 275.
+(biblatex)                at entry 'pur07' on input line 274.
 
 
 Package biblatex Warning: Using fallback definition for \mkbibordinal.
@@ -2905,7 +2947,7 @@ Package biblatex Warning: Using fallback definition for \mkbibordinal.
 
 
 Package biblatex Warning: Bibliography string 'edition' untranslated
-(biblatex)                at entry 'pur07' on input line 275.
+(biblatex)                at entry 'pur07' on input line 274.
 
 
 Package biblatex Warning: Using fallback definition for \mkbibdatelong.
@@ -2921,7 +2963,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (biblatex)                loaded, is faulty or does not contain a definition
 (biblatex)                for \mkbibdatelong.
 
-[85
+[89
 
 
 
@@ -2936,7 +2978,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (sections/appendixA.aux) (sections/appendixB.aux) (sections/about.aux)
 (sections/source.aux))
 Package rerunfilecheck Info: File `"Modul Aljabar".out' has not changed.
-(rerunfilecheck)             Checksum: 701296E174345DD6842595394C944800;2890.
+(rerunfilecheck)             Checksum: A8BB11D4794EBE45E7F962D5F03CD355;4531.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2946,13 +2988,13 @@ Package logreq Info: Writing requests to '"Modul Aljabar".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56531 strings out of 479663
- 1236510 string characters out of 2873809
- 2466798 words of memory out of 3000000
- 71695 multiletter control sequences out of 15000+200000
- 566866 words of font info for 299 fonts, out of 3000000 for 9000
+ 57103 strings out of 479663
+ 1245350 string characters out of 2873809
+ 2478424 words of memory out of 3000000
+ 72210 multiletter control sequences out of 15000+200000
+ 567566 words of font info for 306 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 136i,20n,137p,1162b,2523s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 136i,22n,137p,1225b,2523s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/d
 vips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
@@ -2979,9 +3021,9 @@ bm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1r8a.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
-Output written on "Modul Aljabar.pdf" (99 pages, 1825714 bytes).
+Output written on "Modul Aljabar.pdf" (103 pages, 1868829 bytes).
 PDF statistics:
- 1327 PDF objects out of 1440 (max. 8388607)
- 476 named destinations out of 1000 (max. 500000)
- 96236 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1475 PDF objects out of 1728 (max. 8388607)
+ 507 named destinations out of 1000 (max. 500000)
+ 96396 words of extra memory for PDF output out of 106986 (max. 10000000)
 

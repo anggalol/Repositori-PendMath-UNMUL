@@ -5,8 +5,6 @@
 \documentclass[a4paper, british]{memoir}
 % Add [final] to remove marginal notes
 
-\ProvidesFile{mtc-mem.tex}
-
 \usepackage{style}       % Custom style
 \usepackage{mnfrontpage} % Front page
 \usepackage{kantlipsum}  % Dummy text
@@ -14,6 +12,7 @@
 \usepackage{tcolorbox}
 \usepackage{appendix}
 \usepackage{multicol}
+\usepackage{systeme}
 \usepackage{float}
 \usepackage{pgfplots}
 \usepackage[figurename=Gambar]{caption}
@@ -228,7 +227,7 @@
     sections/source
 }
 
-\settocdepth{section}
+\settocdepth{subsection}
 \setsecnumdepth{subsection}
 
 \begin{document}
