@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  17 DEC 2020 22:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  18 DEC 2020 11:12
 entering extended mode
 **"./Modul Aljabar.tex"
 ("Modul Aljabar.tex"
@@ -2835,23 +2835,30 @@ g[]$ \T1/lmr/m/n/10 (-20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (-20) = []  []$\T1/
 lmr/m/n/10 (-20) . 
  []
 
+[43]
+Underfull \hbox (badness 7168) in paragraph at lines 1143--1145
+\T1/lmr/m/n/10 (+20) Oleh ka-re-na itu, jang-ka-u-an da-ri fung-si $[]  \OML/lm
+m/m/it/10 g[]$ \T1/lmr/m/n/10 (+20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (+20) =
+ []
 
-Underfull \vbox (badness 7291) has occurred while \output is active []
-
- [43]
-[44] [45] [46] [47]) [48] [49]
+Package pgfplots info on input line 1165: Overriding colorspace to cmyk due to 
+xcolor configuration.
+[44]
+Package pgfplots info on input line 1181: Overriding colorspace to cmyk due to 
+xcolor configuration.
+ [45] [46] [47] [48] [49]) [50] [51]
 \openout2 = `sections/chapter3.aux'.
 
- (sections/chapter3.tex [50
+ (sections/chapter3.tex [52
 
 
 
 
-] [51] [52]) [53]
+] [53]
+[54]) [55]
 \openout2 = `sections/chapter4.aux'.
 
-
-(sections/chapter4.tex [54
+ (sections/chapter4.tex [56
 
 
 
@@ -2859,25 +2866,25 @@ Underfull \vbox (badness 7291) has occurred while \output is active []
 ]
 Underfull \vbox (badness 4366) has occurred while \output is active []
 
- [55]
-[56] [57]) [58] [59]
+ [57]
+[58] [59]) [60] [61]
 \openout2 = `sections/chapter5.aux'.
 
- (sections/chapter5.tex [60
+ (sections/chapter5.tex [62
 
 
 
 
-] [61] [62] [63]) [64] [65]
+] [63] [64] [65]) [66] [67]
 \openout2 = `sections/chapter6.aux'.
 
 
-(sections/chapter6.tex [66
+(sections/chapter6.tex [68
 
 
 
 
-] [67] [68] [69] [70] [71] [72] [73]) [74] [75
+] [69] [70] [71] [72] [73] [74] [75]) [76] [77
 
 
 
@@ -2885,44 +2892,44 @@ Underfull \vbox (badness 4366) has occurred while \output is active []
 \openout2 = `sections/appendixA.aux'.
 
 
-(sections/appendixA.tex [76
+(sections/appendixA.tex [78
 
 
-] [77]) [78] [79]
+] [79]) [80] [81]
 \openout2 = `sections/appendixB.aux'.
 
- (sections/appendixB.tex [80
+ (sections/appendixB.tex [82
 
 
 
 
 ]
-[81]
+[83]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [82])
-[83] [84]
+ [84])
+[85] [86]
 \openout2 = `sections/about.aux'.
 
  (sections/about.tex)
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
- [85
+ [87
 
 
 
 
 
 ]
-[86]
+[88]
 \openout2 = `sections/source.aux'.
 
- (sections/source.tex [87
+ (sections/source.tex [89
 
 
 
 
-]) [88]
+]) [90]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2963,7 +2970,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (biblatex)                loaded, is faulty or does not contain a definition
 (biblatex)                for \mkbibdatelong.
 
-[89
+[91
 
 
 
@@ -2978,7 +2985,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (sections/appendixA.aux) (sections/appendixB.aux) (sections/about.aux)
 (sections/source.aux))
 Package rerunfilecheck Info: File `"Modul Aljabar".out' has not changed.
-(rerunfilecheck)             Checksum: A8BB11D4794EBE45E7F962D5F03CD355;4531.
+(rerunfilecheck)             Checksum: 105E9F003EE246AA14CC58AC380FA535;4531.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2988,11 +2995,11 @@ Package logreq Info: Writing requests to '"Modul Aljabar".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57103 strings out of 479663
- 1245350 string characters out of 2873809
- 2478424 words of memory out of 3000000
- 72210 multiletter control sequences out of 15000+200000
- 567566 words of font info for 306 fonts, out of 3000000 for 9000
+ 57146 strings out of 479663
+ 1245935 string characters out of 2873809
+ 2479398 words of memory out of 3000000
+ 72227 multiletter control sequences out of 15000+200000
+ 567519 words of font info for 306 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  136i,22n,137p,1225b,2523s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
@@ -3021,9 +3028,9 @@ bm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1r8a.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
-Output written on "Modul Aljabar.pdf" (103 pages, 1868829 bytes).
+Output written on "Modul Aljabar.pdf" (105 pages, 1880307 bytes).
 PDF statistics:
- 1475 PDF objects out of 1728 (max. 8388607)
- 507 named destinations out of 1000 (max. 500000)
+ 1513 PDF objects out of 1728 (max. 8388607)
+ 533 named destinations out of 1000 (max. 500000)
  96396 words of extra memory for PDF output out of 106986 (max. 10000000)
 

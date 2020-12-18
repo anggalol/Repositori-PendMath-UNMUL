@@ -1008,7 +1008,7 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 		Tentukan fungsi kuadrat yang bernilai negatif untuk $ -2 < x < 3 $ dan melalui titik $ \left(1, -6\right) $.
 	\end{contoh}
 	\begin{jawab}
-		Soal ini mungkin agak mengintimidasi pada awal ketika kita membacanya. Tetapi, jika kita memperhatikan lebih lanjut mengenai grafik fungsi kuadrat, kita akan dapat dengan mudah menyelesaikannya. Ingat kembali bahwa berdasarkan tanda koefisien $ a $ pada persamaan kuadrat umum \ref{eq:222}, maka terdapat dua kemungkinan grafik dari suatu fungsi kuadrat, yaitu terbuka ke atas atau terbuka ke bawah. Ilustrasinya adalah sebagai berikut.
+		Soal ini mungkin agak mengintimidasi pada awal ketika kita membacanya. Tetapi, jika kita memperhatikan lebih lanjut mengenai grafik fungsi kuadrat, kita akan dapat dengan mudah menyelesaikannya. Ingat kembali bahwa berdasarkan tanda koefisien $ a $ pada fungsi kuadrat umum \ref{eq:222}, maka terdapat dua kemungkinan grafik dari suatu fungsi kuadrat, yaitu terbuka ke atas atau terbuka ke bawah. Ilustrasinya adalah sebagai berikut.
 		\begin{figure}[H]
 			\centering
 			\begin{multicols}{2}
@@ -1110,11 +1110,11 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 				\end{axis}
 			\end{tikzpicture}
 		\end{center}
-		Jika kita lihat sketsa grafiknya, maka nilai dari $ \func{f}{x} $ akan selalu lebih besar dari atau sama dengan $ \func{f}{x_{p}} = \func{f}{1} = 2 $. Inilah alasan mengapa jangkauan dari fungsi kuadrat dengan $ a > 0 $ selalu lebih besar dari atau sama dengan $ y_{p} $ atau nilai minimumnya. Oleh karena itu, jangkauan dari fungsi $ f $ adalah $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{\func{f}{x} \leq 2} $.
+		Jika kita lihat sketsa grafiknya, maka nilai dari $ \func{f}{x} $ akan selalu lebih besar dari atau sama dengan $ \func{f}{x_{p}} = \func{f}{1} = 2 $. Inilah alasan mengapa jangkauan dari fungsi kuadrat dengan $ a > 0 $ selalu lebih besar dari atau sama dengan $ y_{p} $ atau nilai minimumnya. Oleh karena itu, jangkauan dari fungsi $ f $ adalah $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{\func{f}{x} \geq 2} $.
 		\par Jadi, domain dan jangkaun dari fungsi $ f $ berturut-turut adalah $ \func{\Dom}{f} = \mathbb{R} $ dan $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{\func{f}{x} \geq 2} $.
 	\end{jawab}
 	
-	\par Apabila domain fungsi kuadrat $ \func{f}{x} $ dibatasi, kita harus bekerja dengan lebih keras untuk mendapatkan jangkauannya. Disini kita perkenalkan istilah \textit{titik kritis}. Titik kritis adalah calon titik maksimum atau calon titik minimum (calon titik ekstrim). Untuk mengetahui jangkauan dari fungsi kuadrat yang domainnya dibatasi, kita harus mengecek titik-titik kritisnya terlebih dahulu untuk mencari nilai maksimum dan nilai minimumnya. Dalam fungsi kuadrat, titik-titik kritisnya adalah titik ujung interval atau titik balik. Setelah dicari titik-titik kritisnya, kita kemudian mencari manakah titik kritis yang menghasilkan nilai maksimum dan nilai minimum. Agar lebih jelas, kita akan mengerjakan beberapa contoh berikut.
+	\par Apabila domain fungsi kuadrat $ \func{f}{x} $ dibatasi, kita harus bekerja dengan lebih keras untuk mendapatkan jangkauannya. Disini kita perkenalkan istilah \textit{titik kritis}. Titik kritis adalah calon titik maksimum atau calon titik minimum (calon titik ekstrim). Untuk mengetahui jangkauan dari fungsi kuadrat yang domainnya dibatasi, kita harus mengecek titik-titik kritisnya terlebih dahulu untuk mencari nilai maksimum dan nilai minimumnya. Dalam fungsi kuadrat, titik-titik kritisnya adalah titik ujung interval dan titik baliknya. Setelah dicari titik-titik kritisnya, kita kemudian mencari manakah titik kritis yang menghasilkan nilai maksimum dan nilai minimum. Agar lebih jelas, kita akan mengerjakan beberapa contoh berikut.
 	
 	\begin{contoh}
 		Untuk $ 1 \leq x \leq 4 $, tentukan jangkauan dari fungsi $ \func{f}{x} = 2x^{2} - 4x - 3 $.
@@ -1139,7 +1139,9 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 	\[ \frac{1}{5} < \frac{1}{\func{f}{x}} \leq 1 \iff \frac{1}{5} < \func{g}{x} \leq 1 \]
 	sehingga jangkauan dari fungsi $ \func{g}{x} $ adalah $ \func{\Ran}{g} = \set{\func{g}{x} \in \mathbb{R}}{\dfrac{1}{5} < \func{g}{x} \leq 1} $.
 	
-	\par Khusus untuk $ n \in \mathbb{Z}^{+} $, jangkauan dari fungsi kuadrat $ \func{f}{x} $ diperbolehkan mengandung nol, asalkan selain nol tersebut, anggota yang lainnya tidak ada yang berbeda tanda, seperti interval $ \left[0, 1\right] $ atau $ \lbrk{-5, 0} $.
+	\par Khusus untuk $ n \in \mathbb{Z}^{+} $, jangkauan dari fungsi kuadrat $ \func{f}{x} $ diperbolehkan mengandung nol, asalkan selain nol tersebut, anggota yang lainnya tidak ada yang berbeda tanda, seperti interval $ \left[0, 1\right] $ atau $ \lbrk{-5, 0} $. Sebagai contoh, jika diketahui $ \func{\Ran}{f} = \set{\func{f}{x} \in \mathbb{R}}{0 \leq \func{f}{x} \leq 2} $, maka kita juga bisa mengetahui jangkauan dari fungsi $ \func{g}{x} = \left(\func{f}{x}\right)^{2} $. Mengingat $ 0 \leq \func{f}{x} \leq 2 $, maka dengan aturan ketaksamaan pada bab 3, kita dapat mengkuadratkan ketiga ruas sehingga akan didapatkan
+	\[ 0^{2} \leq \left(\func{f}{x}\right)^{2} \leq 2^{2} \iff 0 \leq \func{g}{x} \leq 4. \]
+	Oleh karena itu, jangkauan dari fungsi $ \func{g}{x} $ adalah $ \func{\Ran}{g} = \set{\func{g}{x} \in \mathbb{R}}{0 \leq \func{g}{x} \leq 4} $.
 	
 	\begin{explbox}
 		Diberikan fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $. Tentukan syarat-syarat bagi jangkauan kedua fungsi kuadrat tersebut agar jangkauan dari fungsi $ \func{h}{x} = \dfrac{\func{f}{x}}{\func{g}{x}} $ dapat diketahui hanya dari jangkauan kedua fungsi tersebut.
@@ -1153,7 +1155,75 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 
 \subsection{Definit Positif dan Definit Negatif}
 	
-	\kant[7-8]
+	Dalam fungsi kuadrat, bahkan juga sebarang fungsi selain fungsi kuadrat, terdapat istilah \textit{definit}. Secara bahasa, definit sendiri berarti 'selalu'. Oleh karena itu, definit positif berarti selalu positif dan definit negatif berarti selalu negatif.
+	
+	\par Jika kita menggambar grafik fungsi kuadrat yang selalu positif, maka grafiknya akan selalu berada di atas sumbu-$ x $. Berikut merupakan ilustrasinya.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.7]
+			\begin{axis}
+				[ticks=none, axis x line=center, axis y line=none, xmin=-3, xmax=3, ymin=0, ymax=6, axis line style={<->}]
+				\addplot[smooth, red] {x^2 + 1};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Ilustrasi fungsi kuadrat yang selalu positif (definit positif).}
+	\end{figure}
+	Perhatikan bahwa agar suatu fungsi kuadrat umum seperti pada persamaan \ref{eq:222} definit positif, maka diskriminannya harus negatif agar tidak menyinggung ataupun memotong sumbu-$ x $. Tetapi syarat tersebut masih belum cukup karena bisa saja grafik fungsinya selalu di bawah sumbu-$ x $. Oleh karena itu, agar terjamin grafik fungsinya selalu berada di atas sumbu-$ x $, nilai dari koefisien $ a $ haruslah positif. Jadi, syarat-syarat agar suatu fungsi kuadrat definit positif adalah
+	\begin{equation} \label{eq:227}
+		b^{2} - 4ac < 0 \quad \mbox{dan} \quad a > 0.
+	\end{equation}
+	
+	\par Selain bisa selalu bernilai positif, suatu fungsi kuadrat juga bisa selalu bernilai negatif. Jika kita menggambar grafik fungsi kuadrat yang selalu negatif, maka grafiknya akan selalu berada di bawah sumbu-$ x $. Berikut merupakan ilustrasinya.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.7]
+			\begin{axis}
+				[ticks=none, axis x line=center, axis y line=none, xmin=-3, xmax=3, ymin=-6, ymax=0, axis line style={<->}]
+				\addplot[smooth, red] {-x^2 - 1};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Ilustrasi fungsi kuadrat yang selalu negatif (definit negatif).}
+	\end{figure}
+	Perhatikan bahwa agar suatu fungsi kuadrat umum seperti pada persamaan \ref{eq:222} definit negatif, maka diskriminannya harus negatif agar tidak menyinggung ataupun memotong sumbu-$ x $. Tetapi syarat tersebut masih belum cukup karena bisa saja grafik fungsinya selalu di atas sumbu-$ x $. Oleh karena itu, agar terjamin grafik fungsinya selalu berada di bawah sumbu-$ x $, nilai dari koefisien $ a $ haruslah negatif. Jadi, syarat-syarat agar suatu fungsi kuadrat definit negatif adalah
+	\begin{equation} \label{eq:228}
+		b^{2} - 4ac < 0 \quad \mbox{dan} \quad a < 0.
+	\end{equation}
+	
+	\begin{contoh}
+		Tentukan apakah fungsi-fungsi kuadrat di bawah definit positif atau definit negatif, atau tidak keduanya.
+		\begin{enumerate}
+			\item $ \func{f}{x} = 3x^{2} - 2x + 1 $
+			\item $ \func{f}{x} = -x^{2} - 4x + 10 $
+			\item $ \func{f}{x} = -7x^{2} + 3x - 1 $
+			\item $ \func{f}{x} = x^{2} + 2x + 1 $
+			\item $ \func{f}{x} = ax^{2} - 3x + 1 $ untuk $ a > 5 $
+		\end{enumerate}
+	\end{contoh}
+	\begin{jawab}
+		Untuk masing-masing fungsi, kita hitung terlebih dahulu diskriminannya. Jika diskriminannya nonnegatif, kita tidak perlu lagi lebih jauh menghitung karena sudah pasti fungsi tersebut tidak definit (baik definit positif maupun definit negatif).
+		\begin{enumerate}
+			\item Perhatikan bahwa $ b^{2} - 4ac = \left(-2\right)^{2} - 4\left(3\right)\left(1\right) = -8 < 0 $ dan $ a = 3 > 0 $. Oleh karena itu, $ f $ definit positif.
+			\item Perhatikan bahwa $ b^{2} - 4ac = \left(-4\right)^{2} - 4\left(-1\right)\left(10\right) = 20 \geq 0 $ sehingga $ f $ tidak definit.
+			\item Perhatikan bahwa $ b^{2} - 4ac = 3^{2} - 4\left(-7\right)\left(-1\right) = -19 < 0 $ dan $ a = -7 < 0 $. Oleh karena itu $ f $ definit negatif.
+			\item Perhatikan bahwa $ b^{2} - 4ac = 2^{2} - 4\left(2\right)\left(1\right) = 0 \geq 0 $ sehingga $ f $ tidak definit.
+			\item Perhatikan bahwa $ b^{2} - 4ac = \left(-3\right)^{2} - 4a\left(1\right) = 9 - 4a $. Karena $ a > 5 $, maka mengalikan kedua ruas dengan $ -4 $ akan didapatkan $ -4a < -20 $. Kemudian, jika kita jumlahkan kedua ruas dengan 9 akan didapatkan $ 9 - 4a < -11 $. Jadi $ b^{2} - 4ac < 0 $ dan $ a > 5 > 0 $ sehingga $ f $ definit positif.
+		\end{enumerate}
+	\end{jawab}
+	
+	\begin{contoh}
+		Tentukan nilai $ m $ agar fungsi kuadrat $ \func{f}{x} = mx^{2} - x + 1 $
+		\begin{enumerate}
+			\item definit positif.
+			\item definit negatif.
+		\end{enumerate}
+	\end{contoh}
+	\begin{jawab}
+		Kita cari dahulu diskriminannya. Perhatikan bahwa $ b^{2} - 4ac = \left(-1\right)^{2} - 4m\left(1\right) = 1 - 4m $. Selanjutnya, kita akan mengerjakan soal ini.
+		\begin{enumerate}
+			\item Agar $ f $ definit positif, maka $ b^{2} - 4ac = 1 - 4m < 0 \iff m > 1/4 $ dan $ a = m > 0 $. Jadi haruslah $ m \in \left(1/4, +\infty\right) $.
+			\item Agar $ f $ definit negatif, maka $ b^{2} - 4ac = 1 - 4m < 0 \iff m > 1/4 $ dan $ a = m < 0 $. Tetapi tidak akan ada perpotongan dari kedua interval tersebut. Oleh karena itu, tidak ada $ m $ yang membuat $ f $ definit negatif. Dengan kata lain, $ m \in \emptyset $.
+		\end{enumerate}
+	\end{jawab}
 	
 \subsection{Sifat Fungsi Kuadrat Terhadap Fungsi Lainnya}
 	
