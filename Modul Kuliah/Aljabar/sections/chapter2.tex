@@ -1189,6 +1189,10 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 		b^{2} - 4ac < 0 \quad \mbox{dan} \quad a < 0.
 	\end{equation}
 	
+	\begin{explbox}
+		Tentukan syarat agar suatu fungsi kuadrat selalu taknegatif. Bagaimana juga syarat agar fungsi kuadrat tersebut selalu takpositif?
+	\end{explbox}
+	
 	\begin{contoh}
 		Tentukan apakah fungsi-fungsi kuadrat di bawah definit positif atau definit negatif, atau tidak keduanya.
 		\begin{enumerate}
@@ -1225,9 +1229,171 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 		\end{enumerate}
 	\end{jawab}
 	
-\subsection{Sifat Fungsi Kuadrat Terhadap Fungsi Lainnya}
+\subsection{Kedudukan Fungsi Kuadrat Terhadap Fungsi Lainnya}
 	
-	\kant[9-10]
+	Terdapat tiga kemungkinan kedudukan fungsi kuadrat terhadap fungsi lainnya. Kemungkinan-kemungkinannya adalah fungsi kuadrat tersebut berpotongan terhadap fungsi lainnya, menyinggung fungsi lainnya, dan tidak menyingggung maupun memotong fungsi lainnya. Dalam materi ini, yang dimaksud dengan fungsi lainnya hanya terbatas pada fungsi kuadrat dan fungsi linear.
+	
+	\subsubsection{Kedudukan Fungsi Kuadrat Terhadap Fungsi Linear}
+	
+		\par Misalkan diberikan fungsi kuadrat $ \func{f}{x} $ dan fungsi linear $ \func{g}{x} $. Agar kedua fungsi tersebut saling berpotongan tepat di dua titik, maka haruslah terdapat dua nilai $ x $ yang memenuhi $ \func{f}{x} = \func{g}{x} $. Tetapi persamaan tersebut tentunya ekuivalen dengan $ \func{f}{x} - \func{g}{x} = 0 $. Perhatikan bahwa pengurangan fungsi kuadrat dengan fungsi linear akan tetap menghasilkan fungsi kuadrat. Oleh karena itu, misalkan $ \func{h}{x} = \func{f}{x} - \func{g}{x} $. Agar persamaan kuadrat $ \func{h}{x} = 0 $ memiliki dua solusi real $ x $, haruslah diskriminan persamaan tersebut bernilai positif.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.6]
+				\begin{axis}
+					[ticks=none, axis x line=none, axis y line=none, xmin=-3.5, xmax=3.5, ymin=-1.5, ymax=3.5, axis line style={<->}, legend pos=south east]
+					\addplot[smooth, red] {x^2};
+					\addplot[smooth, blue] {0.5*x + 1};
+					
+					\legend{$ \func{f}{x} $, $ \func{g}{x} $}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Ilustrasi fungsi kuadrat $ \func{f}{x} $ dan fungsi linear $ \func{g}{x} $ yang berpotongan di dua titik.}
+		\end{figure}
+		
+		\par Dengan cara serupa, agar fungsi kuadrat $ \func{f}{x} $ dan fungsi linear $ \func{g}{x} $ saling bersinggungan, maka diskriminan persamaan $ \func{h}{x} = 0 $ haruslah sama dengan nol.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.6]
+				\begin{axis}
+					[ticks=none, axis x line=none, axis y line=none, xmin=-3.5, xmax=3.5, ymin=-1.5, ymax=3.5, axis line style={<->}, legend pos=south east]
+					\addplot[smooth, red] {x^2};
+					\addplot[smooth, blue] {0.5*x - 0.0625};
+					
+					\legend{$ \func{f}{x} $, $ \func{g}{x} $}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Ilustrasi fungsi kuadrat $ \func{f}{x} $ dan fungsi linear $ \func{g}{x} $ yang saling bersinggungan.}
+		\end{figure}
+		Selain itu, agar fungsi kuadrat $ \func{f}{x} $ dan fungsi linear $ \func{g}{x} $ tidak menyinggung maupun memotong satu sama lain, maka diskriminan persamaan $ \func{h}{x} = 0 $ haruslah kurang dari nol.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.6]
+				\begin{axis}
+					[ticks=none, axis x line=none, axis y line=none, xmin=-3.5, xmax=3.5, ymin=-1.5, ymax=3.5, axis line style={<->}, legend pos=south east]
+					\addplot[smooth, red] {x^2};
+					\addplot[smooth, blue] {0.5*x - 0.5};
+					
+					\legend{$ \func{f}{x} $, $ \func{g}{x} $}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Ilustrasi fungsi kuadrat $ \func{f}{x} $ dan fungsi linear $ \func{g}{x} $ yang tidak berpotongan ataupun bersinggungan.}
+		\end{figure}
+		Agar lebih jelas, kita akan mengerjakan beberapa contoh berikut.
+		
+		\begin{contoh}
+			Tentukan kedudukan fungsi kuadrat $ \func{f}{x} = x^{2} - 2x + 3 $ dengan fungsi $ \func{g}{x} = 2x - 1 $. Jika kedua fungsi tersebut berpotongan atau bersinggungan, tentukan titik potongnya atau titik singgungnya.
+		\end{contoh}
+		\begin{jawab}
+			Perhatikan bahwa $ \func{f}{x} - \func{g}{x} = x^{2} - 2x + 3 - \left(2x - 1\right) = x^{2} - 4x + 4 $. Karena diskriminan persamaan $ x^{2} - 4x + 4 = 0 $ adalah $ D = \left(-4\right)^{2} - 4\left(1\right)\left(4\right) = 0 $, maka fungsi kuadrat $ f $ menyinggung fungsi $ g $.
+			\par Lebih jauh, jika kita menyelesaikan persamaan $ x^{2} - 4x + 4 = 0 $, maka kita akan dapat menentukan lokasi titik singgung kedua persamaan tersebut. Perhatikan bahwa
+			\[ x^{2} - 4x + 4 = 0 \iff \left(x - 2\right)^{2} = 0 \]
+			sehingga $ x = 2 $. Oleh karena itu, titik singgung kedua persamaan tersebut adalah $ \left(2, \func{f}{2}\right) $ atau $ \left(2, \func{g}{2}\right) $.
+			\par Karena $ \func{f}{2} = \func{g}{2} = 2\left(2\right) - 1 = 3 $, maka titik singgungnya adalah $ \left(2, 3\right) $ dan kita selesai.
+		\end{jawab}
+		
+		\begin{contoh}
+			Tentukanlah syarat untuk $ n $ agar parabola $ y = x^{2} - x + 2n - 1 $ dan $ y = x + n $
+			\begin{enumerate}
+				\item saling berpotongan,
+				\item saling bersinggungan,
+				\item tidak bersinggungan atau berpotongan.
+			\end{enumerate}
+		\end{contoh}
+		\begin{jawab}
+			Mengurangi persamaan pertama dengan persamaan kedua akan didapatkan persamaan
+			\[ x^{2} - x + 2n - 1 - \left(x + n\right) = 0 \iff x^{2} - 2x + n - 1 = 0. \]
+			Persamaan ini memiliki diskriminan $ D = \left(-2\right)^{2} - 4\left(1\right)\left(n - 1\right) = -4n + 8 $.
+			\begin{enumerate}
+				\item Agar kedua fungsi saling berpotongan, haruslah $ D = -4n + 8 > 0 \iff n < 2 $ sehingga $ n \in \left(-\infty, 2\right) $.
+				\item Agar kedua fungsi saling bersinggungan, haruslah $ D = -4n + 8 = 0 \iff n = 2 $.
+				\item Agar kedua fungsi tidak bersinggungan atau berpotongan, haruslah $ D = -4n + 8 < 0 \iff n > 2 $ sehingga $ n \in \left(2, +\infty\right) $.
+			\end{enumerate}
+		\end{jawab}
+		
+		\begin{explbox}
+			Apakah ada kemungkinan suatu fungsi kuadrat berpotongan (bukan bersinggungan) dengan garis lurus tepat di satu titik?
+		\end{explbox}
+	
+	\subsubsection{Kedudukan Fungsi Kuadrat Terhadap Fungsi Kuadrat Lainnya}
+	
+		\par Selain hubungan antara fungsi kuadrat dan fungsi linear, kita juga akan membahas mengenai hubungan antara fungsi kuadrat dengan fungsi kuadrat lainnya. Misalkan $ \func{f}{x} = ax^{2} + bx + c $ dan $ \func{g}{x} = px^{2} + rx + s $ keduanya fungsi kuadrat dengan $ \func{f}{x} \ne \func{g}{x} $. Dengan argumen yang sama, agar kedua fungsi tersebut saling berpotongan tepat di dua titik, maka haruslah terdapat dua nilai $ x $ yang memenuhi $ \func{f}{x} = \func{g}{x} \iff \func{f}{x} - \func{g}{x} = 0 $. Selanjutnya, misalkan $ \func{h}{x} = \func{f}{x} - \func{g}{x} $. Perhatikan bahwa pengurangan fungsi kuadrat dengan fungsi kuadrat belum pasti juga akan menghasilkan fungsi kuadrat. Bisa saja akan dihasilkan fungsi linear bahkan fungsi konstan. Sebagai contoh, jika $ \func{f}{x} = x^{2} + 2x $ dan $ \func{g}{x} = x^{2} + x $, maka $ \func{h}{x} = x $ yang merupakan fungsi linear. Permasalahannya adalah, jika $ \func{h}{x} $ adalah fungsi linear atau fungsi konstan, maka persamaan $ \func{h}{x} = 0 $ tidak akan memiliki tepat dua solusi. Oleh karena itu, agar $ f $ dan $ g $ memotong satu sama lain, haruslah $ \func{h}{x} $ merupakan fungsi kuadrat yang hanya bisa terjadi jika koefisien $ a \ne p $. Selain itu, agar terdapat tepat dua solusi, diskriminan persamaan kuadrat $ \func{h}{x} = 0 $ haruslah positif. Jadi, agar kedua fungsi kuadrat $ f $ dan $ g $ saling berpotongan tepat di dua titik, haruslah
+		\begin{enumerate}
+			\item fungsi $ \func{h}{x} $ merupakan fungsi kuadrat, dan
+			\item diskriminan dari persamaan kuadrat $ \func{h}{x} = 0 $ bernilai positif.
+		\end{enumerate}
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.6]
+				\begin{axis}
+					[ticks=none, axis x line=none, axis y line=none, xmin=-3.5, xmax=3.5, ymin=-0.5, ymax=5, axis line style={<->}, legend pos=south east]
+					\addplot[smooth, red] {x^2};
+					\addplot[smooth, blue] {0.5*x^2 + 1};
+					
+					\legend{$ \func{f}{x} $, $ \func{g}{x} $}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Ilustrasi dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang berpotongan tepat di dua titik.}
+		\end{figure}
+		
+		\par Selain berpotongan tepat pada dua titik, kedua fungsi $ f $ dan $ g $ juga memiliki kemungkinan untuk berpotongan tepat di satu titik. Seperti yang telah dijelaskan sebelumnya, jika $ \func{h}{x} $ merupakan fungsi linear takkonstan, maka persamaan $ \func{h}{x} = 0 $ akan memiliki tepat satu solusi. Akibatnya, fungsi $ f $ dan $ g $ akan berpotongan tepat di satu titik. Lain halnya jika kita menginginkan $ f $ dan $ g $ saling bersinggungan. Jika $ f $ dan $ g $ saling bersinggungan, maka $ \func{h}{x} $ haruslah berupa fungsi kuadrat. Selain itu, diskriminan persamaan kuadrat $ \func{h}{x} = 0 $ harus sama dengan nol.
+		
+		\par Kemudian muncul pertanyaan baru mengenai mengapa jika $ h $ fungsi linear takkonstan akan membuat dua fungsi $ f $ dan $ g $ berpotongan tepat di satu titik, tetapi ketika $ h $ fungsi kuadrat akan membuat dua fungsi $ f $ dan $ g $ bersinggungan. Hal ini berkaitan dengan fungsi $ \func{h}{x} $ itu sendiri. Ingat kembali bahwa $ \func{h}{x} = \func{f}{x} - \func{g}{x} $ atau dalam kata lain, $ \func{h}{x} $ ini sebenarnya merupakan selisih antara fungsi $ f $ dan $ g $. Ketika $ h $ merupakan fungsi linear takkonstan, maka pada suatu saat grafik fungsi $ h $ akan berpotongan dengan sumbu-$ x $ (yaitu ketika $ \func{h}{x} = 0 $) dan akan terjadi perubahan tanda. Berarti, terkadang $ \func{f}{x} < \func{g}{x} $ dan terkadang juga $ \func{f}{x} > \func{g}{x} $ pada suatu interval tertentu. Akibatnya, pastilah $ f $ dan $ g $ berpotongan tepat pada satu titik, yang persisnya adalah ketika $ \func{h}{x} = 0 $. Anda dapat menganggap kejadian ini seperti gunting yang menyilang. Ilustrasinya adalah sebagai berikut.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.6]
+				\begin{axis}
+					[ticks=none, axis x line=none, axis y line=none, xmin=-3.5, xmax=3.5, ymin=-1.5, ymax=3.5, axis line style={<->}, legend pos=south west]
+					\addplot[smooth, red] {x^2 - 2*x};
+					\addplot[smooth, blue] {x^2};
+					
+					\legend{$ \func{f}{x} $, $ \func{g}{x} $}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Ilustrasi dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang berpotongan tepat di satu titik.}
+		\end{figure}
+		Lain halnya ketika $ h $ fungsi kuadrat. Ketika persamaan $ \func{h}{x} = 0 $ memiliki diskriminan nol, maka grafik fungsinya hanya akan menyinggung sumbu-$ x $. Akibatnya, selisih dari $ f $ dan $ g $ tidak akan pernah berubah tanda. Oleh karena itu, kedua fungsi tersebut hanya akan bersinggungan satu sama lain (yaitu ketika $ \func{h}{x} = 0 $). Ilustrasinya adalah sebagai berikut.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.6]
+				\begin{axis}
+					[ticks=none, axis x line=none, axis y line=none, xmin=-3.5, xmax=3.5, ymin=-0.5, ymax=5, axis line style={<->}, legend pos=south east]
+					\addplot[smooth, red] {x^2};
+					\addplot[smooth, blue] {0.5*x^2};
+					
+					\legend{$ \func{f}{x} $, $ \func{g}{x} $}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Ilustrasi dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang saling bersinggungan.}
+		\end{figure}
+		
+		\par Terakhir, agar kedua fungsi kuadrat $ f $ dan $ g $ tidak menyinggung maupun memotong satu sama lain, maka haruslah $ \func{h}{x} $ merupakan fungsi kuadrat atau fungsi konstan taknol. Jika $ \func{h}{x} $ berupa fungsi kuadrat, maka diskriminan persamaan $ \func{h}{x} = 0 $ haruslah kurang dari nol. Tetapi, jika $ \func{h}{x} $ berupa fungsi konstan taknol, maka hal tersebut sudah cukup untuk menjamin $ f $ dan $ g $ agar tidak menyinggung ataupun memotong satu sama lain. Selisih antara $ f $ dan $ g $ selalu konstan sehingga tidak akan memotong ataupun bersinggungan satu sama lain.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.6]
+				\begin{axis}
+					[ticks=none, axis x line=none, axis y line=none, xmin=-3.5, xmax=3.5, ymin=-0.5, ymax=5, axis line style={<->}, legend pos=south east]
+					\addplot[smooth, red] {x^2 + 1};
+					\addplot[smooth, blue] {0.3*x^2};
+					
+					\legend{$ \func{f}{x} $, $ \func{g}{x} $}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Ilustrasi dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang tidak memotong ataupun bersinggungan satu sama lain karena $ \func{h}{x} $ berupa fungsi kuadrat dan diskriminannya kurang dari nol.}
+		\end{figure}
+		
+		\begin{explbox}
+			Ilustrasikan dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang tidak memotong ataupun bersinggungan satu sama lain karena $ \func{h}{x} $ berupa fungsi konstan taknol. Apa perbedaannya dengan ilustrasi terakhir? Bagaimana jika selisih antara $ f $ dan $ g $ selalu konstan dan bernilai nol?
+		\end{explbox}
+	
+	\subsubsection{Kasus Khusus Ketika Tidak Ada Perpotongan Antara Dua Fungsi}
+		
+		Ketika tidak ada perpotongan antara fungsi kuadrat dengan fungsi lainnya, kita bisa membuat fungsi kuadrat tersebut selalu berada di atas fungsi lainnya ataupun selalu berada di bawah fungsi lainnya. Jika $ \func{f}{x} $ fungsi kuadrat dan $ \func{g}{x} $ fungsi linear, kita bisa membuat fungsi kuadrat $ f $ agar selalu berada di atas fungsi linear $ g $. Tentunya agar kondisi tersebut tercapai, selisih antara $ f $ dan $ g $ harus positif sehingga $ \func{f}{x} - \func{g}{x} > 0 $. Akibatnya, $ \func{f}{x} - \func{g}{x} $ harus selalu berada di atas sumbu-$ x $ (karena harus positif) sehingga $ \func{f}{x} - \func{g}{x} $ harus definit positif. Dengan cara yang sama, agar fungsi kuadrat $ f $ selalu berada di bawah fungsi linear $ g $, maka $ \func{f}{x} - \func{g}{x} $ harus definit negatif. Tentunya ketika $ f $ fungsi kuadrat dan $ g $ fungsi linear, maka fungsi $ \func{f}{x} - \func{g}{x} $ akan terjamin merupakan fungsi kuadrat sehingga syarat-syarat definitnya sama dengan syarat-syarat yang telah kita pelajari pada bagian sebelumnya.
+		
+		\par Lain halnya ketika $ \func{f}{x} $ dan $ \func{g}{x} $ keduanya fungsi kuadrat. Langkah-langkahnya sama dengan paragraf sebelumnya ketika $ \func{f}{x} - \func{g}{x} $ merupakan fungsi kuadrat. Tetapi, jika $ \func{f}{x} - \func{g}{x} $ bukan merupakan fungsi kuadrat, melainkan fungsi linear takkonstan, maka kita tidak akan bisa membuat $ f $ selalu berada di atas $ g $ atau sebaliknya. Hal ini dikarenakan fungsi linear takkonstan pasti akan selalu berpotongan dengan sumbu-$ x $ yang membuat $ \func{f}{x} - \func{g}{x} $ mustahil selalu berada di atas sumbu-$ x $ maupun dibawahnya.
+		
+		\begin{explbox}
+			Bagaimana jika $ \func{f}{x} - \func{g}{x} $ fungsi konstan (baik nol maupun taknol)?
+		\end{explbox}
 	
 \subsection{Titik Tetap Fungsi Kuadrat}
 	
