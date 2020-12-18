@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  18 DEC 2020 18:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  18 DEC 2020 20:41
 entering extended mode
 **"./Modul Aljabar.tex"
 ("Modul Aljabar.tex"
@@ -2864,19 +2864,19 @@ Package pgfplots info on input line 1359: Overriding colorspace to cmyk due to
 xcolor configuration.
 Package pgfplots info on input line 1374: Overriding colorspace to cmyk due to 
 xcolor configuration.
- [50] [51] [52] [53]) [54] [55]
+ [50] [51] [52] [53] [54] [55]) [56] [57]
 \openout2 = `sections/chapter3.aux'.
 
 
-(sections/chapter3.tex [56
+(sections/chapter3.tex [58
 
 
 
 
-] [57] [58]) [59]
+] [59] [60]) [61]
 \openout2 = `sections/chapter4.aux'.
 
- (sections/chapter4.tex [60
+ (sections/chapter4.tex [62
 
 
 
@@ -2884,25 +2884,25 @@ xcolor configuration.
 ]
 Underfull \vbox (badness 4366) has occurred while \output is active []
 
- [61]
-[62] [63]) [64] [65]
+ [63]
+[64] [65]) [66] [67]
 \openout2 = `sections/chapter5.aux'.
 
- (sections/chapter5.tex [66
+ (sections/chapter5.tex [68
 
 
 
 
-] [67] [68] [69]) [70] [71]
+] [69] [70] [71]) [72] [73]
 \openout2 = `sections/chapter6.aux'.
 
 
-(sections/chapter6.tex [72
+(sections/chapter6.tex [74
 
 
 
 
-] [73] [74] [75] [76] [77] [78] [79]) [80] [81
+] [75] [76] [77] [78] [79] [80] [81]) [82] [83
 
 
 
@@ -2910,44 +2910,44 @@ Underfull \vbox (badness 4366) has occurred while \output is active []
 \openout2 = `sections/appendixA.aux'.
 
 
-(sections/appendixA.tex [82
+(sections/appendixA.tex [84
 
 
-] [83]) [84] [85]
+] [85]) [86] [87]
 \openout2 = `sections/appendixB.aux'.
 
- (sections/appendixB.tex [86
+ (sections/appendixB.tex [88
 
 
 
 
 ]
-[87]
+[89]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [88])
-[89] [90]
+ [90])
+[91] [92]
 \openout2 = `sections/about.aux'.
 
  (sections/about.tex)
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
- [91
+ [93
 
 
 
 
 
 ]
-[92]
+[94]
 \openout2 = `sections/source.aux'.
 
- (sections/source.tex [93
+ (sections/source.tex [95
 
 
 
 
-]) [94]
+]) [96]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2988,7 +2988,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (biblatex)                loaded, is faulty or does not contain a definition
 (biblatex)                for \mkbibdatelong.
 
-[95
+[97
 
 
 
@@ -3002,14 +3002,9 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (sections/chapter4.aux) (sections/chapter5.aux) (sections/chapter6.aux)
 (sections/appendixA.aux) (sections/appendixB.aux) (sections/about.aux)
 (sections/source.aux))
+Package rerunfilecheck Info: File `"Modul Aljabar".out' has not changed.
+(rerunfilecheck)             Checksum: 06690612901FA60AFD6053DECF1AC3A8;4535.
 
-Package rerunfilecheck Warning: File `"Modul Aljabar".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Modul Aljabar".out':
-(rerunfilecheck)             Before: 3D3A467336E3E6EC1661C52B4D3FE547;4535
-(rerunfilecheck)             After:  06690612901FA60AFD6053DECF1AC3A8;4535.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -3018,48 +3013,42 @@ Package logreq Info: Writing requests to '"Modul Aljabar".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57278 strings out of 479663
- 1248216 string characters out of 2873809
+ 57299 strings out of 479663
+ 1248506 string characters out of 2873809
  2481233 words of memory out of 3000000
- 72323 multiletter control sequences out of 15000+200000
+ 72324 multiletter control sequences out of 15000+200000
  567815 words of font info for 309 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  136i,22n,137p,1495b,2523s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section*.43} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix*.40} has been referenced but does not exis
-t, replaced by a fixed one
-
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiK
-TeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
-ps/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C
-:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/M
-iKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/
-dvips/lm/lm-mathex.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
-lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1r8a.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-urw/helvetic/uhvr8a.pfb>
-Output written on "Modul Aljabar.pdf" (109 pages, 1908042 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/d
+vips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files
+/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Files/MiKTeX 2.9/fonts/en
+c/dvips/lm/lm-mathex.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/bera/fvmr8a.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr
+8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
+/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1r8a.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/urw/helvetic/uhvr8a.pfb>
+Output written on "Modul Aljabar.pdf" (111 pages, 1918795 bytes).
 PDF statistics:
- 1563 PDF objects out of 1728 (max. 8388607)
- 563 named destinations out of 1000 (max. 500000)
+ 1594 PDF objects out of 1728 (max. 8388607)
+ 583 named destinations out of 1000 (max. 500000)
  96396 words of extra memory for PDF output out of 106986 (max. 10000000)
 

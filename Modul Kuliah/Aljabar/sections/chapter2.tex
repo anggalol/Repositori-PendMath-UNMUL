@@ -1384,16 +1384,77 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 		\begin{explbox}
 			Ilustrasikan dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang tidak memotong ataupun bersinggungan satu sama lain karena $ \func{h}{x} $ berupa fungsi konstan taknol. Apa perbedaannya dengan ilustrasi terakhir? Bagaimana jika selisih antara $ f $ dan $ g $ selalu konstan dan bernilai nol?
 		\end{explbox}
+		
+		\par Agar lebih jelas, kita akan mengerjakan beberapa contoh soal yang berkaitan dengan kedudukan fungsi kuadrat terhadap fungsi kuadrat lainnya.
+		
+		\begin{contoh}
+			Tentukan kedudukan fungsi kuadrat $ \func{f}{x} = x^{2} + 3x - 1 $ dengan fungsi kuadrat $ \func{g}{x} = x^{2} + 1 $. Jika kedua fungsi tersebut berpotongan atau bersinggungan, tentukan titik potongnya atau titik singgungnya.
+		\end{contoh}
+		\begin{jawab}
+			Perhatikan bahwa $ \func{f}{x} - \func{g}{x} = 3x - 2 $. Akibatnya, $ f $ dan $ g $ berpotongan tepat di satu titik, yaitu ketika $ 3x - 2 = 0 \iff x = 2/3 $. Oleh karena itu, titik potong $ f $ dan $ g $ adalah $ \left(2/3, \func{f}{2/3}\right) $ atau $ \left(2/3, \func{g}{2/3}\right) $.
+			\par Karena $ \func{f}{2/3} = \func{g}{2/3} = \left(2/3\right)^{2} + 1 = 13/9 $, maka titik potongnya adalah $ \left(2/3, 13/9\right) $.
+		\end{jawab}
+		
+		\begin{contoh}
+			Tentukanlah syarat untuk $ m $ agar fungsi kuadrat $ \func{f}{x} = mx^{2} + 1 $ dan fungsi kuadrat $ \func{g}{x} = x^{2} + 2x $
+			\begin{enumerate}
+				\item saling berpotongan tepat di dua titik berbeda,
+				\item saling berpotongan tepat di satu titik,
+				\item saling bersinggungan,
+				\item tidak bersinggungan atau berpotongan.
+			\end{enumerate}
+		\end{contoh}
+		\begin{jawab}
+			Ingat bahwa agar $ f $ merupakan fungsi kuadrat, maka $ m \ne 0 $. Syarat ini mutlak dipenuhi oleh setiap subsoal.
+			\par Perhatikan bahwa dengan mengurangi $ \func{f}{x} $ dengan $ \func{g}{x} $ kita akan mendapatkan
+			\[ \func{f}{x} - \func{g}{x} = \left(m - 1\right)x^{2} - 2x + 1. \]
+			Fungsi yang didapatkan dari hasil pengurangan ini memiliki diskriminan $ \left(-2\right)^{2} - 4\left(m - 1\right)\left(1\right) = 8 - 4m $. Selanjutnya, misalkan $ \func{h}{x} = \func{f}{x} - \func{g}{x} $.
+			\begin{enumerate}
+				\item Agar kedua fungsi saling berpotongan di dua titik, maka $ \func{h}{x} $ haruslah merupakan fungsi kuadrat dengan diskriminan positif. Oleh karena itu, agar $ \func{h}{x} $ fungsi kuadrat, maka $ m - 1 \ne 0 \iff m \ne 1 $. Selain itu, haruslah $ 8 - 4m > 0 \iff m < 2 $.
+				\par Jadi, agar kedua fungsi saling berpotongan di dua titik, haruslah $ m \in \left(-\infty, 2\right) \backslash \lrbr{0, 1} $.
+				\item Agar kedua fungsi saling berpotongan tepat di satu titk, maka $ \func{h}{x} $ haruslah fungsi linear takkonstan sehingga haruslah $ m - 1 = 0 \iff m = 1 $.
+				\item Agar kedua fungsi saling bersinggungan, maka $ \func{h}{x} $ haruslah merupakan fungsi kuadrat dengan diskriminan nol. Oleh karena itu, agar $ \func{h}{x} $ fungsi kuadrat, maka $ m - 1 \ne 0 \iff m \ne 1 $. Selain itu, haruslah $ 8 - 4m = 0 \iff m = 2 $.
+				\par Jadi, agar kedua fungsi saling bersinggungan, haruslah $ m = 2 $.
+				\item Agar kedua fungsi tidak bersinggungan atau berpotongan, maka $ \func{h}{x} $ haruslah merupakan fungsi kuadrat dengan diskriminan negatif atau fungsi konstan taknol. Jika kita lihat lebih lanjut, $ \func{h}{x} $ tidak mungkin fungsi konstan sehingga haruslah $ \func{h}{x} $ fungsi kuadrat. Oleh karena itu, agar $ \func{h}{x} $ fungsi kuadrat, maka $ m - 1 \ne 0 \iff m \ne 1 $. Selain itu, haruslah $ 8 - 4m < 0 \iff m > 2 $.
+				\par Jadi, agar kedua fungsi tidak bersinggungan atau berpotongan, haruslah $ m \in \left(2, +\infty\right) $.
+			\end{enumerate}
+		\end{jawab}
+		
+		\begin{infobox}{Informasi}
+			Jika Anda mengalami kesulitan untuk membayangkan bagaimana cara kerja soal ini, Anda dapat mencoba membuka laman daring https://www.desmos.com/calculator?lang=id. Kemudian buatlah grafik $ f $ dan $ g $ untuk contoh soal terakhir. Jangan lupa tambahkan slider $ m $ untuk melihat bagaimana kedudukan $ f $ terhadap $ g $ seiring berubahnya nilai $ m $.
+		\end{infobox}
 	
 	\subsubsection{Kasus Khusus Ketika Tidak Ada Perpotongan Antara Dua Fungsi}
 		
-		Ketika tidak ada perpotongan antara fungsi kuadrat dengan fungsi lainnya, kita bisa membuat fungsi kuadrat tersebut selalu berada di atas fungsi lainnya ataupun selalu berada di bawah fungsi lainnya. Jika $ \func{f}{x} $ fungsi kuadrat dan $ \func{g}{x} $ fungsi linear, kita bisa membuat fungsi kuadrat $ f $ agar selalu berada di atas fungsi linear $ g $. Tentunya agar kondisi tersebut tercapai, selisih antara $ f $ dan $ g $ harus positif sehingga $ \func{f}{x} - \func{g}{x} > 0 $. Akibatnya, $ \func{f}{x} - \func{g}{x} $ harus selalu berada di atas sumbu-$ x $ (karena harus positif) sehingga $ \func{f}{x} - \func{g}{x} $ harus definit positif. Dengan cara yang sama, agar fungsi kuadrat $ f $ selalu berada di bawah fungsi linear $ g $, maka $ \func{f}{x} - \func{g}{x} $ harus definit negatif. Tentunya ketika $ f $ fungsi kuadrat dan $ g $ fungsi linear, maka fungsi $ \func{f}{x} - \func{g}{x} $ akan terjamin merupakan fungsi kuadrat sehingga syarat-syarat definitnya sama dengan syarat-syarat yang telah kita pelajari pada bagian sebelumnya.
+		Ketika tidak ada perpotongan antara fungsi kuadrat dengan fungsi lainnya, kita bisa membuat fungsi kuadrat tersebut selalu berada di atas fungsi lainnya ataupun selalu berada di bawah fungsi lainnya. Jika $ \func{f}{x} $ fungsi kuadrat dan $ \func{g}{x} $ fungsi linear, kita bisa membuat fungsi kuadrat $ f $ agar selalu berada di atas fungsi linear $ g $. Tentunya agar kondisi tersebut tercapai, haruslah $ \func{f}{x} > \func{g}{x} \iff \func{f}{x} - \func{g}{x} > 0 $ atau dengan kata lain, selisih antara $ f $ dan $ g $ harus positif. Akibatnya, $ \func{f}{x} - \func{g}{x} $ harus selalu berada di atas sumbu-$ x $ (karena harus positif) sehingga $ \func{f}{x} - \func{g}{x} $ harus definit positif. Dengan cara yang sama, agar fungsi kuadrat $ f $ selalu berada di bawah fungsi linear $ g $, maka $ \func{f}{x} - \func{g}{x} $ harus definit negatif. Tentunya ketika $ f $ fungsi kuadrat dan $ g $ fungsi linear, maka fungsi $ \func{f}{x} - \func{g}{x} $ akan terjamin merupakan fungsi kuadrat sehingga syarat-syarat definitnya sama dengan syarat-syarat yang telah kita pelajari pada bagian sebelumnya.
 		
 		\par Lain halnya ketika $ \func{f}{x} $ dan $ \func{g}{x} $ keduanya fungsi kuadrat. Langkah-langkahnya sama dengan paragraf sebelumnya ketika $ \func{f}{x} - \func{g}{x} $ merupakan fungsi kuadrat. Tetapi, jika $ \func{f}{x} - \func{g}{x} $ bukan merupakan fungsi kuadrat, melainkan fungsi linear takkonstan, maka kita tidak akan bisa membuat $ f $ selalu berada di atas $ g $ atau sebaliknya. Hal ini dikarenakan fungsi linear takkonstan pasti akan selalu berpotongan dengan sumbu-$ x $ yang membuat $ \func{f}{x} - \func{g}{x} $ mustahil selalu berada di atas sumbu-$ x $ maupun dibawahnya.
 		
 		\begin{explbox}
 			Bagaimana jika $ \func{f}{x} - \func{g}{x} $ fungsi konstan (baik nol maupun taknol)?
 		\end{explbox}
+		
+		\par Agar lebih jelas, kita akan mengerjakan beberapa contoh soal yang berkaitan dengan kasus khusus ketika tidak ada perpotongan antara dua fungsi ini.
+		
+		\begin{contoh}
+			Tentukanlah syarat untuk $ m $ agar grafik fungsi $ \func{f}{x} = mx^{2} - 2mx + m $ seluruhnya berada di atas fungsi $ \func{g}{x} = 2x - 3 $.
+		\end{contoh}
+		\begin{jawab}
+			Pada soal ini tidak disebutkan secara eksplisit jika $ f $ merupakan 'fungsi kuadrat', tetapi hanya 'fungsi'. Berarti syarat $ m \ne 0 $ tidak diperlukan.
+			\par Agar grafik fungsi $ f $ seluruhnya berada di atas fungsi $ g $, maka haruslah
+			\[ \func{f}{x} - \func{g}{x} = mx^{2} - \left(2m + 2\right)x + m + 3 > 0. \]
+			Perhatikan bahwa $ \func{f}{x} - \func{g}{x} $ memiliki kemungkinan untuk menjadi fungsi linear (ketika $ m = 0 $). Padahal $ \func{f}{x} - \func{g}{x} $ harus merupakan fungsi kuadrat yang memaksa kita untuk memerlukan syarat $ m \ne 0 $. Selain itu, fungsi kuadrat $ \func{f}{x} - \func{g}{x} $ harus definit positif. Akibatnya $ m > 0 $ dan
+			\[ \left(-\left(2m + 2\right)\right)^{2} - 4m\left(m\right) = 8m + 4 < 0 \iff m < -\frac{1}{2}. \]
+			Tetapi, perpotongan ketiga syarat tersebut merupakan himpunan kosong.
+			\par Jadi, tidak ada nilai $ m $ sedemikian sehingga grafik fungsi $ f $ seluruhnya berada di atas fungsi $ g $.
+		\end{jawab}
+		
+		\begin{contoh}
+			Tentukanlah syarat untuk $ m $ agar grafik fungsi $ \func{f}{x} = mx^{2} + 2x $ seluruhnya berada di bawah fungsi $ \func{g}{x} = x^{2} - 3 $.
+		\end{contoh}
+		\begin{jawab}
+			latihan.
+		\end{jawab}
 	
 \subsection{Titik Tetap Fungsi Kuadrat}
 	
