@@ -547,7 +547,7 @@ dengan $ a, b, c \in \mathbb{R} $ dan $ a \ne 0 $.
 		\par \noindent Jadi, banyaknya penyelesaian real dari persamaan $ x^{4} - 5x^{3} + 6x^{2} - 5x + 1 = 0 $ adalah 2.
 	\end{jawab}
 	
-	\begin{contoh}
+	\begin{contoh}[OSN 2004 P6]
 		Persamaan kuadrat $ x^{2} + ax + b + 1 = 0 $ dengan $ a $, $ b $ adalah bilangan bulat, memiliki akar-akar bilangan asli. Buktikan bahwa $ a^{2} + b^{2} $ bukan merupakan bilangan prima.
 	\end{contoh}
 	\begin{jawab}
@@ -634,7 +634,6 @@ dengan $ a, b, c \in \mathbb{R} $ dan $ a \ne 0 $.
 					\item $ 7x^{2} + x - 1 = 0 $
 					\item $ x^{2} + 4x + 4 = 0 $
 					\item $ x^{2} + x + 1 = 0 $
-					\item[]
 				\end{enumerate}
 			\end{multcols}
 			\item Tentukanlah akar-akar persamaan kuadrat pada soal di atas dengan menggunakan rumus kuadratik (rumus abc).
@@ -657,7 +656,6 @@ dengan $ a, b, c \in \mathbb{R} $ dan $ a \ne 0 $.
 					\item akar-akar real
 					\item akar-akar real yang berbeda
 					\item akar-akar takreal
-					\item[]
 				\end{enumerate}
 			\end{multcols}
 			\item Persamaan kuadrat $ x^{2} - 2mx + m - 1 = 0 $ memiliki akar kembar. Tentukanlah nilai dari $ m $.
@@ -683,7 +681,7 @@ dengan $ a, b, c \in \mathbb{R} $ dan $ a \ne 0 $.
 					\item $ x_{1}^{-3} - x_{2}^{-3} $
 					\item $ \dfrac{x_{1}}{x_{2}} + \dfrac{x_{2}}{x_{1}} $
 					\item $ x_{1}^{5} + x_{2}^{5} $
-					\item $ \dfrac{1}{\sqrt{x_{1}}} + \dfrac{1}{\sqrt{x_{2}}} $
+					\item $ \dfrac{1}{\sqrt[3]{x_{1}}} + \dfrac{1}{\sqrt[3]{x_{2}}} $
 				\end{enumerate}
 			\end{multcols}
 			\item Jika $ r $ dan $ s $ merupakan akar-akar dari persamaan $ 2x^{2} - 1x + 2 = 0 $, tentukanlah nilai dari
@@ -714,7 +712,6 @@ dengan $ a, b, c \in \mathbb{R} $ dan $ a \ne 0 $.
 					\item akar-akarnya berlainan tanda
 					\item akar-akarnya berkebalikan
 					\item akar-akarnya berlawanan
-					\item[]
 				\end{enumerate}
 			\end{multcols}
 			\item Kedua akar persamaan $ x^{2} - 3x + a - 3 = 0 $ lebih besar dari 2. Tentukanlah syarat untuk $ a $.
@@ -1642,13 +1639,74 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 
 \subsection{Contoh Soal HOTS}
 	
-	\kant[10-15]
+	Subbab ini tentunya harus diakhiri dengan memberikan contoh-contoh soal HOTS agar pembaca dapat lebih kritis dan lebih menguasai lagi materi-materi yang telah diberikan pada subbab ini. Pembaca diharapkan dapat mencoba untuk mengerjakan contoh-contoh ini terlebih dahulu sebelum membaca solusinya.
+	
+	\begin{contoh}[Baltic Way 2011 P5]
+		Misalkan $ f : \mathbb{R} \to \mathbb{R} $ fungsi yang memenuhi $ \func{f}{\func{f}{x}} = x^{2} - x + 1 $ untuk setiap bilangan real $ x $. Hitunglah nilai dari $ \func{f}{0} $.
+	\end{contoh}
+	\begin{jawab}
+		Misalkan $ \func{f}{0} = a $ dan $ \func{f}{1} = b $. Maka $ \func{f}{\func{f}{0}} = \func{f}{a} $. Tetapi dari soal kita tahu bahwa $ \func{f}{\func{f}{0}} = 0^{2} - 0 + 1 = 1 $. Oleh karena itu $ \func{f}{a} = 1 $.
+		\par Perhatikan juga bahwa $ \func{f}{\func{f}{1}} = b $. Tetapi dari soal kita juga tahu bahwa $ \func{f}{\func{f}{1}} = 1^{2} - 1 + 1 = 1 $. Oleh karena itu $ \func{f}{b} = 1 $.
+		\par Karena $ \func{f}{a} = 1 $, maka $ \func{f}{\func{f}{a}} = \func{f}{1} $. Tetapi dari soal kita tahu bahwa $ \func{f}{\func{f}{a}} = a^{2} - a + 1 $. Oleh karena itu $ a^{2} - a + 1 = b $.
+		\par Karena $ \func{f}{b} = 1 $, maka $ \func{f}{\func{f}{b}} = \func{f}{1} = b $. Tetapi dari soal kita juga tahu bahwa $ \func{f}{\func{f}{b}} = b^{2} - b + 1 $. Oleh karena itu
+		\[ b^{2} - b + 1 = b \iff b^{2} - 2b + 1 = 0 \iff \left(b - 1\right)^{2} = 0 \iff b = 1. \]
+		Berarti $ a^{2} - a + 1 = 1 \iff a\left(a - 1\right) = 0 $. Jika $ a = 0 $, maka $ \func{f}{\func{f}{0}} = 0 $ yang mana hal tersebut tidak mungkin. Jadi $ a = 1 $ atau dengan kata lain $ \func{f}{0} = 1 $ dan kita selesai.
+	\end{jawab}
+	
+	\begin{contoh}[OSN 2020 P2]
+		Diberikan fungsi kuadrat $ \func{P}{x} = ax^{2} + bx + c $ dimana $ a $, $ b $, dan $ c $ bilangan real. Jika
+		\[ \func{P}{a} = bc, \quad \func{P}{b} = ca, \quad \mbox{dan} \quad \func{P}{c} = ab, \]
+		buktikan bahwa
+		\[ \left(a - b\right)\left(b - c\right)\left(c - a\right)\left(a + b + c\right) = 0. \]
+	\end{contoh}
+	\begin{jawab}
+		Karena $ \func{P}{a} = bc $, $ \func{P}{b} = ca $, dan $ \func{P}{c} = ab $, maka kita punyai sistem persamaan
+		\[
+			\begin{cases}
+				\begin{aligned}
+					a^{3} + ab + c &= bc \\
+					ab^{2} + b^{2} + c &= ca \\
+					ac^{2} + bc + c &= ab
+				\end{aligned}
+			\end{cases}
+		\]
+		Mengurangi persamaan (2) dengan persamaan (3), kita akan mendapatkan
+		\begin{alignat*}{2}
+			&\qquad& ab^{2} + b^{2} - ac^{2} - bc &= ca - ab \\
+			\iff&& a\left(b^{2} - c^{2}\right) + b\left(b - c\right) &= a\left(c - b\right) \\
+			\iff&& a\left(b + c\right)\left(b - c\right) + b\left(b - c\right) + a\left(b - c\right) &= 0 \\
+			\iff&& \left(b - c\right)\left(ab + ac + a + b\right) &= 0
+		\end{alignat*}
+		Jika $ b - c = 0 $, maka kita selesai. Oleh karena itu, selanjutnya misalkan $ ab + ac + a + b = 0 $.
+		\par Perhatikan juga bahwa jika kita mengurangi persamaan (1) dengan persamaan (2), maka kita akan mendapatkan
+		\begin{alignat*}{2}
+			&\qquad& a^{3} + ab - ab^{2} - b^{2} &= bc - ca \\
+			\iff&& a\left(a^{2} - b^{2}\right) + b\left(a - b\right) &= c\left(b - a\right) \\
+			\iff&& a\left(a + b\right)\left(a - b\right) + b\left(a - b\right) + c\left(a - b\right) &= 0 \\
+			\iff&& \left(a - b\right)\left(a^{2} + ab + b + c\right) &= 0
+		\end{alignat*}
+		Jika $ a - b = 0 $, maka kita selesai. Oleh karena itu, selanjutnya misalkan $ a^{2} + ab + b + c = 0 $.
+		\par Sampai saat ini, kita punyai $ ab + ac + a + b = 0 $ dan $ a^{2} + ab + b + c = 0 $. Mengurangi kedua persamaan tersebut akan didapatkan
+		\[ ac + c - a^{2} - c = 0 \iff a\left(c - a\right) - \left(c - a\right) = 0 \iff \left(c - a\right)\left(a - 1\right) = 0. \]
+		Tentunya jika $ c - a = 0 $, maka kita selesai. Oleh karena itu, selanjutnya misalkan $ a = 1 $. Akibatnya, mensubstitusikannya pada persamaan (2) kita akan mendapatkan $ b = 0 $ (cek!). Mensubstitusikan nilai $ a $ dan $ b $ ini ke persamaan (1), kita juga akan mendapatkan $ c = -1 $ (cek!). Setelah solusi ini di substitusikan ke persamaan (3), ternyata solusi ini juga memenuhi sehingga solusi ini valid (cek!). Berarti $ a + b + c = 1 + 0 - 1 = 0 $.
+		\par Jadi terbukti bahwa $ \left(a - b\right)\left(b - c\right)\left(c - a\right)\left(a + b + c\right) = 0 $. \hfill $ \square $
+	\end{jawab}
 	
 \newpage
 
 \subsection{Latihan Soal 2.2}
 	
-	\kant[16-20]
+	\subsubsection{Bagian Pertama}
+		
+		\begin{enumerate}[nosep]
+			\item template.
+		\end{enumerate}
+	
+	\subsubsection{Bagian Kedua \dashh Soal Tantangan}
+		
+		\begin{enumerate}[nosep]
+			\item template.
+		\end{enumerate}
 
 \newpage
 
