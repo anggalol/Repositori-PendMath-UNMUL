@@ -1381,8 +1381,10 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 			\caption{Ilustrasi dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang tidak memotong ataupun bersinggungan satu sama lain karena $ \func{h}{x} $ berupa fungsi kuadrat dan diskriminannya kurang dari nol.}
 		\end{figure}
 		
+		\par Jika fungsi $ \func{h}{x} $ konstan, atau dengan kata lain $ \func{h}{x} = k $ untuk suatu konstanta real $ k $, maka $ k $ tidak boleh nol. Tentunya jika $ k = 0 $, maka fungsi $ f $ dan $ g $ akan saling berhimpitan. Tetapi jika $ k \ne 0 $, maka seperti yang telah dijelaskan sebelumnya, selisih $ f $ dan $ g $ akan selalu konstan sehingga grafiknya tidak akan berpotongan maupun bersinggungan satu sama lain.
+		
 		\begin{explbox}
-			Ilustrasikan dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang tidak memotong ataupun bersinggungan satu sama lain karena $ \func{h}{x} $ berupa fungsi konstan taknol. Apa perbedaannya dengan ilustrasi terakhir? Bagaimana jika selisih antara $ f $ dan $ g $ selalu konstan dan bernilai nol?
+			Ilustrasikan dua fungsi kuadrat $ \func{f}{x} $ dan $ \func{g}{x} $ yang tidak memotong ataupun bersinggungan satu sama lain karena $ \func{h}{x} $ berupa fungsi konstan. Apa perbedaannya dengan ketika $ \func{h}{x} $ fungsi kuadrat berdiskriminan negatif?
 		\end{explbox}
 		
 		\par Agar lebih jelas, kita akan mengerjakan beberapa contoh soal yang berkaitan dengan kedudukan fungsi kuadrat terhadap fungsi kuadrat lainnya.
@@ -1450,27 +1452,203 @@ dengan $ a, b, c $ semuanya bilangan real dan $ a \ne 0 $.
 		\end{jawab}
 		
 		\begin{contoh}
-			Tentukanlah syarat untuk $ m $ agar grafik fungsi $ \func{f}{x} = mx^{2} + 2x $ seluruhnya berada di bawah fungsi $ \func{g}{x} = x^{2} - 3 $.
+			Tentukanlah syarat untuk $ m $ agar grafik fungsi $ \func{f}{x} = x^{2} - 3 $ seluruhnya berada di bawah fungsi $ \func{g}{x} = mx^{2} + 2x $.
 		\end{contoh}
 		\begin{jawab}
 			latihan.
 		\end{jawab}
 	
-\subsection{Titik Tetap Fungsi Kuadrat}
+\subsection{Titik Tetap dan Titik Invarian Fungsi Kuadrat}
 	
-	\kant[11-12]
+	Dalam fungsi kuadrat, bahkan juga fungsi secara umum, terdapat istilah titik tetap dan titik invarian. Titik tetap suatu fungsi didefinisikan sebagai suatu elemen pada domain fungsi yang dipetakan ke dirinya sendiri oleh fungsi tersebut. Dengan kata lain, titik $ c $ adalah titik tetap fungsi $ \func{f}{x} $ jika dan hanya jika $ \func{f}{c} = c $. Sebagai contoh, pada fungsi kuadrat $ \func{f}{x} = x^{2} - 3x + 4 $, titik $ x = 2 $ merupakan titik tetap fungsi $ f $ karena $ \func{f}{2} = 2^{2} - 3\left(2\right) + 4 = 2 $. Secara geometris, titik tetap adalah titik dimana suatu grafik fungsi $ f $ berpotongan/bersinggungan dengan garis $ y = x $. Berdasarkan bagian sebelumnya, fungsi kuadrat hanya dapat berpotongan dengan fungsi linear paling banyak di dua titik berbeda. Oleh karena itu, fungsi kuadrat akan memiliki paling banyak dua titik tetap. Berikut merupakan ilustrasinya.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.7]
+			\begin{axis}
+				[axis x line=center, axis y line=center, extra y ticks={-3, -1, 1}, extra y tick labels={$ -3 $, $ -1 $, 1}, ymin=-4.5, ymax=2.5, xmin=-4.5, xmax=2.5, axis line style={<->}, legend pos=north west]
+				\addplot[smooth, red] {x^2 + 2*x - 3};
+				\addplot[smooth, blue] {x};
+				
+				\legend{$ \func{f}{x} $, $ y = x $}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Ilustrasi fungsi kuadrat $ \func{f}{x} $ yang memiliki dua titik tetap, yaitu titik-titik yang berpotongan dengan garis $ y = x $.}
+	\end{figure}
+	
+	\par Secara umum, jika $ \func{f}{x} $ adalah fungsi kuadrat umum \ref{eq:222}, maka titik-titik tetapnya memenuhi persamaan
+	\[ ax^{2} + bx + c = x \iff ax^{2} + \left(b - 1\right)x + c = 0 \]
+	sehingga dengan menggunakan rumus kuadratik, titik-titik tetap $ x_{\fixed_{1, 2}} $ fungsi kuadrat $ f $ adalah
+	\begin{equation} \label{eq:229}
+		x_{\fixed_{1, 2}} = \frac{-b + 1 \pm \sqrt{\left(b - 1\right)^{2} - 4ac}}{2a}.
+	\end{equation}
+	Disini, titik-titik tetap biasa dinotasikan dengan $ x_{\fixed} $ dengan $ \fixed $ disini berarti \textit{fixed} (tetap) dan bukan merujuk kepada fungsi $ f $.
+	
+	\par Selain memiliki titik tetap, fungsi kuadrat juga memiliki titik invarian. Beberapa matematikawan menyebut titik invarian ini sebagai titik tetap. Tetapi, karena titik tetap sudah memiliki definisinya tersendiri dalam matematika, maka dalam buku ini dituliskan sebagai \textit{titik invarian}. Titik invarian fungsi kuadrat didefinisikan sebagai titik-titik yang selalu dilalui oleh fungsi kuadrat $ f $ meskipun beberapa koefisien-koefisiennya berubah. Sebagai contoh, titik invarian fungsi kuadrat $ \func{f}{x} = x^{2} $ memiliki titik invarian $ \left(0, 0\right) $. Hal ini disebabkan ketika koefisien $ x^{2} $ pada fungsi $ f $ tersebut diubah-ubah, titik $ \left(0, 0\right) $ ini akan tetap dilalui oleh fungsi $ f $ yang termodifikasi tersebut. Berikut merupakan ilustrasinya.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.7]
+			\begin{axis}
+				[axis x line=center, axis y line=center, ymin=-5, ymax=40, axis line style={<->}]
+				\addplot[smooth, red] {0.5 * x^2};
+				\addplot[smooth, blue] {x^2};
+				\addplot[smooth, pink] {1.5 * x^2};
+				\addplot[smooth, purple] {2 * x^2};
+				
+				\legend{$ \func{f}{x} = 0.5x^2 $, $ \func{f}{x} = 1.0x^2 $, $ \func{f}{x} = 1.5x^2 $, $ \func{f}{x} = 2.0x^2 $};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Grafik fungsi kuadrat $ \func{f}{x} $ ketika koefisien $ x^{2} $-nya berubah. Perhatikan bahwa titik $ \left(0, 0\right) $ selalu dilalui oleh fungsi yang termodifikasi.}
+	\end{figure}
+	
+	\par Terdapat dua cara untuk mencari titik-titik invarian fungsi kuadrat. Untuk mendemonstrasikannya, kita akan mengerjakan contoh soal berikut.
+	
+	\begin{contoh}
+		Untuk setiap bilangan real $ m $, tentukanlah titik-titik invarian fungsi kuadrat
+		\[ \func{f}{x} = \left(m - 3\right)x^{2} - \left(3m - 9\right)x + 30 - 10m. \]
+	\end{contoh}
+	\begin{jawab}
+		Cara pertama adalah dengan menguraikan fungsi kuadrat $ \func{f}{x} $, lalu memfaktorkan suku-suku yang mengandung variabel $ m $. Untuk itu, pertama-tama kita tulis ulang fungsi $ f $ sebagai
+		\begin{align*}
+			\func{f}{x} &= \left(m - 3\right)x^{2} - \left(3m - 9\right)x + 30 - 10m \\
+			&= mx^{2} - 3x^{2} - 3mx + 9x + 30 - 10m \\
+			&= m\left(x^{2} - 3x - 10\right) - 3x^{2} + 9x + 30 \\
+			&= m\left(x + 2\right)\left(x - 5\right) - 3x^{2} + 9x + 30
+		\end{align*}
+		Perhatikan bahwa ketika $ x = -2 $, ekspresi $ m\left(x + 2\right)\left(x - 5\right) $ akan selalu bernilai nol untuk setiap $ m \in \mathbb{R} $. Artinya, titik $ \left(-2, \func{f}{-2}\right) $ akan selalu dilalui oleh fungsi $ f $ berapapun nilai $ m $-nya. Selain itu, titik $ \left(5, \func{f}{5}\right) $ juga akan selalu dilalui oleh fungsi $ f $ berapapun nilai $ m $-nya. Inilah alasan mengapa kita menguraikan fungsi $ f $, kemudian memfaktorkan keluar $ m $. Hal ini akan mempermudah kita untuk mencari nilai $ x $ agar ekspresi yang mengandung $ m $ ini akan selalu bernilai nol.
+		\par Dari persamaan terakhir, $ \func{f}{-2} = 0 - 3\left(-2\right)^{2} + 9\left(-2\right) + 30 = 0 $ dan $ \func{f}{5} = 0 - 3\left(5\right)^{2} + 9\left(5\right) + 30 = 0 $ sehingga titik-titik invarian fungsi $ f $ adalah $ \left(-2, 0\right) $ dan $ \left(5, 0\right) $.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.7]
+				\begin{axis}
+					[axis x line=center, axis y line=center, extra x ticks={-2}, extra x tick labels={-2}, xmin=-10.5, xmax=13.5, ymin=-65, ymax=65, axis line style={<->}]
+					\addplot[smooth, red, domain=-10.5:13.5] {-2*x^2 + 6*x + 20};
+					\addplot[smooth, blue, domain=-10.5:13.5] {-x^2 + 3*x + 10};
+					\addplot[smooth, pink, domain=-10.5:13.5] {x^2 - 3*x - 10};
+					\addplot[smooth, purple, domain=-10.5:13.5] {2*x^2 - 6*x - 20};
+					
+					\legend{$ m = 1 $, $ m = 2 $, $ m = 4 $, $ m = 5 $};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Grafik fungsi kuadrat $ \func{f}{x} $ untuk beberapa nilai $ m $. Perhatikan bahwa titik $ \left(-2, 0\right) $ dan $ \left(5, 0\right) $ selalu dilalui oleh grafik fungsi $ \func{f}{x} $.}
+		\end{figure}
+		Selain dengan penguraian, terdapat juga cara kedua untuk mencari titik-titik invarian fungsi kuadrat. Cara kedua ini adalah dengan memisalkan titik-titik invarian ini sebagai $ \left(p, q\right) $, kemudian mensubstitusi beberapa nilai $ m $. Untuk itu, pertama-tama kita misalkan titik-titik invarian fungsi $ f $ sebagai titik $ \left(p, q\right) $. Karenanya, untuk setiap bilangan real $ m $, titik $ \left(p, q\right) $ ini pasti akan selalu dilalui oleh fungsi $ f $.
+		\par Ambil $ m = 3 $, maka $ \func{f}{x} = \left(3 - 3\right)x^{2} - \left(3\left(3\right) - 9\right)x + 30 - 10\left(3\right) = 0 $. Akibatnya $ \func{f}{x} \equiv 0 $ sehingga $ q = 0 $. Selanjutnya ambil $ m = 0 $, maka $ \func{f}{x} = \left(0 - 3\right)x^{2} - \left(3\left(0\right) - 9\right)x + 30 - 10\left(0\right) = -3x^{2} + 9x + 30 $. Karena $ \left(p, q\right) $ selalu dilalui oleh $ f $, maka $ \left(p, q\right) $ memenuhi $ q = -3p^{2} + 9p + 30 $. Mengingat $ q = 0 $, maka
+		\[ 0 = -3p^{2} + 9p + 30 \iff 0 = p^{2} - 3p - 10 \iff \left(p + 2\right)\left(p - 5\right) = 0. \]
+		Jadi, titik-titik invarian fungsi $ f $ adalah $ \left(-2, 0\right) $ dan $ \left(5, 0\right) $.
+	\end{jawab}
+	
+	\par Pada bagian-bagian sebelumnya, kita tahu bahwa kita bisa mengonstruksi fungsi kuadrat dari tiga titik yang dilaluinya. Dari tiga titik ini, kita akan bisa membentuk fungsi kuadrat yang unik karena sistem persamaan linear yang dibentuk oleh ketiga titik tersebut akan menghasilkan koefisien-koefisien $ a $, $ b $, dan $ c $ yang unik. Artinya, ketiga titik tersebut hanya akan menghasilkan satu dan hanya satu fungsi kuadrat. Tidak akan ada lagi fungsi kuadrat lain yang dilalui oleh ketiga titik tersebut. Akibatnya, fungsi kuadrat $ f $ hanya memiliki titik invarian paling banyak dua.
+	
+	\begin{explbox}
+		Apakah mungkin ada suatu fungsi kuadrat yang tidak memiliki titik invarian? Jika ada, berikan contohnya.
+	\end{explbox}
 	
 \subsection{Penerapan Fungsi Kuadrat dalam Kehidupan Sehari-hari}
 	
-	\kant[13-14]
+	Fungsi kuadrat memiliki penerapan dalam kehidupan sehari-hari. Biasanya fungsi kuadrat digunakan untuk permasalahan optimisasi, seperti memaksimalkan luas pekarangan rumah yang dipagari atau meminimumkan biaya pemagarannya. Tentunya permasalahan optimisasi ini cenderung diselesaikan dengan menggunakan kalkulus karena menyediakan alat-alat yang lebih lengkap dan dapat digunakan untuk berbagai macam fungsi, tidak terbatas pada fungsi kuadrat saja.
+	
+	\par Proses optimisasi menggunakan konsep fungsi kuadrat ini tentunya memerlukan pengetahuan yang cukup mengenai titik baliknya. Dari titik balik ini, akan didapatkan nilai yang telah teroptimisasi. Untuk lebih memahaminya, kita akan mengerjakan beberapa contoh berikut.
+	
+	\begin{contoh}
+		Sebidang tanah terletak di belakang sisi suatu gudang. Tanah ini akan dipagari dengan kawat untuk membuat kandang ayam yang berbentuk persegi panjang. Kandang ayam tersebut dibuat menempel dengan dinding belakang gudang untuk meminimalkan penggunaan kawat. Jika kawat yang tersedia adalah $ 400 \punit{m} $, tentukan luas maksimum kandang ayam yang dapat dibuat. 
+	\end{contoh}
+	\begin{jawab}
+		Dari deskripsi pada soal, kita hanya akan memagari kandang ayam tersebut pada tiga sisi selain sisi yang menyentuh (berhimpitan) dengan dinding belakang gudang. Misalkan panjang dan lebar kandang ayam tersebut berturut-turut adalah $ p $ dan $ \ell $. Ilustrasinya adalah sebagai berikut.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.7]
+				\coordinate (A) at (0, 0);
+				\coordinate (B) at (5, 0);
+				\coordinate (C) at (5, 1);
+				\coordinate (D) at (0, 1);
+				\coordinate (X) at (0.5, -2);
+				\coordinate (Y) at (4.5, -2);
+				\coordinate (Z) at (4.5, 0);
+				\coordinate (W) at (0.5, 0);
+				
+				\draw (A) -- (B) -- (C) -- (D) -- cycle;
+				\draw[color=red] (W) -- (X) -- (Y) -- (Z);
+				
+				\path (W) -- (X) node[midway, left] {$ \ell $};
+				\path (X) -- (Y) node[midway, below] {$ p $};
+				\path (Y) -- (Z) node[midway, right] {$ \ell $};
+				
+				\node at (barycentric cs:A=1,B=1,C=1,D=1) {gudang};
+				\node at (barycentric cs:W=1,X=1,Y=1,Z=1) {kandang ayam};
+			\end{tikzpicture}
+			\caption{Ilustrasi permasalahan pada soal. Perhatikan bahwa garis merah berarti sisi-sisi yang akan dipagari.}
+		\end{figure}
+		Karena kawat yang tersedia untuk memagari kandang ayam adalah $ 400 \punit{m} $, maka $ p + 2\ell = 400 \iff p = 400 - 2\ell $ dengan $ 0 < p < 400 $ dan $ 0 < \ell < 200 $ (mengapa?). Perhatikan bahwa luas kandang ayam $ L $ memenuhi $ L = pl = \left(400 - 2\ell\right)\ell = -2\ell^{2} + 400\ell $. Karena grafik $ L $ terbuka ke bawah, maka $ L $ akan mencapai nilai maksimumnya ketika $ \ell = -\dfrac{400}{2\left(-2\right)} = 100 $. Akibatnya, $ p = 400 - 2\left(100\right) = 200 $. Oleh karena itu, agar luasnya maksimum, haruslah $ p = 200 \punit{m} $ dan $ \ell = 100 \punit{m} $.
+		\par Jadi, luas maksimum kandang ayam adalah $ L_{\mathrm{max}} = 200\left(100\right) = 20000 \punit{m^{2}} $.
+	\end{jawab}
+	
+	\begin{explbox}
+		Coba cari tahu mengenai ketaksamaan AM-GM. Gunakan ketaksamaan AM-GM ini untuk menentukan luas kandang maksimum dengan cepat.
+	\end{explbox}
+	
+	\begin{contoh}
+		Pemerintah daerah Kota Bontang berencana akan membuat rumah tahanan (rutan). Rutan tersebut terdiri dari 5 blok dan setiap bloknya terdiri dari tiga sel penjara yang berdampingan. Tepi kanan dan tepi kiri setiap blok dibatasi oleh tembok, begitu juga dengan bagian belakang bloknya. Pemerintah menginginkan setiap sel penjara memiliki luas yang sama. Jika jeruji besi yang tersedia ada sepanjang $ 2000 \punit{m} $ dan setiap meternya pada setiap sel penjara diperlukan sebanyak $ 10 \punit{m} $ jeruji besi, tentukan luas maksimum setiap sel penjara.
+	\end{contoh}
+	\begin{jawab}
+		Dari deskripsi pada soal, misalkan panjang dan lebar setiap sel penjara berturut-turut adalah $ p $ dan $ \ell $. Ilustrasi setiap bloknya adalah sebagai berikut.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[scale=0.7]
+				\coordinate (A) at (0, 0);
+				\coordinate (B) at (6, 0);
+				\coordinate (C) at (6, 3);
+				\coordinate (D) at (0, 3);
+				\coordinate (P) at (0, 0.5);
+				\coordinate (Q) at (6, 0.5);
+				\coordinate (R) at (2, 3);
+				\coordinate (S) at (4, 3);
+				\coordinate (T) at (2, 0.5);
+				\coordinate (U) at (4, 0.5);
+				
+				\draw[very thick] (A) -- (D) -- (C) -- (B);
+				\draw[color=red] (P) -- (Q);
+				\draw[color=red] (R) -- (T);
+				\draw[color=red] (S) -- (U);
+				
+				\path (R) -- (T) node[midway, left] {$ \ell $};
+				\path (S) -- (U) node[midway, right] {$ \ell $};
+				\path (P) -- (T) node[midway, below] {$ p $};
+				\path (T) -- (U) node[midway, below] {$ p $};
+				\path (U) -- (Q) node[midway, below] {$ p $};
+			\end{tikzpicture}
+			\caption{Ilustrasi permasalahan pada soal. Perhatikan bahwa garis merah berarti sisi-sisi yang akan diberi jeruji besi.}
+		\end{figure}
+		Dari ilustrasi tersebut, panjang total sisi sel penjara yang akan diberi jeruji besi adalah $ 3p + 2\ell $. Karena terdapat 5 blok pada rutan tersebut, maka setiap bloknya memerlukan $ 2000/5 = 400 \punit{m} $ jeruji besi. Lebih jauh, karena per meter dari sisi penjara yang akan diberi jeruji besi ini membutuhkan $ 10 \punit{m} $ jeruji besi, maka total jeruji besi per bloknya adalah $ 10\left(3p + 2\ell\right) $. Akibatnya,
+		\[ 10\left(3p + 2\ell\right) = 400 \iff 3p + 2\ell = 40 \iff \ell = 20 - \frac{3}{2}p \]
+		dengan $ 0 < p < 40/3 $ dan $ 0 < \ell < 20 $ (mengapa?). Selanjutnya, perhatikan bahwa luas $ L $ setiap sel penjara adalah
+		\[ L = p\ell = p\left(20 - \frac{3}{2}p\right) = -\frac{3}{2}p^{2} + 20p. \]
+		Karena grafik $ L $ terbuka ke bawah, maka $ L $ akan mencapai nilai maksimumnya ketika $ p = -\dfrac{20}{2\left(-3/2\right)} = \dfrac{20}{3} $. Akibatnya, $ \ell = 20 - \dfrac{3}{2}\left(\dfrac{20}{3}\right) = 10 $. Oleh karena itu, agar luasnya maksimum, haruslah $ p = \dfrac{20}{3} \punit{m} $ dan $ \ell = 10 \punit{m} $.
+		\par Jadi, luas maksimum setiap sel penjara adalah $ L_{\mathrm{max}} = \dfrac{20}{3}\left(10\right) = \dfrac{200}{3} \approx 66,6 \punit{m^{2}} $.
+	\end{jawab}
 	
 \subsection{Fungsi Kuadrat Umum*}
 	
-	\kant[15-16]
+	Pada subbab ini, kita telah mempelajari fungsi kuadrat secara mendetail. Tetapi, fungsi kuadrat yang kita pelajari pada subbab ini ternyata hanya merupakan kasus khusus. Fungsi kuadrat yang telah kita pelajari ini merupakan fungsi kuadrat satu variabel atau biasa disebut juga sebagai fungsi kuadrat univariat.
 	
+	\par Fungsi kuadrat juga bisa memiliki lebih dari satu variabel yang biasa disebut sebagai fungsi kuadrat multivariat. Artinya, fungsi kuadrat tersebut memerlukan dua input atau lebih. Akibatnya, domainnya bukan bilangan real, tetapi tupel bilangan real. Salah satu fungsi kuadrat dengan variabel lebih dari satu adalah fungsi kuadrat bivariat, yaitu fungsi kuadrat dua variabel. Bentuk umum fungsi kuadrat bivariat adalah
+	\begin{equation} \label{eq:230}
+		\func{f}{x, y} = ax^{2} + by^{2} + cxy + dx + ey + f
+	\end{equation}
+	dengan $ a, b, c, d, e, f $ adalah koefisien-koefisien dari fungsi tersebut. Anda akan mempelajari fungsi kuadrat dua variabel ini pada mata kuliah geometri analitik untuk studi yang lebih mendalam mengenai irisan kerucut.
+	
+	\begin{explbox}
+		Carilah informasi mengenai fungsi kuadrat tiga variabel atau lebih. Bagaimana bentuk umum fungsi kuadrat dengan $ n $ variabel?
+	\end{explbox}
+
+\subsection{Contoh Soal HOTS}
+	
+	\kant[10-15]
+	
+\newpage
+
 \subsection{Latihan Soal 2.2}
 	
-	\kant[17-18]
+	\kant[16-20]
 
 \newpage
 
