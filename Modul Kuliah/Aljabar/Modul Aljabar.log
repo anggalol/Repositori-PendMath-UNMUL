@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  19 DEC 2020 22:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.16)  20 DEC 2020 17:16
 entering extended mode
 **"./Modul Aljabar.tex"
 ("Modul Aljabar.tex"
@@ -2767,7 +2767,7 @@ t line 313.
 Package pgfplots info on input line 425: Overriding colorspace to cmyk due to x
 color configuration.
  [22] [23] [24] [25] [26] [27] [28]
-[29]
+[29] [30]
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 7
 29.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ts1phv.fd"
@@ -2777,8 +2777,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [30] [31]
-[32] [33]
+ [31]
+[32] [33] [34]
 Underfull \hbox (badness 1210) in paragraph at lines 822--824
 []\T1/lmr/m/n/10 (+20) Grafik fung-si ku-a-drat ju-ga sa-ngat ber-ka-it-an erat
  de-ngan koefisien-
@@ -2794,7 +2794,7 @@ Missing character: There is no ; in font nullfont!
 Overfull \vbox (6.96443pt too high) has occurred while \output is active []
 
 
-[34]
+[35]
 Package pgfplots info on input line 863: Overriding colorspace to cmyk due to x
 color configuration.
 Missing character: There is no ; in font nullfont!
@@ -2803,13 +2803,13 @@ color configuration.
 Missing character: There is no ; in font nullfont!
 Package pgfplots info on input line 895: Overriding colorspace to cmyk due to x
 color configuration.
- [35] [36]
+ [36] [37]
 Package pgfplots info on input line 945: Overriding colorspace to cmyk due to x
 color configuration.
- [37]
+ [38]
 Package pgfplots info on input line 975: Overriding colorspace to cmyk due to x
 color configuration.
- [38]
+ [39]
 Overfull \hbox (4.16411pt too wide) detected at line 999
 []  \OML/lmm/m/it/10 f[] \OT1/lmr/m/n/10 = 12  \OMS/lmsy/m/n/10 ([])  \OML/lmm/
 m/it/10 a [] [] \OT1/lmr/m/n/10 = 12  \OMS/lmsy/m/n/10 ([])  [] [] \OML/lmm/m/i
@@ -2821,10 +2821,10 @@ Package pgfplots info on input line 1015: Overriding colorspace to cmyk due to
 xcolor configuration.
 Package pgfplots info on input line 1026: Overriding colorspace to cmyk due to 
 xcolor configuration.
-[39] [40] [41]
+[40] [41] [42]
 Package pgfplots info on input line 1103: Overriding colorspace to cmyk due to 
 xcolor configuration.
- [42]
+ [43]
 Overfull \hbox (1.53587pt too wide) in paragraph at lines 1122--1123
 []\T1/lmr/m/n/10 (-20) Jadi, jang-ka-u-an da-ri fung-si $\OML/lmm/m/it/10 f$ \T
 1/lmr/m/n/10 (-20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (-20) = []  []$\T1/lmr/m/n
@@ -2838,7 +2838,7 @@ g[]$ \T1/lmr/m/n/10 (-20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (-20) = []  []$\T1/
 lmr/m/n/10 (-20) . 
  []
 
-[43]
+[44]
 Underfull \hbox (badness 7168) in paragraph at lines 1140--1142
 \T1/lmr/m/n/10 (+20) Oleh ka-re-na itu, jang-ka-u-an da-ri fung-si $[]  \OML/lm
 m/m/it/10 g[]$ \T1/lmr/m/n/10 (+20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (+20) =
@@ -2846,55 +2846,98 @@ m/m/it/10 g[]$ \T1/lmr/m/n/10 (+20) ada-lah $[]  [][] \OT1/lmr/m/n/10 (+20) =
 
 Package pgfplots info on input line 1162: Overriding colorspace to cmyk due to 
 xcolor configuration.
-[44]
+[45]
 Package pgfplots info on input line 1178: Overriding colorspace to cmyk due to 
 xcolor configuration.
- [45]
+ [46]
 Package pgfplots info on input line 1240: Overriding colorspace to cmyk due to 
 xcolor configuration.
- [46]
+ [47]
 Package pgfplots info on input line 1255: Overriding colorspace to cmyk due to 
 xcolor configuration.
 Package pgfplots info on input line 1269: Overriding colorspace to cmyk due to 
 xcolor configuration.
- [47] [48]
+ [48] [49]
 Package pgfplots info on input line 1325: Overriding colorspace to cmyk due to 
 xcolor configuration.
 Package pgfplots info on input line 1342: Overriding colorspace to cmyk due to 
 xcolor configuration.
- [49]
+ [50]
 Package pgfplots info on input line 1356: Overriding colorspace to cmyk due to 
 xcolor configuration.
 Package pgfplots info on input line 1371: Overriding colorspace to cmyk due to 
 xcolor configuration.
- [50] [51] [52]
+ [51] [52] [53]
 Package pgfplots info on input line 1465: Overriding colorspace to cmyk due to 
 xcolor configuration.
 
 Underfull \vbox (badness 5490) has occurred while \output is active []
 
- [53]
+ [54]
 Package pgfplots info on input line 1488: Overriding colorspace to cmyk due to 
 xcolor configuration.
 Missing character: There is no ; in font nullfont!
 
-[54]
+[55]
 Package pgfplots info on input line 1520: Overriding colorspace to cmyk due to 
 xcolor configuration.
 Missing character: There is no ; in font nullfont!
- [55] [56] [57] [58] [59] [60]) [61] [62]
+ [56] [57] [58] [59] [60] [61]
+Package pgfplots info on input line 1747: Overriding colorspace to cmyk due to 
+xcolor configuration.
+
+Overfull \hbox (5.77492pt too wide) in paragraph at lines 1752--1753
+[][] 
+ []
+
+Package pgfplots info on input line 1755: Overriding colorspace to cmyk due to 
+xcolor configuration.
+
+Overfull \hbox (5.77492pt too wide) in paragraph at lines 1760--1761
+[][] 
+ []
+
+Package pgfplots info on input line 1763: Overriding colorspace to cmyk due to 
+xcolor configuration.
+
+Overfull \hbox (5.77492pt too wide) in paragraph at lines 1768--1769
+[][] 
+ []
+
+Package pgfplots info on input line 1771: Overriding colorspace to cmyk due to 
+xcolor configuration.
+
+Overfull \hbox (5.77492pt too wide) in paragraph at lines 1776--1777
+[][] 
+ []
+
+Package pgfplots info on input line 1779: Overriding colorspace to cmyk due to 
+xcolor configuration.
+
+Overfull \hbox (5.77492pt too wide) in paragraph at lines 1784--1785
+[][] 
+ []
+
+Package pgfplots info on input line 1787: Overriding colorspace to cmyk due to 
+xcolor configuration.
+
+Overfull \hbox (5.77492pt too wide) in paragraph at lines 1792--1793
+[][] 
+ []
+
+[62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72]) [73]
 \openout2 = `sections/chapter3.aux'.
 
- (sections/chapter3.tex [63
+
+(sections/chapter3.tex [74
 
 
 
 
-]
-[64]) [65]
+] [75] [76]) [77]
 \openout2 = `sections/chapter4.aux'.
 
- (sections/chapter4.tex [66
+ (sections/chapter4.tex [78
 
 
 
@@ -2902,25 +2945,25 @@ Missing character: There is no ; in font nullfont!
 ]
 Underfull \vbox (badness 4366) has occurred while \output is active []
 
- [67]
-[68] [69]) [70] [71]
+ [79]
+[80] [81]) [82] [83]
 \openout2 = `sections/chapter5.aux'.
 
- (sections/chapter5.tex [72
+ (sections/chapter5.tex [84
 
 
 
 
-] [73] [74] [75]) [76] [77]
+] [85] [86] [87]) [88] [89]
 \openout2 = `sections/chapter6.aux'.
 
 
-(sections/chapter6.tex [78
+(sections/chapter6.tex [90
 
 
 
 
-] [79] [80] [81] [82] [83] [84] [85]) [86] [87
+] [91] [92] [93] [94] [95] [96] [97]) [98] [99
 
 
 
@@ -2928,44 +2971,44 @@ Underfull \vbox (badness 4366) has occurred while \output is active []
 \openout2 = `sections/appendixA.aux'.
 
 
-(sections/appendixA.tex [88
+(sections/appendixA.tex [100
 
 
-] [89]) [90] [91]
+] [101]) [102] [103]
 \openout2 = `sections/appendixB.aux'.
 
- (sections/appendixB.tex [92
+ (sections/appendixB.tex
+[104
 
 
 
 
-]
-[93]
+] [105]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [94])
-[95] [96]
+ [106])
+[107] [108]
 \openout2 = `sections/about.aux'.
 
  (sections/about.tex)
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
- [97
+ [109
 
 
 
 
 
 ]
-[98]
+[110]
 \openout2 = `sections/source.aux'.
 
- (sections/source.tex [99
+ (sections/source.tex [111
 
 
 
 
-]) [100]
+]) [112]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3006,7 +3049,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (biblatex)                loaded, is faulty or does not contain a definition
 (biblatex)                for \mkbibdatelong.
 
-[101
+[113
 
 
 
@@ -3021,7 +3064,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdatelong.
 (sections/appendixA.aux) (sections/appendixB.aux) (sections/about.aux)
 (sections/source.aux))
 Package rerunfilecheck Info: File `"Modul Aljabar".out' has not changed.
-(rerunfilecheck)             Checksum: EDC2ECB8FD536753BD905436911752C5;4625.
+(rerunfilecheck)             Checksum: CEE73F246832F80F94D9AAC54757A9A8;4625.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3031,10 +3074,10 @@ Package logreq Info: Writing requests to '"Modul Aljabar".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57531 strings out of 479663
- 1251980 string characters out of 2873809
- 2484159 words of memory out of 3000000
- 72501 multiletter control sequences out of 15000+200000
+ 57872 strings out of 479663
+ 1255702 string characters out of 2873809
+ 2486262 words of memory out of 3000000
+ 72584 multiletter control sequences out of 15000+200000
  568662 words of font info for 320 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  136i,22n,137p,1495b,2523s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3065,9 +3108,9 @@ am Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/arial/ua1r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhv
 r8a.pfb>
-Output written on "Modul Aljabar.pdf" (115 pages, 1957082 bytes).
+Output written on "Modul Aljabar.pdf" (127 pages, 2038272 bytes).
 PDF statistics:
- 1654 PDF objects out of 1728 (max. 8388607)
- 615 named destinations out of 1000 (max. 500000)
+ 2008 PDF objects out of 2073 (max. 8388607)
+ 873 named destinations out of 1000 (max. 500000)
  96404 words of extra memory for PDF output out of 106986 (max. 10000000)
 
