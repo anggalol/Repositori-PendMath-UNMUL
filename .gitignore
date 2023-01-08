@@ -2,7 +2,10 @@
 *.bbl
 *.blg
 *.log
+*.lof
 *.bcf
 *.ptc
 *.mtc*
 *.out
+*.xml
+*.gz

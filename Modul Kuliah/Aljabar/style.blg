@@ -1,5 +1,0 @@
-[0] Config.pm:312> INFO - This is Biber 2.15 (beta)
-[1] Config.pm:315> INFO - Logfile is 'style.blg'
-[562] biber-MSWIN64:330> INFO - === 
-[1602] Utils.pm:411> ERROR - Cannot find 'style.bcf'!
-[1603] Biber.pm:132> INFO - ERRORS: 1
